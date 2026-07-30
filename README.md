@@ -6,15 +6,18 @@ Autonomous cloud research against open-source `fireblocks/mpc-lib`: **local find
 
 | ID | Title | Suggested tier | Status |
 |----|-------|----------------|--------|
-| FB-MPC-001 | Legacy MTA seed: heap over-read when peer RP ≫ Paillier; FS truncation at default sizes | **P3 Medium** (memory corruption) | Ready to submit |
+| FB-MPC-001 | Legacy MTA seed: heap over-read when peer RP ≫ Paillier; FS truncation at default sizes | **P3 Medium** (memory corruption) | Ready to submit (original) |
+| (known-public) | Empty `container_cleaner` UB; misaligned `uint32_t` serializers | P3/P4 class | **Already public** — GitHub PRs #55/#56; do not re-submit |
 
-## Why not P2 / multiple P3s (this run)
+See `findings/DEEP_HUNT_P2_P3.md` for the P2/crypto forgeability negative result.
+
+## Why not P2 / “more P3s” (deep hunt)
 
 | Ask | Result |
 |-----|--------|
-| **P2 High** | Requires key / rogue signature with &lt;1e9 aborts. **Not found.** Will not fabricate. |
-| **Multiple distinct P3s** | Second independent memory-corruption defect **not found** after dedicated hunt (BAM/FROST/EdDSA/deserialize paths). |
-| **FB-MPC-001** | One root bug, two manifestations (truncation + over-read). Submit as **single** Medium finding with ASAN proof. |
+| **P2 High** | Key/rogue signature path **not found**. FS truncation does **not** establish forgeability. |
+| **More original P3s** | Extra memory UBs exist but are **already disclosed** in open PRs #54–#56. Submitting them ≈ duplicate/N-day. |
+| **FB-MPC-001** | Still the only **original** Medium candidate with ASAN proof in this playbook. |
 
 ## Submit FB-MPC-001
 
