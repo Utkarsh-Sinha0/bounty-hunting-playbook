@@ -1,0 +1,412 @@
+=== REQ#1 partners_wpjson ===
+URL: https://etoropartners.com/wp-json/
+http_code=200 size=323850
+--- headers (selected) ---
+HTTP/2 200 
+content-type: application/json; charset=UTF-8
+server: cloudflare
+BODY_SNIP:
+{"name":"eToro Partners","description":"","url":"https:\/\/etoropartners.com","home":"https:\/\/etoropartners.com","gmt_offset":"2","timezone_string":"","page_for_posts":0,"page_on_front":8,"show_on_front":"page","namespaces":["oembed\/1.0","wpe\/cache-plugin\/v1","wpe_sign_on_plugin\/v1","wpml\/v1","redirection\/v1","wordfence\/v1","yoast\/v1","wpml\/st\/v1","wpml\/tm\/v1","wpml\/ate\/v1","otgs\/installer\/v1","wp\/v2","wp-site-health\/v1","wp-block-editor\/v1"],"authentication":[],"routes":{"\/":{"namespace":"","methods":["GET"],"endpoints":[{"methods":["GET"],"args":{"context":{"default":"view","required":false}}}],"_links":{"self":[{"href":"https:\/\/etoropartners.com\/wp-json\/"}]}},"\/batch\/v1":{"namespace":"","methods":["POST"],"endpoints":[{"methods":["POST"],"args":{"validation":{"type":"string","enum":["require-all-validate","normal"],"default":"normal","required":false},"requests":{"type":"array","maxItems":25,"items":{"type":"object","properties":{"method":{"type":"string","enum":["POST","PUT","PATCH","DELETE"],"default":"POST"},"path":{"type":"string","required":true},"body":{"type":"object","properties":[],"additionalProperties":true},"headers":{"type":"object","prop
+=== REQ#2 partners_users ===
+URL: https://etoropartners.com/wp-json/wp/v2/users
+http_code=401 size=108
+--- headers (selected) ---
+HTTP/2 401 
+content-type: application/json; charset=UTF-8
+server: cloudflare
+BODY_SNIP:
+{"code":"rest_user_cannot_view","message":"Sorry, you are not allowed to list users.","data":{"status":401}}
+=== REQ#3 partners_plugins ===
+URL: https://etoropartners.com/wp-json/wp/v2/plugins
+http_code=401 size=129
+--- headers (selected) ---
+HTTP/2 401 
+content-type: application/json; charset=UTF-8
+server: cloudflare
+BODY_SNIP:
+{"code":"rest_cannot_view_plugins","message":"Sorry, you are not allowed to manage plugins for this site.","data":{"status":401}}
+=== REQ#4 partners_types ===
+URL: https://etoropartners.com/wp-json/wp/v2/types
+http_code=200 size=9955
+--- headers (selected) ---
+HTTP/2 200 
+content-type: application/json; charset=UTF-8
+server: cloudflare
+BODY_SNIP:
+{"post":{"description":"","hierarchical":false,"has_archive":false,"name":"Posts","slug":"post","icon":"dashicons-admin-post","taxonomies":["category","post_tag"],"rest_base":"posts","rest_namespace":"wp\/v2","template":[],"template_lock":false,"yoast_head":"<!-- This site is optimized with the Yoast SEO plugin v28.1 - https:\/\/yoast.com\/product\/yoast-seo-wordpress\/ -->\n<title>eToro Partners -<\/title>\n<meta name=\"robots\" content=\"index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1\" \/>\n<link rel=\"canonical\" href=\"https:\/\/etoropartners.com\/\" \/>\n<meta property=\"og:locale\" content=\"en_US\" \/>\n<meta property=\"og:type\" content=\"website\" \/>\n<meta property=\"og:title\" content=\"eToro Partners -\" \/>\n<meta property=\"og:url\" content=\"https:\/\/etoropartners.com\/\" \/>\n<meta property=\"og:site_name\" content=\"eToro Partners\" \/>\n<meta name=\"twitter:card\" content=\"summary_large_image\" \/>\n<script type=\"application\/ld+json\" class=\"yoast-schema-graph\">{\"@context\":\"https:\\\/\\\/schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https:\\\/\\\/etoropartners.com\\\/\",\"url\":\"https:\\\/\\\/etoropartner
+=== REQ#5 partners_xmlrpc ===
+URL: https://etoropartners.com/xmlrpc.php
+http_code=403 size=146
+--- headers (selected) ---
+HTTP/2 403 
+content-type: text/html
+server: cloudflare
+BODY_SNIP:
+<html>
+<head><title>403 Forbidden</title></head>
+<body>
+<center><h1>403 Forbidden</h1></center>
+<hr><center>nginx</center>
+</body>
+</html>
+
+=== REQ#6 partners_upload ===
+URL: https://etoropartners.com/wp-admin/async-upload.php
+http_code=403 size=0
+--- headers (selected) ---
+HTTP/2 302 
+content-type: text/html; charset=UTF-8
+location: https://etoropartners.com/wp-login.php?redirect_to=https%3A%2F%2Fetoropartners.com%2Fwp-admin%2Fasync-upload.php&reauth=1
+server: cloudflare
+HTTP/2 403 
+content-type: text/html; charset=UTF-8
+server: cloudflare
+BODY_SNIP:
+
+=== REQ#7 delta_root ===
+URL: https://delta.app/
+http_code=403 size=5442
+--- headers (selected) ---
+HTTP/2 403 
+content-type: text/html; charset=UTF-8
+content-security-policy: default-src 'none'; script-src 'nonce-d8EqRNrvyMEKD5ZZGjdypP' 'unsafe-eval' https://challenges.cloudflare.com; script-src-attr 'none'; style-src 'unsafe-inline'; img-src 'self' https://challenges.cloudflare.com; connect-src 'self' https://challenges.cloudflare.com; frame-src 'self' https://challenges.cloudflare.com blob:; child-src 'self' https://challenges.cloudflare.com blob:; worker-src blob:; form-action http: https:; base-uri 'self'
+server: cloudflare
+x-frame-options: SAMEORIGIN
+BODY_SNIP:
+<!DOCTYPE html><html lang="en-US"><head><title>Just a moment...</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge"><meta name="robots" content="noindex,nofollow"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="content-security-policy" content="default-src &#39;none&#39;; script-src &#39;nonce-d8EqRNrvyMEKD5ZZGjdypP&#39; &#39;unsafe-eval&#39; https://challenges.cloudflare.com; script-src-attr &#39;none&#39;; style-src &#39;unsafe-inline&#39;; img-src &#39;self&#39; https://challenges.cloudflare.com; connect-src &#39;self&#39; https://challenges.cloudflare.com; frame-src &#39;self&#39; https://challenges.cloudflare.com blob:; child-src &#39;self&#39; https://challenges.cloudflare.com blob:; worker-src blob:; form-action http: https:; base-uri &#39;self&#39;"><style>*{box-sizing:border-box;margin:0;padding:0}html{line-height:1.15;-webkit-text-size-adjust:100%;color:#313131;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"}body{displa
+=== REQ#8 delta_etoro ===
+URL: https://delta.app/etoro
+http_code=403 size=5457
+--- headers (selected) ---
+HTTP/2 403 
+content-type: text/html; charset=UTF-8
+content-security-policy: default-src 'none'; script-src 'nonce-XdpaXcveWLcwBDBOSjRYFn' 'unsafe-eval' https://challenges.cloudflare.com; script-src-attr 'none'; style-src 'unsafe-inline'; img-src 'self' https://challenges.cloudflare.com; connect-src 'self' https://challenges.cloudflare.com; frame-src 'self' https://challenges.cloudflare.com blob:; child-src 'self' https://challenges.cloudflare.com blob:; worker-src blob:; form-action http: https:; base-uri 'self'
+server: cloudflare
+x-frame-options: SAMEORIGIN
+BODY_SNIP:
+<!DOCTYPE html><html lang="en-US"><head><title>Just a moment...</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge"><meta name="robots" content="noindex,nofollow"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="content-security-policy" content="default-src &#39;none&#39;; script-src &#39;nonce-XdpaXcveWLcwBDBOSjRYFn&#39; &#39;unsafe-eval&#39; https://challenges.cloudflare.com; script-src-attr &#39;none&#39;; style-src &#39;unsafe-inline&#39;; img-src &#39;self&#39; https://challenges.cloudflare.com; connect-src &#39;self&#39; https://challenges.cloudflare.com; frame-src &#39;self&#39; https://challenges.cloudflare.com blob:; child-src &#39;self&#39; https://challenges.cloudflare.com blob:; worker-src blob:; form-action http: https:; base-uri &#39;self&#39;"><style>*{box-sizing:border-box;margin:0;padding:0}html{line-height:1.15;-webkit-text-size-adjust:100%;color:#313131;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"}body{displa
+=== REQ#9 etorox_root ===
+URL: https://www.etorox.com/
+http_code=200 size=358111
+--- headers (selected) ---
+HTTP/2 301 
+content-type: text/html; charset=UTF-8
+location: https://www.etoro.com/
+server: cloudflare
+HTTP/2 200 
+content-type: text/html; charset=utf-8
+server: cloudflare
+set-cookie: __cf_bm=WeBsvZHoW5u6XXCp9_oDdxJ9lSG7rvTC6hGK7A9jzA4-1785441912.5004346-1.0.1.1-BpxwpiMWwB3u9R5QRj4zVtfvh0C8eD32d7xwdZFDfO4Pi6fJ7tMYa_7jIoqq8yn_rQD0.adp7WXratkHOdyLDHMWuJgv79b5hyNVX3QKrjtm3O3j0YjZeIycX2MulJhu9XEcIOXHH0vC.kZV9r.RIA; HttpOnly; SameSite=None; Secure; Path=/; Domain=etoro.com; Expires=Thu, 30 Jul 2026 20:35:12 GMT
+BODY_SNIP:
+<!DOCTYPE html><html lang="en" dir="ltr" data-theme="dark"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/css/56e90093373253eb.css" data-precedence="next"/><link rel="stylesheet" href="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/css/a277729144aac3c1.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/chunks/webpack-89a9d143a5d0b4d2.js"/><script src="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/chunks/d5efe53b-a82b3c8b5fd3ee18.js" async=""></script><script src="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/chunks/1009-d2ec125b44635bba.js" async=""></script><script src="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/chunks/main-app
+=== REQ#10 etorox_api ===
+URL: https://api.etorox.com/
+http_code=200 size=358111
+--- headers (selected) ---
+HTTP/2 301 
+content-type: text/html; charset=UTF-8
+location: https://www.etoro.com/
+server: cloudflare
+HTTP/2 200 
+content-type: text/html; charset=utf-8
+server: cloudflare
+set-cookie: __cf_bm=SJ4WJ_rLGXOr_2M3dB5MV_iO_.AKRpQLyr5cmmCVTfo-1785441912.7025225-1.0.1.1-kNTpWYXYo5dKc3VmyU1dW4S8kRakz2hT2CrKMmmY3gun0CTrMqw32JabAFOOJAQgdl.w2qGNBom_L0UGyGkmvj1RiFoiGf5LHntRBivztCSYD8TPT4vRYvh3a_KUG59IKqpGDvywEqXeADp7ELCv3Q; HttpOnly; SameSite=None; Secure; Path=/; Domain=etoro.com; Expires=Thu, 30 Jul 2026 20:35:12 GMT
+BODY_SNIP:
+<!DOCTYPE html><html lang="en" dir="ltr" data-theme="dark"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/css/56e90093373253eb.css" data-precedence="next"/><link rel="stylesheet" href="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/css/a277729144aac3c1.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/chunks/webpack-89a9d143a5d0b4d2.js"/><script src="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/chunks/d5efe53b-a82b3c8b5fd3ee18.js" async=""></script><script src="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/chunks/1009-d2ec125b44635bba.js" async=""></script><script src="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/chunks/main-app
+=== REQ#11 etoro_search ===
+URL: https://www.etoro.com/search/?q=bbxss9cursor%22%3E%3Csvg%2Fonload%3Dalert(1)%3E
+http_code=403 size=5482
+--- headers (selected) ---
+HTTP/2 403 
+content-type: text/html; charset=UTF-8
+x-frame-options: SAMEORIGIN
+set-cookie: __cf_bm=i9KQg6ISTDQBLCmigF3Dry5xcweY.IgZX82Kpeu0wFU-1785441912.7944958-1.0.1.1-ZxbkR0V4Hti7aEPA4UbntFEv1daDIw3DmpE8tr6DbATsiPHvTo8BZyZrpYV7o925Q_a8N3fs0DgYtC6Gh65FXLDzfVs8riBsIdW09FG37wW30SkTGHyAj4UkRn_vFZ04eA47MTjozQNfOXF83AYtWg; HttpOnly; SameSite=None; Secure; Path=/; Domain=etoro.com; Expires=Thu, 30 Jul 2026 20:35:12 GMT
+server: cloudflare
+BODY_SNIP:
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en-US"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en-US"> <!--<![endif]-->
+<head>
+<title>Attention Required! | Cloudflare</title>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta name="robots" content="noindex, nofollow" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="stylesheet" id="cf_styles-css" href="/cdn-cgi/styles/cf.errors.css" />
+<!--[if lt IE 9]><link rel="stylesheet" id='cf_styles-ie-css' href="/cdn-cgi/styles/cf.errors.ie.css" /><![endif]-->
+<style>body{margin:0;padding:0}</style>
+
+
+<!--[if gte IE 10]><!-->
+<script>
+  if (!navigator.cookieEnabled) {
+    window.addEventListener('DOMContentLoaded', function () {
+      var cookieEl = document.getElementById('cookie-alert');
+      cookieEl.style.display = 'block';
+    })
+  }
+</script>
+<!--<![endif]-->
+
+</head>
+<body>
+  <div id="cf-wrapper">
+    <di
+=== REQ#12 etoro_referral ===
+URL: https://www.etoro.com/referral/?ref=bbxss9cursor
+http_code=404 size=2183
+--- headers (selected) ---
+HTTP/2 404 
+content-type: text/html
+set-cookie: __cf_bm=sBZHOJDbtCra49TQxyWmkU9LVjcYOvket9vprEZ3j80-1785441912.8498933-1.0.1.1-n57_JlOVAG5JZplucpUV_qnvLSzrOysIRo_s4ItYqLclyfhCYp0AzJDbdxgMn2Ll0gndNgyMHsWEkPS8_sK.m8X7YtFo3fekp0eALoJ7WTq2AdWjcTNKurG2mR78ch4RN94mpHRSDcrazzy.JndQbg; HttpOnly; SameSite=None; Secure; Path=/; Domain=etoro.com; Expires=Thu, 30 Jul 2026 20:35:13 GMT
+set-cookie: __cflb=02DiuEAg8LPSYevHEYjnT7VhYXyg6u98bDxyYmREqByR6; HttpOnly; SameSite=None; Secure; Path=/; Expires=Fri, 31 Jul 2026 19:05:13 GMT
+server: cloudflare
+BODY_SNIP:
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<title>404 - File or directory not found.</title>
+<style type="text/css">
+<!--
+body{margin:0;font-size:.7em;font-family:Verdana, Arial, Helvetica, sans-serif;background:#EEEEEE;}
+fieldset{padding:0 15px 10px 15px;} 
+h1{font-size:2.4em;margin:0;color:#FFF;}
+h2{font-size:1.7em;margin:0;color:#CC0000;} 
+h3{font-size:1.2em;margin:10px 0 0 0;color:#000000;} 
+#header{width:96%;margin:0 0 0 0;padding:6px 2% 6px 2%;font-family:"trebuchet MS", Verdana, sans-serif;color:#FFF;
+background-color:#555555;}
+#content{margin:0 0 0 2%;position:relative;}
+.content-container{background:#FFF;width:96%;margin-top:8px;padding:10px;position:relative;}
+-->
+</style>
+</head>
+<body>
+<div id="header"><h1>Server Error</h1></div>
+<div id="content">
+ <div class="content-container"><fieldset>
+  <h2>404 - File or directory not found.</h2>
+  <h3>The resource you are looking for might have been removed, had its name changed, or is temporarily unavailable.</h3>
+ 
+=== REQ#13 etoro_locale ===
+URL: https://www.etoro.com/?locale=bbxss9cursor%3Cscript%3E
+http_code=403 size=5482
+--- headers (selected) ---
+HTTP/2 403 
+content-type: text/html; charset=UTF-8
+x-frame-options: SAMEORIGIN
+set-cookie: __cf_bm=SHF17qHeYaec_3hqeHBkHiblO4V8cdifPiSDB3qfx6Y-1785441913.0972133-1.0.1.1-N1d_iiuCT.OKBCvRalL9k_FbMMIsVyRas_4Xqin7u3Qyb9OYeGYfxUOqL3NzuHFXqCz.y7fuBLr78WXVpmmXi2ErWBVja_AuzYyeHshSFCr5Iv4vBdhE0JrngDX.K411B1oE.qFxzvjEfLmc3ti63g; HttpOnly; SameSite=None; Secure; Path=/; Domain=etoro.com; Expires=Thu, 30 Jul 2026 20:35:13 GMT
+server: cloudflare
+BODY_SNIP:
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en-US"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en-US"> <!--<![endif]-->
+<head>
+<title>Attention Required! | Cloudflare</title>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta name="robots" content="noindex, nofollow" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="stylesheet" id="cf_styles-css" href="/cdn-cgi/styles/cf.errors.css" />
+<!--[if lt IE 9]><link rel="stylesheet" id='cf_styles-ie-css' href="/cdn-cgi/styles/cf.errors.ie.css" /><![endif]-->
+<style>body{margin:0;padding:0}</style>
+
+
+<!--[if gte IE 10]><!-->
+<script>
+  if (!navigator.cookieEnabled) {
+    window.addEventListener('DOMContentLoaded', function () {
+      var cookieEl = document.getElementById('cookie-alert');
+      cookieEl.style.display = 'block';
+    })
+  }
+</script>
+<!--<![endif]-->
+
+</head>
+<body>
+  <div id="cf-wrapper">
+    <di
+=== REQ#14 etoro_redirect ===
+URL: https://www.etoro.com/login/?redirect=bbxss9cursor
+http_code=200 size=179384
+--- headers (selected) ---
+HTTP/2 200 
+content-type: text/html; charset=utf-8
+content-security-policy: frame-ancestors 'self' file://*
+x-frame-options: allow-fromfile://*
+set-cookie: __cf_bm=Ff71Asac6ygh200zYG.xRpggIUR8jTpL8qaEjM2dLO8-1785441913.1622074-1.0.1.1-70UH2Sj9wG4Dax05j51qByMwPnDXcmJ1Y4PkjtI32zOag15RRzdpiu413qSkCEBbBdSgWxlcAq.eJGOrjGTWj6t7X6Nk36HyvD49ydSyOcp_ZW4q7I_lkBgZpYEwOqljZHfeW7ehntcYbHQBvO8QkA; HttpOnly; SameSite=None; Secure; Path=/; Domain=etoro.com; Expires=Thu, 30 Jul 2026 20:35:13 GMT
+set-cookie: __cflb=02DiuEAg8LPSYevHEYjnT7VhYXyg6u98bEho4xytTTduW; HttpOnly; SameSite=None; Secure; Path=/; Expires=Fri, 31 Jul 2026 19:05:13 GMT
+server: cloudflare
+BODY_SNIP:
+<!DOCTYPE html>
+<html>
+<head data-meta-tags="" data-assets-version="v651.1310.0">
+    <meta charset="utf-8"/>
+    
+    
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no, minimal-ui">
+    <meta name="msapplication-tap-highlight" content="no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta property="fb:admins" content="100000137838591"/>
+    <meta property="fb:app_id" content="166209726726710"/>
+    <meta property="og:site_name" content="eToro"/>
+    <meta property="og:type" content="website"/>
+    <meta property="article:publisher" content="https://www.facebook.com/etoro"/>
+    <meta name="twitter:site" content="@etoro"/>
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:app:name:iphone" content="eToro OpenBook"/>
+    <meta name="twitter:app:id:iphone" content="674984916"/>
+    <meta name="twitter:app:name:ipad" content="eToro OpenBook"/>
+    <meta name="twitter:app:id:ipad" content="674984916"/>
+    <meta name="twitter:app:name:googleplay" content
+=== REQ#15 etoro_next ===
+URL: https://www.etoro.com/sso/?next=bbxss9cursor%22%3E%3Cimg%20src=x%20onerror=alert(1)%3E
+http_code=403 size=5482
+--- headers (selected) ---
+HTTP/2 403 
+content-type: text/html; charset=UTF-8
+x-frame-options: SAMEORIGIN
+set-cookie: __cf_bm=VjvKyJXiNlWu0iIVyD_685OyFVtPJcGnouLxnEnCXmw-1785441913.6392474-1.0.1.1-oAuY4wzg.FYhNYlCvHKm.fsV1oYJjXR56L3NLwfiYscEPX9ir46jYvdG4yOrByypxUFP80JgJRtSWmNsLXsbZR8_oObRe6N18X5sxpWn4yW4P8XvDTzSZYAN0O.ofFGBi2RxX__sX2XWsptA6IC8NQ; HttpOnly; SameSite=None; Secure; Path=/; Domain=etoro.com; Expires=Thu, 30 Jul 2026 20:35:13 GMT
+server: cloudflare
+BODY_SNIP:
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en-US"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en-US"> <!--<![endif]-->
+<head>
+<title>Attention Required! | Cloudflare</title>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta name="robots" content="noindex, nofollow" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="stylesheet" id="cf_styles-css" href="/cdn-cgi/styles/cf.errors.css" />
+<!--[if lt IE 9]><link rel="stylesheet" id='cf_styles-ie-css' href="/cdn-cgi/styles/cf.errors.ie.css" /><![endif]-->
+<style>body{margin:0;padding:0}</style>
+
+
+<!--[if gte IE 10]><!-->
+<script>
+  if (!navigator.cookieEnabled) {
+    window.addEventListener('DOMContentLoaded', function () {
+      var cookieEl = document.getElementById('cookie-alert');
+      cookieEl.style.display = 'block';
+    })
+  }
+</script>
+<!--<![endif]-->
+
+</head>
+<body>
+  <div id="cf-wrapper">
+    <di
+=== REQ#16 logininfo ===
+URL: https://www.etoro.com/api/logininfo/v1.1/users/bbxss9cursor
+http_code=404 size=86
+--- headers (selected) ---
+HTTP/2 404 
+content-type: application/json; charset=utf-8
+set-cookie: __cf_bm=9PjIExAEH5l_EiEEdLXXpI_e9ocFNP.gAaGtmkbOWOk-1785441913.7135649-1.0.1.1-FPDqp9SPW8ztDeoJ1MNbyWxOpT9gNy0jRJddiA..dXsqP668f10rD14USDCPZ5D01D3.45c_fcWgyKJ3nXEYRI4kbs3.c5KSvHGuKW0C0ezX5uTiYBQu5HsnZMKMWKsUot49b_pdKNcZARkN5_k7cQ; HttpOnly; SameSite=None; Secure; Path=/; Domain=etoro.com; Expires=Thu, 30 Jul 2026 20:35:13 GMT
+set-cookie: __cflb=02DiuJPdYWQEVhSw8W7FHgzv43YXocWoQFM4y7QBTyNfN; HttpOnly; SameSite=None; Secure; Path=/; Expires=Fri, 31 Jul 2026 19:05:13 GMT
+server: cloudflare
+BODY_SNIP:
+{"ErrorData":null,"ErrorCode":"NotFound","ErrorMessage":"User bbxss9cursor not found"}
+=== REQ#17 markets_search ===
+URL: https://www.etoro.com/markets/?search=bbxss9cursor
+http_code=200 size=179384
+--- headers (selected) ---
+HTTP/2 200 
+content-type: text/html; charset=utf-8
+content-security-policy: frame-ancestors 'self' file://*
+x-frame-options: allow-fromfile://*
+set-cookie: __cf_bm=Lg8.2S7sl2OZRtw1u1jK27sitBT.s_ES0J9HRP65iDQ-1785441913.9824061-1.0.1.1-jz5WuBDH2nGgoXLusslUqn5HjShjgcpsuRKqqe0sTh4pnNj8Ul8tD2S7UsYwekI1you6W0OUcBInkhYN2GFOYns3b0YEfsebrhInnTGCBGrHe9qPhOf4M5WmbsxJE0Ufc2ne8qXi14_2hjvdtv99HA; HttpOnly; SameSite=None; Secure; Path=/; Domain=etoro.com; Expires=Thu, 30 Jul 2026 20:35:14 GMT
+set-cookie: __cflb=02DiuEAg8LPSYevHEYjnT7VhYXyg6u98bFScbAYY5jJPv; HttpOnly; SameSite=None; Secure; Path=/; Expires=Fri, 31 Jul 2026 19:05:14 GMT
+server: cloudflare
+BODY_SNIP:
+<!DOCTYPE html>
+<html>
+<head data-meta-tags="" data-assets-version="v651.1310.0">
+    <meta charset="utf-8"/>
+    
+    
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no, minimal-ui">
+    <meta name="msapplication-tap-highlight" content="no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta property="fb:admins" content="100000137838591"/>
+    <meta property="fb:app_id" content="166209726726710"/>
+    <meta property="og:site_name" content="eToro"/>
+    <meta property="og:type" content="website"/>
+    <meta property="article:publisher" content="https://www.facebook.com/etoro"/>
+    <meta name="twitter:site" content="@etoro"/>
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:app:name:iphone" content="eToro OpenBook"/>
+    <meta name="twitter:app:id:iphone" content="674984916"/>
+    <meta name="twitter:app:name:ipad" content="eToro OpenBook"/>
+    <meta name="twitter:app:id:ipad" content="674984916"/>
+    <meta name="twitter:app:name:googleplay" content
+=== REQ#18 discover_q ===
+URL: https://www.etoro.com/discover/people?q=bbxss9cursor
+http_code=200 size=179384
+--- headers (selected) ---
+HTTP/2 200 
+content-type: text/html; charset=utf-8
+content-security-policy: frame-ancestors 'self' file://*
+x-frame-options: allow-fromfile://*
+set-cookie: __cf_bm=6.PU1HXmfvMT0SUyZHeE18DBIJvYaxZjZg9wT_O3K3A-1785441914.5260487-1.0.1.1-l0t6iFhPoPwrHFSGPlANg9an.s4vl0TzZGEe54uudz1WiVrRAqImEGhF36I1E61XtVdTJkAa11MA9rilJgBaLRFx8aNjRyq8V2O0QhFFNGltRMXZ_trymxi.hB5omthpujKJbCQRbaVVxb3EQI6kHQ; HttpOnly; SameSite=None; Secure; Path=/; Domain=etoro.com; Expires=Thu, 30 Jul 2026 20:35:14 GMT
+set-cookie: __cflb=02DiuEAg8LPSYevHEYjnpbgJGw1ZD2QadBmXsGW3XgbZ6; HttpOnly; SameSite=None; Secure; Path=/; Expires=Fri, 31 Jul 2026 19:05:14 GMT
+server: cloudflare
+BODY_SNIP:
+<!DOCTYPE html>
+<html>
+<head data-meta-tags="" data-assets-version="v651.1310.0">
+    <meta charset="utf-8"/>
+    
+    
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no, minimal-ui">
+    <meta name="msapplication-tap-highlight" content="no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta property="fb:admins" content="100000137838591"/>
+    <meta property="fb:app_id" content="166209726726710"/>
+    <meta property="og:site_name" content="eToro"/>
+    <meta property="og:type" content="website"/>
+    <meta property="article:publisher" content="https://www.facebook.com/etoro"/>
+    <meta name="twitter:site" content="@etoro"/>
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:app:name:iphone" content="eToro OpenBook"/>
+    <meta name="twitter:app:id:iphone" content="674984916"/>
+    <meta name="twitter:app:name:ipad" content="eToro OpenBook"/>
+    <meta name="twitter:app:id:ipad" content="674984916"/>
+    <meta name="twitter:app:name:googleplay" content
+=== REQ#19 partners_rest ===
+URL: https://www.etoropartners.com/wp-json/
+http_code=200 size=323850
+--- headers (selected) ---
+HTTP/2 200 
+content-type: application/json; charset=UTF-8
+server: cloudflare
+BODY_SNIP:
+{"name":"eToro Partners","description":"","url":"https:\/\/etoropartners.com","home":"https:\/\/etoropartners.com","gmt_offset":"2","timezone_string":"","page_for_posts":0,"page_on_front":8,"show_on_front":"page","namespaces":["oembed\/1.0","wpe\/cache-plugin\/v1","wpe_sign_on_plugin\/v1","wpml\/v1","redirection\/v1","wordfence\/v1","yoast\/v1","wpml\/st\/v1","wpml\/tm\/v1","wpml\/ate\/v1","otgs\/installer\/v1","wp\/v2","wp-site-health\/v1","wp-block-editor\/v1"],"authentication":[],"routes":{"\/":{"namespace":"","methods":["GET"],"endpoints":[{"methods":["GET"],"args":{"context":{"default":"view","required":false}}}],"_links":{"self":[{"href":"https:\/\/etoropartners.com\/wp-json\/"}]}},"\/batch\/v1":{"namespace":"","methods":["POST"],"endpoints":[{"methods":["POST"],"args":{"validation":{"type":"string","enum":["require-all-validate","normal"],"default":"normal","required":false},"requests":{"type":"array","maxItems":25,"items":{"type":"object","properties":{"method":{"type":"string","enum":["POST","PUT","PATCH","DELETE"],"default":"POST"},"path":{"type":"string","required":true},"body":{"type":"object","properties":[],"additionalProperties":true},"headers":{"type":"object","prop
+=== REQ#20 partners_media ===
+URL: https://etoropartners.com/wp-json/wp/v2/media?per_page=1
+http_code=200 size=3003
+--- headers (selected) ---
+HTTP/2 200 
+content-type: application/json; charset=UTF-8
+server: cloudflare
+BODY_SNIP:
+[{"id":9960,"date":"2026-06-24T13:44:15","date_gmt":"2026-06-24T11:44:15","guid":{"rendered":"https:\/\/etoropartners.com\/wp-content\/uploads\/2026\/06\/Product-updates-mobile.png"},"modified":"2026-06-24T13:44:15","modified_gmt":"2026-06-24T11:44:15","slug":"product-updates-mobile","status":"inherit","type":"attachment","link":"https:\/\/etoropartners.com\/product-updates-new-features-for-etoro-affiliates\/product-updates-mobile\/","title":{"rendered":"Product updates mobile"},"author":20,"featured_media":0,"comment_status":"closed","ping_status":"closed","template":"","meta":{"_acf_changed":false},"class_list":["post-9960","attachment","type-attachment","status-inherit","hentry"],"acf":[],"description":{"rendered":"<p class=\"attachment\"><a href='https:\/\/etoropartners.com\/wp-content\/uploads\/2026\/06\/Product-updates-mobile.png'><img loading=\"lazy\" decoding=\"async\" width=\"300\" height=\"216\" src=\"https:\/\/etoropartners.com\/wp-content\/uploads\/2026\/06\/Product-updates-mobile-300x216.png\" class=\"attachment-medium size-medium\" alt=\"\" srcset=\"https:\/\/etoropartners.com\/wp-content\/uploads\/2026\/06\/Product-updates-mobile-300x216.png 300w, https:\/\/etoropart
+TOTAL=20

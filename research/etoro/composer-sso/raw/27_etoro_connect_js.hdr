@@ -1,0 +1,10 @@
+HTTP/2 302 
+content-type: text/html; charset=utf-8
+access-control-allow-origin: *
+access-control-allow-headers: Origin, X-Requested-With, Content-Type, Accept
+timing-allow-origin: *
+location: /v651.1310.0/js/embed/etoro-connect/etoro-connect.js
+content-encoding: gzip
+content-length: 105
+date: Thu, 30 Jul 2026 20:05:44 GMT
+

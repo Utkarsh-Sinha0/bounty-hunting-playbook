@@ -1,0 +1,25 @@
+HTTP/2 301 
+date: Thu, 30 Jul 2026 20:06:01 GMT
+content-type: text/html
+location: http://www.etoro.com/sapi/trade-data/live/public/portfolios/?cid=2988943
+cf-cache-status: DYNAMIC
+strict-transport-security: max-age=15552000; includeSubDomains; preload
+x-content-type-options: nosniff
+set-cookie: __cf_bm=6XD.fldkLp3Up8XzLby1z4QTd4xWnv0957o7OFMDp8E-1785441960.9496567-1.0.1.1-MSzOfu11JaRWAh_1vMd2zbEbvN1xBpzJVksDNBxDLSW8kRbFgsoLcrnEWPDCkbIaCsgNxUbDpquM2Pij.Gy5SKPj9AeFE2NEXsNHmzbWnZIfc07jswbQxt0.cj7cqXwZ9F2MCtKFJIloCqlCr2a1NA; HttpOnly; SameSite=None; Secure; Path=/; Domain=etoro.com; Expires=Thu, 30 Jul 2026 20:36:01 GMT
+set-cookie: __cflb=02DiuEAg8LPSYevHEYjnT7VhYXyg6u98aCubbVQ9d5VVW; HttpOnly; SameSite=None; Secure; Path=/; Expires=Fri, 31 Jul 2026 19:06:01 GMT
+server: cloudflare
+cf-ray: a236fb3fea7612d4-SEA
+alt-svc: h3=":443"; ma=86400
+
+HTTP/2 404 
+date: Thu, 30 Jul 2026 20:06:01 GMT
+content-type: text/html
+cf-cache-status: DYNAMIC
+strict-transport-security: max-age=15552000; includeSubDomains; preload
+x-content-type-options: nosniff
+set-cookie: __cf_bm=wmQ6cBfbwkVYVZrb6grOPg8.ErR2fxsNuL.xyhpyDS0-1785441961.143411-1.0.1.1-z3k4b_tKjvTVp4ZdVrp43cMmW_4OWOoBpX6XohhUbOqtSOOo7Ql1TrUbhNTQcJkG_JVLmbCIQflxcdRQUQxSyPbB5z72eoR.qcJTr6VK._QTs617Eurlqvu6vKSooHc7IQi.u3borP.ftbyhYoA.yw; HttpOnly; SameSite=None; Secure; Path=/; Domain=etoro.com; Expires=Thu, 30 Jul 2026 20:36:01 GMT
+set-cookie: __cflb=02DiuEAg8LPSYevHEYjnT7VhYXyg6u98aDeR7gxoFM9yv; HttpOnly; SameSite=None; Secure; Path=/; Expires=Fri, 31 Jul 2026 19:06:01 GMT
+server: cloudflare
+cf-ray: a236fb411b7612d4-SEA
+alt-svc: h3=":443"; ma=86400
+

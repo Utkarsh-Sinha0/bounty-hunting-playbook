@@ -1,0 +1,13 @@
+HTTP/2 301 
+date: Thu, 30 Jul 2026 20:05:18 GMT
+content-type: text/html
+location: http://www.etoro.com/api/login/v1/forgot-password/
+set-cookie: __cf_bm=Yjvr0skyRQRWfoAa_5Fm1PBc6Kz23CimA9LPOd2SHjo-1785441917.8946178-1.0.1.1-7sY.VbCjN.XyJfJVVQnWZEEQBwDiY.ZCyh8UrVGwzMT5a8s0.ip8Y5yKAYegTsaYBScNX3ri9dsfH3p.zRu7HMBULrtjsXYQX6A4FFJl9YfjKkcIIUmWKKW7ltJUPX8sdaCE5tYc3T2dCH7X1GX8wg; HttpOnly; SameSite=None; Secure; Path=/; Domain=etoro.com; Expires=Thu, 30 Jul 2026 20:35:18 GMT
+set-cookie: __cflb=02DiuEAg8LPSYevHEYjnpbgJGw1ZD2QadDyzRsBzQVb2L; HttpOnly; SameSite=None; Secure; Path=/; Expires=Fri, 31 Jul 2026 19:05:18 GMT
+cf-cache-status: DYNAMIC
+strict-transport-security: max-age=15552000; includeSubDomains; preload
+x-content-type-options: nosniff
+server: cloudflare
+cf-ray: a236fa32df97532b-SEA
+alt-svc: h3=":443"; ma=86400
+

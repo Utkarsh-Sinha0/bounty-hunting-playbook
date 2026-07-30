@@ -1,0 +1,24 @@
+HTTP/2 200 
+date: Thu, 30 Jul 2026 20:05:16 GMT
+content-type: application/json; charset=UTF-8
+server: cloudflare
+vary: Accept-Encoding
+vary: Accept-Encoding,Cookie
+access-control-allow-headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type
+access-control-expose-headers: X-WP-Total, X-WP-TotalPages, Link
+allow: GET
+link: <https://etoropartners.com/wp-json/wp/v2/media?per_page=1&page=2>; rel="next"
+x-content-type-options: nosniff
+x-powered-by: WP Engine
+x-robots-tag: noindex
+x-wp-total: 362
+x-wp-totalpages: 362
+x-cacheable: SHORT
+cache-control: max-age=600, must-revalidate
+x-cache: MISS
+x-cache-group: normal
+strict-transport-security: max-age=15552000; includeSubDomains; preload
+cf-cache-status: DYNAMIC
+cf-ray: a236fa259cd69b19-PDX
+alt-svc: h3=":443"; ma=86400
+

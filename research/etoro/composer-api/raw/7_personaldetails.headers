@@ -1,0 +1,34 @@
+HTTP/2 301 
+date: Thu, 30 Jul 2026 20:06:02 GMT
+content-type: text/html
+location: http://www.etoro.com/
+cf-cache-status: DYNAMIC
+strict-transport-security: max-age=15552000; includeSubDomains; preload
+x-content-type-options: nosniff
+set-cookie: __cf_bm=57OHnQZNXRgpDzQkN.pejzwvk_ZDY4wWQwd0YRWHxec-1785441962.6224656-1.0.1.1-gZK2QBHAoCcuBGtuw6skDIEbOe6fY_jhoyjBI0b3U626UOcBT0y8_EP5hRSq3fH85zlYnr70NvRzceLupINLunambTDbE83edEIk3tBk1ZJ3dPss7soKaqfHOVU0E9169YuthUECT3OGAQHwtVfeZw; HttpOnly; SameSite=None; Secure; Path=/; Domain=etoro.com; Expires=Thu, 30 Jul 2026 20:36:02 GMT
+set-cookie: __cflb=02DiuEAg8LPSYevHEYjnT7VhYXyg6u98aEPEdtXSscpUL; HttpOnly; SameSite=None; Secure; Path=/; Expires=Fri, 31 Jul 2026 19:06:02 GMT
+server: cloudflare
+cf-ray: a236fb4a6bb0ded9-SEA
+alt-svc: h3=":443"; ma=86400
+
+HTTP/2 200 
+date: Thu, 30 Jul 2026 20:06:02 GMT
+content-type: text/html; charset=utf-8
+cf-ray: a236fb4b9cadded9-SEA
+cf-cache-status: HIT
+age: 644
+cache-control: public, max-age=3600
+expires: Thu, 30 Jul 2026 21:06:02 GMT
+last-modified: Thu, 30 Jul 2026 19:55:21 GMT
+link: <https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/css/56e90093373253eb.css>; rel=preload; as="style", <https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/css/a277729144aac3c1.css>; rel=preload; as="style"
+server: cloudflare
+strict-transport-security: max-age=15552000; includeSubDomains; preload
+vary: rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch, Accept-Encoding
+x-content-type-options: nosniff
+accept-ch: Sec-CH-Prefers-Color-Scheme
+critical-ch: Sec-CH-Prefers-Color-Scheme
+x-app-version: 0.24.2
+x-middleware-rewrite: /en/
+set-cookie: __cf_bm=F6QmRT9IlPkkFejPEMAM4KS8gbNoGwfXmjkuhc8NQ4c-1785441962.8126698-1.0.1.1-FMVYZVJ7sbqtnOql2_RF82w7OGq9Ut2DFFsK1pg2o7c2Qh8nvDdTFb7QtQaZJUI.hjPrW8I_E2bgua5uHmsH3zFgTT3qqI6i_uaRhC2bU6z9GzFjIyE9e.9E5m85FKvExHHyGz0cgS7_2wI8HumROA; HttpOnly; SameSite=None; Secure; Path=/; Domain=etoro.com; Expires=Thu, 30 Jul 2026 20:36:02 GMT
+alt-svc: h3=":443"; ma=86400
+

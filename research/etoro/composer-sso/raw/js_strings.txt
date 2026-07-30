@@ -1,0 +1,68 @@
+=== https?://[^"\']+ (15) ===
+http://www.w3.org/1998/MathML/
+http://www.w3.org/1999/xhtml
+http://www.w3.org/1999/xlink
+http://www.w3.org/2000/svg
+http://www.w3.org/2000/xmlns/
+http://www.w3.org/XML/1998/namespace
+https://api.etorostatic.com/sapi/app-data/web-client-locales/{culture}.js
+https://cdn.etorostatic.com/latest/js/embed/etoro-connect/etoro-connect.js
+https://etoro-cdn.etorostatic.com/web-client/et/img/sso-app/red-lock.svg);width:135px;height:135px}
+https://etoro-cdn.etorostatic.com/web-client/img/eToro.png)}.e-loader-ph[_ngcontent-%COMP%]:after{animation:_ngcontent-%COMP%_rotation .5s infinite linear;background-image:url(https://etoro-cdn.etorostatic.com/web-client/img/preloader.png)}.e-loader[_ngcontent-%COMP%]{background-color:var(--neutral-0);border-radius:5px;height:65px;width:65px;margin:10px auto}@keyframes _ngcontent-%COMP%_rotation{0%{transform:rotate(0)}to{transform:rotate(360deg)}}
+https://etorologsapi.etoro.com/api/v2/monitoring
+https://g.co/ng/security#xss
+https://github.com/uuidjs/uuid#getrandomvalues-not-supported
+https://www.etoro.com
+https://www.etoro.com/
+=== /api/sso[^"\']* (5) ===
+/api/sso/v1/applications/${n}/missing-scopes`,i=new ut({Authorization:r}),s=(new ct).set(
+/api/sso/v1/applications/${r}/app-info`,i=(new ct).set(
+/api/sso/v1/applications/${r}/consent`,s=new ut({Authorization:o}),a=(new ct).set(
+/api/sso/v1/authorize`,d=new ut({Authorization:n});let f=(new ct).set(
+/api/sso/v1/silent-login/verify`,o={code:n},i=(new ct).set(
+=== client_id[^"\']{0,80} (4) ===
+client_id
+client_id (invalid format)
+client_id or redirect_uri
+client_id);const r=this.firstQueryString(n.response_type);this.responseType=
+=== redirect_uri[^"\']{0,80} (3) ===
+redirect_uri
+redirect_uri (invalid or disallowed scheme)
+redirect_uri),this.state=this.firstQueryString(n.state),this.codeChallenge=this.firstQuerySt
+=== app-info[^"\']{0,80} (1) ===
+app-info`,i=(new ct).set(
+=== code_challenge[^"\']{0,80} (3) ===
+code_challenge
+code_challenge),this.codeChallengeMethod=this.firstQueryString(n.code_challenge_method),this.o
+code_challenge_method
+=== silent[^"\']{0,60} (11) ===
+Silent login redirect rejected (unsafe URL or host not allowlisted
+SilentLoginRedirect():this.handleSSORedirect()}handleSSORedirect()
+SilentLoginRedirect(){this.loggerService.postSingleLog(
+SilentLoginRedirectAllowedHosts());if(!i)return this.loggerService
+SilentLoginRedirectAllowedHosts(){const n=new Set;try{n.add(new UR
+silent login ott failed:
+silent login ott success. idpInitiatedFlowRedirectUri:
+silent login redirect start
+silent-login/verify`,o={code:n},i=(new ct).set(
+silentLoginRedirectAllowedHosts:[
+silentLoginRedirectAllowedHosts??[])
+=== reset[^"\']{0,60} (18) ===
+reset();let o,i,s,n=this._itHead,r=!1;if(Array.isArray(t)){this.l
+reset(){if(this.isDirty){let t;for(t=this._previousItHead=this._i
+reset([]);else{const i=o.crossesNgTemplate?sd(n,t,r,[]):tD(n,t,o,
+reset(i,DM),e.notifyOnChanges()}return!0}return!1}function nD(e,t
+reset(t,n){const r=this;r.dirty=!1;const o=function ht(e){return 
+resetBaseElement(){Mi=null}getUserAgent(){return window.navigator
+resetConfig(n){this.config=n.map(If),this.navigated=!1,this.lastS
+resetConfig(this.config),this.currentUrlTree=new po,this.rawUrlTr
+resetHostNodes(){const n=this.hostNodes;n.clear(),n.add(this.doc.
+resetHostNodes()}addHost(n){this.hostNodes.add(n);for(const r of 
+resetHostNodes()}addStyles(n){for(const r of n)1===this.changeUsa
+resetOnError:n=!0,resetOnComplete:r=!0,resetOnRefCountZero:o=!0}=
+resetOnSuccess:o=!1}=t;return n<=0?Wt:fe((i,s)=>{let u,a=0;const 
+resetRootComponentType(n){this.routerState.root.component=n,this.
+resetRootComponentType(n.componentTypes[0]),o.closed||(o.next(),o
+resetState(n),this.browserUrlTree=n.currentUrlTree,this.resetUrlT
+resetState(n),this.resetUrlToCurrentUrlTree())}resetState(n){this
+resetUrlToCurrentUrlTree(){this.location.replaceState(this.urlSer

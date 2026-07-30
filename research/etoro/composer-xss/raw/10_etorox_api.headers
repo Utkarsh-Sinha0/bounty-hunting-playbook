@@ -1,0 +1,28 @@
+HTTP/2 301 
+date: Thu, 30 Jul 2026 20:05:12 GMT
+content-type: text/html; charset=UTF-8
+location: https://www.etoro.com/
+server: cloudflare
+cf-ray: a236fa122c1bc654-PDX
+
+HTTP/2 200 
+date: Thu, 30 Jul 2026 20:05:12 GMT
+content-type: text/html; charset=utf-8
+cf-ray: a236fa126d01eb43-SEA
+cf-cache-status: HIT
+age: 594
+cache-control: public, max-age=3600
+expires: Thu, 30 Jul 2026 21:05:12 GMT
+last-modified: Thu, 30 Jul 2026 19:55:21 GMT
+link: <https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/css/56e90093373253eb.css>; rel=preload; as="style", <https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/css/a277729144aac3c1.css>; rel=preload; as="style"
+server: cloudflare
+strict-transport-security: max-age=15552000; includeSubDomains; preload
+vary: rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch, Accept-Encoding
+x-content-type-options: nosniff
+accept-ch: Sec-CH-Prefers-Color-Scheme
+critical-ch: Sec-CH-Prefers-Color-Scheme
+x-app-version: 0.24.2
+x-middleware-rewrite: /en/
+set-cookie: __cf_bm=SJ4WJ_rLGXOr_2M3dB5MV_iO_.AKRpQLyr5cmmCVTfo-1785441912.7025225-1.0.1.1-kNTpWYXYo5dKc3VmyU1dW4S8kRakz2hT2CrKMmmY3gun0CTrMqw32JabAFOOJAQgdl.w2qGNBom_L0UGyGkmvj1RiFoiGf5LHntRBivztCSYD8TPT4vRYvh3a_KUG59IKqpGDvywEqXeADp7ELCv3Q; HttpOnly; SameSite=None; Secure; Path=/; Domain=etoro.com; Expires=Thu, 30 Jul 2026 20:35:12 GMT
+alt-svc: h3=":443"; ma=86400
+

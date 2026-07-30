@@ -1,0 +1,443 @@
+=== REQ#1 oidc_discovery ===
+CMD: https://www.etoro.com/.well-known/openid-configuration
+http_code=200 size=845
+HTTP/2 200 
+date: Thu, 30 Jul 2026 20:05:13 GMT
+content-type: text/html; charset=utf-8
+x-content-type-options: nosniff
+x-xss-protection: 1; mode=block
+strict-transport-security: max-age=15552000; includeSubDomains; preload
+cache-control: no-cache, no-store, must-revalidate, pre-check=0, post-check=0
+expires: Tue, 31 Mar 1981 05:00:00 GMT
+content-security-policy: frame-ancestors 'self' file://*
+x-frame-options: allow-fromfile://*
+vary: Accept-Encoding
+set-cookie: eToroLocale=en-gb; Path=/
+set-cookie: __cf_bm=87ieTvOcwokwNotm93SsubQllxrqwLdsXkInE8KuK2Q-1785441912.84519-1.0.1.1-F_QNQ9vvkvkoBwNRyNM6fgJ7LvM7z.j0tNDgfoIa_HRGDm.H2mlS3znCIeQ6KsxOV87nk4584QkI8Op99lasvIVpupmlIjDwrFMYZPchmHozfcgslb8GWdVw6LzqvJpRF3n6aYNMj5h773Y2DqW0yA; HttpOnly; SameSite=None; Secure; Path=/; Domain=etoro.com; Expires=Thu, 30 Jul 2026 20:35:13 GMT
+set-cookie: __cflb=02DiuEAg8LPSYevHEYjnT7VhYXyg6u98bDxyYmREqByR6; HttpOnly; SameSite=None; Secure; Path=/; Expires=Fri, 31 Jul 2026 19:05:13 GMT
+cf-cache-status: DYNAMIC
+server: cloudflare
+cf-ray: a236fa133908ebb3-SEA
+alt-svc: h3=":443"; ma=86400
+
+{
+  "issuer": "https://www.etoro.com",
+  "authorization_endpoint": "https://www.etoro.com/sso",
+  "token_endpoint": "https://www.etoro.com/api/sso/v1/token",
+  "userinfo_endpoint": "https://www.etoro.com/api/sso/v1/userinfo",
+  "jwks_uri": "https://www.etoro.com/.well-known/jwks.json",
+  "response_types_supported": [
+    "code"
+  ],
+  "subject_types_supported": [
+    "pairwise"
+  ],
+  "id_token_signing_alg_values_supported": [
+    "RS256"
+  ],
+  "scopes_supported": [
+    "openid",
+    "profile",
+=== REQ#2 jwks ===
+CMD: https://www.etoro.com/.well-known/jwks.json
+http_code=200 size=441
+HTTP/2 200 
+date: Thu, 30 Jul 2026 20:05:13 GMT
+content-type: application/json; charset=utf-8
+content-length: 441
+set-cookie: __cf_bm=HEhbzGt5U5pWIusD3H.j1.TsoGB6gOTaR3JF2kdkPRs-1785441913.1869009-1.0.1.1-ZU9ccs6ke5KcB3Mt3yyW9lRLfby6kUl80rV2m2igTkgCoAUoXumlgcOgspoRH.dvHxqJlrSEIY.nolaJ.9hUEmTaAVdchjcRsAZNnb8w6m2aS.SEbEGQUAzCbMOFjGbG3QjqSsQe0jQraffwbjLeXQ; HttpOnly; SameSite=None; Secure; Path=/; Domain=etoro.com; Expires=Thu, 30 Jul 2026 20:35:13 GMT
+set-cookie: __cflb=0H28vVY5Cxa6wk7ZNGUjDnSAmBEu1fyxNvhucumDXue; HttpOnly; SameSite=None; Secure; Path=/; Expires=Fri, 31 Jul 2026 19:05:13 GMT
+cf-cache-status: DYNAMIC
+strict-transport-security: max-age=15552000; includeSubDomains; preload
+x-content-type-options: nosniff
+server: cloudflare
+cf-ray: a236fa156a05a0ed-SEA
+alt-svc: h3=":443"; ma=86400
+
+{"keys":[{"kty":"RSA","alg":"RS256","use":"sig","kid":"00043","n":"uhWofwq0wm-Y-jtIIeNtOFrA-sdWXfPfOfMThIrAT6d0kZ9jzKRLfxtGfW26NMj-9iNt9csyy8NYTMC04VJxfsHtuRiydyYKMkwqbYXxkohD1RCP49Dig65sSG7NkpzCIUNhlM_QKfxIU5XksXWuyOEp3fjfedDNqK9XJBScKO3G--T1RUAe1xmn25pQ9I8ZqndMXvhTP4--bsKxD3R6GNhIgJwjr0WcVsKZG5NvV6gFH0BpjjnQKKrnjs2OYlN_2GLzQMlSRdiXB4Vhyb8_k_B7kSXI91LTfDhjZJELfkGnluh6aYrn2UJsM-6cF7WPCrq5_uw6w_d_G3jbwSmg4w","e":"AQAB","iat":1761458138}]}
+=== REQ#3 sso_auth_bare ===
+CMD: https://www.etoro.com/sso
+http_code=200 size=11296
+HTTP/2 200 
+date: Thu, 30 Jul 2026 20:05:13 GMT
+content-type: text/html
+cf-ray: a236fa16f858ebc2-SEA
+cf-cache-status: DYNAMIC
+accept-ranges: bytes
+last-modified: Thu, 25 Jun 2026 04:53:15 GMT
+server: cloudflare
+content-md5: 34atWEj8QIVxHjP7rTg6Lg==
+x-ms-request-id: a41af2fe-101e-00ca-2b5e-2074d7000000
+x-ms-version: 2018-03-28
+strict-transport-security: max-age=15552000; includeSubDomains; preload
+x-content-type-options: nosniff
+set-cookie: __cf_bm=IxA2asqpNT0t_8pKbwyZ9T8GNvL7V4IZg_IcLeYcqkg-1785441913.432586-1.0.1.1-9UHKOjuA8myEHR2wjgLSm2JnrA0hGBwRx_LAEW.KINg_ZR2YqEuaK_jOWGI9YjHnQj76pMPXXy6NG5JvyoZe532Clbt1tkUxEYGVPXgCkY.96LnRIRPIk0WSFK0QQIGZvjZzwOmmOrYVFZdEyCE5Hg; HttpOnly; SameSite=None; Secure; Path=/; Domain=etoro.com; Expires=Thu, 30 Jul 2026 20:35:13 GMT
+alt-svc: h3=":443"; ma=86400
+
+<!doctype html>
+<html lang="en" data-critters-container>
+  <head>
+    <meta charset="utf-8">
+    <title>connect-with-etoro</title>
+    <base href="/sso/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+<!--    Prevents the first-frame background flash (when arriving from eToro Dark Mode / cold cache).-->
+<!--    Sets theme-color + color-scheme so the browser paints the initial frame as light,-->
+<!--    and us
+=== REQ#4 sso_auth_evil_redirect ===
+CMD: https://www.etoro.com/sso?response_type=code&client_id=00000000-0000-4000-8000-000000000001&redirect_uri=https://evil.example/cb&scope=openid&state=teststate
+http_code=200 size=11296
+HTTP/2 200 
+date: Thu, 30 Jul 2026 20:05:13 GMT
+content-type: text/html
+cf-ray: a236fa189eb46e7d-SEA
+cf-cache-status: DYNAMIC
+accept-ranges: bytes
+last-modified: Thu, 25 Jun 2026 04:53:15 GMT
+server: cloudflare
+content-md5: 34atWEj8QIVxHjP7rTg6Lg==
+x-ms-request-id: bfa96fb9-d01e-0053-765e-200b6a000000
+x-ms-version: 2018-03-28
+strict-transport-security: max-age=15552000; includeSubDomains; preload
+x-content-type-options: nosniff
+set-cookie: __cf_bm=t1w25LNoe5vtrPxlEU4Vga_njYyZX5GkDIyScv3FLkk-1785441913.6968117-1.0.1.1-bHC6v8Zwsel9SHL_IbrnVSZPUqzZk0bD1xdkSq7JGL_W_C.UUZmZbG0EfjSR6KTm3G_iLciMa_0Gh_ksj7RC7xMfhwCrPqcGuh6XRpu8vYW6hggoEm9hYdY8uKsZwmgkBvGEUNSXm24yNZ49AfWimA; HttpOnly; SameSite=None; Secure; Path=/; Domain=etoro.com; Expires=Thu, 30 Jul 2026 20:35:13 GMT
+alt-svc: h3=":443"; ma=86400
+
+<!doctype html>
+<html lang="en" data-critters-container>
+  <head>
+    <meta charset="utf-8">
+    <title>connect-with-etoro</title>
+    <base href="/sso/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+<!--    Prevents the first-frame background flash (when arriving from eToro Dark Mode / cold cache).-->
+<!--    Sets theme-color + color-scheme so the browser paints the initial frame as light,-->
+<!--    and us
+=== REQ#5 sso_auth_subdomain_redirect ===
+CMD: https://www.etoro.com/sso?response_type=code&client_id=00000000-0000-4000-8000-000000000001&redirect_uri=https://evil.etoro.com/cb&scope=openid&state=teststate
+http_code=200 size=11296
+HTTP/2 200 
+date: Thu, 30 Jul 2026 20:05:14 GMT
+content-type: text/html
+cf-ray: a236fa1a28a62813-SEA
+cf-cache-status: DYNAMIC
+accept-ranges: bytes
+last-modified: Thu, 25 Jun 2026 04:53:15 GMT
+server: cloudflare
+content-md5: 34atWEj8QIVxHjP7rTg6Lg==
+x-ms-request-id: 94804b47-301e-0029-105e-20162a000000
+x-ms-version: 2018-03-28
+strict-transport-security: max-age=15552000; includeSubDomains; preload
+x-content-type-options: nosniff
+set-cookie: __cf_bm=FLMg1WyzBkJq5Kt1RFDnGhNhERIYEdUKhXdvCksm.Fo-1785441913.9445548-1.0.1.1-bJ_h67mOSGAMfgBei.o4X2C2WdGZ9FSJ97XRUTeorYmBBFUsLeGF5b2NIHvfUxumPwBecori2ypQz1VQQkvM3yxwGKjRck0H_jipH0duoYAm6IjtF4wuD61sQMKpOXReWSTktXFPEuQiErwm_HTCxQ; HttpOnly; SameSite=None; Secure; Path=/; Domain=etoro.com; Expires=Thu, 30 Jul 2026 20:35:14 GMT
+alt-svc: h3=":443"; ma=86400
+
+<!doctype html>
+<html lang="en" data-critters-container>
+  <head>
+    <meta charset="utf-8">
+    <title>connect-with-etoro</title>
+    <base href="/sso/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+<!--    Prevents the first-frame background flash (when arriving from eToro Dark Mode / cold cache).-->
+<!--    Sets theme-color + color-scheme so the browser paints the initial frame as light,-->
+<!--    and us
+=== REQ#6 sso_auth_at_bypass ===
+CMD: https://www.etoro.com/sso?response_type=code&client_id=00000000-0000-4000-8000-000000000001&redirect_uri=https://www.etoro.com.evil.example/cb&scope=openid
+http_code=200 size=11296
+HTTP/2 200 
+date: Thu, 30 Jul 2026 20:05:14 GMT
+content-type: text/html
+cf-ray: a236fa1bba2bb9a6-SEA
+cf-cache-status: DYNAMIC
+accept-ranges: bytes
+last-modified: Thu, 25 Jun 2026 04:53:15 GMT
+server: cloudflare
+content-md5: 34atWEj8QIVxHjP7rTg6Lg==
+x-ms-request-id: 1ba951e2-301e-00f2-785e-20d017000000
+x-ms-version: 2018-03-28
+strict-transport-security: max-age=15552000; includeSubDomains; preload
+x-content-type-options: nosniff
+set-cookie: __cf_bm=26D_WYiBRGzhiOTFzjkLivU5vYBQpwOse_zlYZblaI8-1785441914.192807-1.0.1.1-W5jV.ECKSnvoEytDxKNIM4x6BI2q56QHoeqF.YoNgXCMQXopfYk6AJD7hZ.SdonD.HfsI0mqW5IlG9mhsm3310G9I4dpAOmRrxxAyJs5m5VBk3z6pMfniEgu.00TM_lJs.Gd.MAVzwJKrwg_EVdIFg; HttpOnly; SameSite=None; Secure; Path=/; Domain=etoro.com; Expires=Thu, 30 Jul 2026 20:35:14 GMT
+alt-svc: h3=":443"; ma=86400
+
+<!doctype html>
+<html lang="en" data-critters-container>
+  <head>
+    <meta charset="utf-8">
+    <title>connect-with-etoro</title>
+    <base href="/sso/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+<!--    Prevents the first-frame background flash (when arriving from eToro Dark Mode / cold cache).-->
+<!--    Sets theme-color + color-scheme so the browser paints the initial frame as light,-->
+<!--    and us
+=== REQ#7 sso_auth_path ===
+CMD: https://www.etoro.com/sso?response_type=code&client_id=00000000-0000-4000-8000-000000000001&redirect_uri=https://www.etoro.com@evil.example/cb&scope=openid
+http_code=200 size=11296
+HTTP/2 200 
+date: Thu, 30 Jul 2026 20:05:14 GMT
+content-type: text/html
+cf-ray: a236fa1d6c1eec74-SEA
+cf-cache-status: DYNAMIC
+accept-ranges: bytes
+last-modified: Thu, 25 Jun 2026 04:53:15 GMT
+server: cloudflare
+content-md5: 34atWEj8QIVxHjP7rTg6Lg==
+x-ms-request-id: a41af4ee-101e-00ca-655e-2074d7000000
+x-ms-version: 2018-03-28
+strict-transport-security: max-age=15552000; includeSubDomains; preload
+x-content-type-options: nosniff
+set-cookie: __cf_bm=MdPuT3U_c2DS3HgDA1aK762hwiKfTOcQQpzVNwyDW8o-1785441914.4653242-1.0.1.1-BkXuZEazVb9kQIwqRTud7.1pealkSQ8zgo8U1Ys5SHrXEBUQ..mJ_7tjyn1OX2XT6FkEYTVQ8EeHWBBZR5PnRDkqFdT0Evphzazu33GBWGeoQX.4LmWtDKKshElwwY_Lp3IliQjxCpjeV2hoH0NJmg; HttpOnly; SameSite=None; Secure; Path=/; Domain=etoro.com; Expires=Thu, 30 Jul 2026 20:35:14 GMT
+alt-svc: h3=":443"; ma=86400
+
+<!doctype html>
+<html lang="en" data-critters-container>
+  <head>
+    <meta charset="utf-8">
+    <title>connect-with-etoro</title>
+    <base href="/sso/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+<!--    Prevents the first-frame background flash (when arriving from eToro Dark Mode / cold cache).-->
+<!--    Sets theme-color + color-scheme so the browser paints the initial frame as light,-->
+<!--    and us
+=== REQ#8 token_noauth ===
+CMD: -X POST https://www.etoro.com/api/sso/v1/token -H Content-Type: application/x-www-form-urlencoded -d grant_type=authorization_code&code=fakecode&redirect_uri=https://evil.example/cb&client_id=test
+http_code=400 size=27
+HTTP/2 400 
+date: Thu, 30 Jul 2026 20:05:14 GMT
+content-type: application/json; charset=utf-8
+set-cookie: __cf_bm=n7mswqvXhYpIL86hqyht.oW68qIoM9ZBpche9M7z07I-1785441914.697348-1.0.1.1-BStszVoh4i9GCfWxysoZZTaH_lnHzyxAXPBVGzumT0hFXwWw5FdIQROAQYGnzMUdVGf5FvF.HrjxW335w_BWt4XenlgbLEprPAOfJHM.2zdCIMtIHtrrhP.5BUyBwDrvhHXXpGj2QRcTDBmPD4PpCw; HttpOnly; SameSite=None; Secure; Path=/; Domain=etoro.com; Expires=Thu, 30 Jul 2026 20:35:14 GMT
+set-cookie: __cflb=02DiuJeZFAjee67RLJFAsnfLkozSdhHj1sxeJP9h1Zosz; HttpOnly; SameSite=None; Secure; Path=/; Expires=Fri, 31 Jul 2026 19:05:14 GMT
+cf-cache-status: DYNAMIC
+strict-transport-security: max-age=15552000; includeSubDomains; preload
+x-content-type-options: nosniff
+server: cloudflare
+cf-ray: a236fa1edcc216ae-SEA
+alt-svc: h3=":443"; ma=86400
+
+{"error":"invalid_request"}
+=== REQ#9 token_refresh ===
+CMD: -X POST https://www.etoro.com/api/sso/v1/token -H Content-Type: application/x-www-form-urlencoded -d grant_type=refresh_token&refresh_token=fakerefresh&client_id=test
+http_code=400 size=27
+HTTP/2 400 
+date: Thu, 30 Jul 2026 20:05:15 GMT
+content-type: application/json; charset=utf-8
+set-cookie: __cf_bm=CcwP3GUAiyDp5YP7nfQanmd1tEctkSfBrTCnwHOMOYU-1785441914.9503655-1.0.1.1-kkF1He0Fx7aA8M34LNisWpu_m9yUW4LjVZp6mennx0tYTdJgpfwuDy7lHyYnEseojPpleWVZkifIxtXnknqjVaCJbzpUZ2Bol.K7BJvFeFPSFdXzGxfg9ei4WO.N_k_kK9mhn87xMkphzytA86sRuQ; HttpOnly; SameSite=None; Secure; Path=/; Domain=etoro.com; Expires=Thu, 30 Jul 2026 20:35:15 GMT
+set-cookie: __cflb=02DiuJeZFAjee67RLJFAsnfLkozSdhHj1sxeJP9h1Zosz; HttpOnly; SameSite=None; Secure; Path=/; Expires=Fri, 31 Jul 2026 19:05:15 GMT
+cf-cache-status: DYNAMIC
+strict-transport-security: max-age=15552000; includeSubDomains; preload
+x-content-type-options: nosniff
+server: cloudflare
+cf-ray: a236fa20696276b2-SEA
+alt-svc: h3=":443"; ma=86400
+
+{"error":"invalid_request"}
+=== REQ#10 token_client_cred ===
+CMD: -X POST https://www.etoro.com/api/sso/v1/token -H Content-Type: application/x-www-form-urlencoded -d grant_type=client_credentials&client_id=test&client_secret=test
+http_code=400 size=27
+HTTP/2 400 
+date: Thu, 30 Jul 2026 20:05:15 GMT
+content-type: application/json; charset=utf-8
+cf-cache-status: DYNAMIC
+strict-transport-security: max-age=15552000; includeSubDomains; preload
+x-content-type-options: nosniff
+set-cookie: __cf_bm=Lb2jfpc1zhFZZYbFtSmfUH.kwzew_z.QK9QEqC.WuSQ-1785441915.1653218-1.0.1.1-8HIrlXZVGz7D2mEjgq9VydpBF1P3rzv3l60YidS5ZgiRCOlf8mOssu7r9bsV90SFVePYmhA7s8rr85Xmh_9nwivk4kPsJ3LZb3pEq0Z1Gfa2BsgGHUuDBrEy80C8uzDPIkFDCN8XHNy3ffWnsoE_uw; HttpOnly; SameSite=None; Secure; Path=/; Domain=etoro.com; Expires=Thu, 30 Jul 2026 20:35:15 GMT
+set-cookie: __cflb=0H28w3A2BggeMQke9as9iwHXPSAFsi5y2ios129rqVe; HttpOnly; SameSite=None; Secure; Path=/; Expires=Fri, 31 Jul 2026 19:05:15 GMT
+server: cloudflare
+cf-ray: a236fa21cc267600-SEA
+alt-svc: h3=":443"; ma=86400
+
+{"error":"invalid_request"}
+=== REQ#11 userinfo_noauth ===
+CMD: https://www.etoro.com/api/sso/v1/userinfo
+http_code=401 size=96
+HTTP/2 401 
+date: Thu, 30 Jul 2026 20:05:15 GMT
+content-type: application/json; charset=utf-8
+set-cookie: __cf_bm=eTOT7pxxv2U459.TngdnkkWZTikUa6hoSJqqGxoo7DY-1785441915.7804685-1.0.1.1-fpckZJJW24MxFvxPcLbIlrzhkIZKp0SIT3qS7XoWk3ir.yjuSCv7EQfugQCKkKvlFkPvmiR2hGMn02ctIfSxW94Hv.7RGc3GdOXexqDYncdVfSirPcel.Kp8380oz.sPW96LywdXaEu9gLhuP76KzQ; HttpOnly; SameSite=None; Secure; Path=/; Domain=etoro.com; Expires=Thu, 30 Jul 2026 20:35:15 GMT
+set-cookie: __cflb=02DiuJeZFAjee67RLJFAsnfLkozSdhHj1thTpaiLdqUNQ; HttpOnly; SameSite=None; Secure; Path=/; Expires=Fri, 31 Jul 2026 19:05:15 GMT
+cf-cache-status: DYNAMIC
+strict-transport-security: max-age=15552000; includeSubDomains; preload
+x-content-type-options: nosniff
+server: cloudflare
+cf-ray: a236fa259a01065f-SEA
+alt-svc: h3=":443"; ma=86400
+
+{"errorCode":"Unauthorized","errorMessage":"Unauthorized","errorData":{"error":"access_denied"}}
+=== REQ#12 userinfo_fake ===
+CMD: -H Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIn0.fake https://www.etoro.com/api/sso/v1/userinfo
+http_code=401 size=96
+HTTP/2 401 
+date: Thu, 30 Jul 2026 20:05:16 GMT
+content-type: application/json; charset=utf-8
+set-cookie: __cf_bm=Rq_a2.QzvNMxvmmJO0brDdCTql8nZ7ZTQm4jH53BKaw-1785441916.0164552-1.0.1.1-4laxxM8Xw8.MWk196CL.JdTg3pLPDOQ._sp35Ha1rSDjMmjOaCD0TeNDZLEGDaQSYSBqLygPtvY.DP03k1Nra7PRJafx4fM2BwkG99Ea3M8zSGjXIRNyorvshfJc5VeIKuLS8qop2AHx5q20xTypLQ; HttpOnly; SameSite=None; Secure; Path=/; Domain=etoro.com; Expires=Thu, 30 Jul 2026 20:35:16 GMT
+set-cookie: __cflb=0H28w3A2BggeMQke9as9iwHXPSAFsi5ymYL4Zfn8Vz4; HttpOnly; SameSite=None; Secure; Path=/; Expires=Fri, 31 Jul 2026 19:05:16 GMT
+cf-cache-status: DYNAMIC
+strict-transport-security: max-age=15552000; includeSubDomains; preload
+x-content-type-options: nosniff
+server: cloudflare
+cf-ray: a236fa271ab6629c-SEA
+alt-svc: h3=":443"; ma=86400
+
+{"errorCode":"Unauthorized","errorMessage":"Unauthorized","errorData":{"error":"access_denied"}}
+=== REQ#13 silent_verify ===
+CMD: -X POST https://www.etoro.com/api/sso/v1/silent-verify -H Content-Type: application/json -d {"client_id":"test","redirect_uri":"https://evil.example"}
+http_code=404 size=62
+HTTP/2 404 
+date: Thu, 30 Jul 2026 20:05:16 GMT
+content-type: application/json; charset=utf-8
+content-length: 62
+set-cookie: __cf_bm=6Y_8iL5SBunHAUHPw6lSBV.gEFn2vjpto60S_Y5HdEQ-1785441916.2241995-1.0.1.1-nxefuiMifC50bxCVGlEHS2DojIwANc5RzGI_7S1MZa2Y.TjDKAYMrhva9cbMLpM3bSagJwn9i.7iP8QjMB2LzN9B9uSllB6fG42HtJ5qeFbSbdp15AVjAX8M5.afZQ754jN138FgWskd0X708PuFww; HttpOnly; SameSite=None; Secure; Path=/; Domain=etoro.com; Expires=Thu, 30 Jul 2026 20:35:16 GMT
+set-cookie: __cflb=02DiuJeZFAjee67RLJFAsnfLkozSdhHj1uSHLnGzG78rp; HttpOnly; SameSite=None; Secure; Path=/; Expires=Fri, 31 Jul 2026 19:05:16 GMT
+cf-cache-status: DYNAMIC
+strict-transport-security: max-age=15552000; includeSubDomains; preload
+x-content-type-options: nosniff
+server: cloudflare
+cf-ray: a236fa2868d5ba3a-SEA
+alt-svc: h3=":443"; ma=86400
+
+{"errorCode":"RouteNotFound","errorMessage":"Route not found"}
+=== REQ#14 appinfo_evil ===
+CMD: https://www.etoro.com/api/sso/v1/applications/00000000-0000-4000-8000-000000000001/app-info?redirect_uri=https://evil.example/cb&client_request_id=bb-test
+http_code=404 size=68
+HTTP/2 404 
+date: Thu, 30 Jul 2026 20:05:16 GMT
+content-type: application/json; charset=utf-8
+set-cookie: __cf_bm=Gfbqpx9ZBO2yGwPgTGb5y_WDhelOgodLn7_zckTuKKY-1785441916.459945-1.0.1.1-CSKIq8vkXzt0vSHQ2FEg_jnM0zpbJ70xEIO57qcMabSJoaBWd5lD0vcXpLW1LWrCAQzqqbm_FB9jq3LDGc7LIkwQiFqu0f0rcBDHEZZBQCxBJ54AgAM8PWpi1EVMDARcXeiI_6mNo2KNvPgypvnBYw; HttpOnly; SameSite=None; Secure; Path=/; Domain=etoro.com; Expires=Thu, 30 Jul 2026 20:35:16 GMT
+set-cookie: __cflb=0H28w3A2BggeMQke9as9iwHXPSAFsi5ymYL4Zfn8Vz4; HttpOnly; SameSite=None; Secure; Path=/; Expires=Fri, 31 Jul 2026 19:05:16 GMT
+cf-cache-status: DYNAMIC
+strict-transport-security: max-age=15552000; includeSubDomains; preload
+x-content-type-options: nosniff
+server: cloudflare
+cf-ray: a236fa29d8cfec38-SEA
+alt-svc: h3=":443"; ma=86400
+
+{"errorCode":"ClientIdNotFound","errorMessage":"ClientId not found"}
+=== REQ#15 token_options ===
+CMD: -X OPTIONS https://www.etoro.com/api/sso/v1/token -H Origin: https://evil.example -H Access-Control-Request-Method: POST
+http_code=200 size=1038
+HTTP/2 200 
+date: Thu, 30 Jul 2026 20:05:16 GMT
+content-type: text/html; charset=utf-8
+access-control-allow-methods: GET
+access-control-allow-origin: *
+cache-control: public,max-age=3600
+set-cookie: __cf_bm=JWFZn3Hz0lIFtU3mxdSAHWz8WvqF_MaXR68kZ1xfDkQ-1785441916.787339-1.0.1.1-e7afzmHBfMHGTPbpWYhNOQLVmbmpjJ4q1M.g_EsRQ1KME9n1UGKVzY_8j.esBoZ_UjVrWiD0_LqSCl7L26KhyzNFZaVwvnAVWaTYPAf3ioLwm.GWFeb9oXGFf8Q79Pc3OIjgS8WDJQh.YH2yw2XwBQ; HttpOnly; SameSite=None; Secure; Path=/; Domain=etoro.com; Expires=Thu, 30 Jul 2026 20:35:16 GMT
+set-cookie: __cflb=02DiuEAg8LPSYevHEYjnT7VhYXyg6u98bGvFdZfqLGdNk; HttpOnly; SameSite=None; Secure; Path=/; Expires=Fri, 31 Jul 2026 19:05:16 GMT
+cf-cache-status: DYNAMIC
+strict-transport-security: max-age=15552000; includeSubDomains; preload
+x-content-type-options: nosniff
+server: cloudflare
+cf-ray: a236fa2bea31e945-SEA
+alt-svc: h3=":443"; ma=86400
+
+<html>
+   <head>
+        <title>Pong</title>
+   </head>
+   <body>
+        Pong
+   <script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a236fa2bea31e945',t:'MTc4NTQ0MTkxNg=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(
+=== REQ#16 accounts_root ===
+CMD: https://accounts.etoro.com/
+http_code=301 size=0
+HTTP/2 301 
+content-length: 0
+location: https://www.etoro.com/
+
+
+=== REQ#17 accounts_login ===
+CMD: https://accounts.etoro.com/login
+http_code=301 size=0
+HTTP/2 301 
+content-length: 0
+location: https://www.etoro.com/
+
+
+=== REQ#18 forgot_api ===
+CMD: -X POST https://www.etoro.com/api/login/v1/forgot-password -H Content-Type: application/json -d {"email":"nonexistent-bb-test@bugcrowdninja.com"}
+http_code=301 size=261
+HTTP/2 301 
+date: Thu, 30 Jul 2026 20:05:18 GMT
+content-type: text/html
+location: http://www.etoro.com/api/login/v1/forgot-password/
+set-cookie: __cf_bm=Yjvr0skyRQRWfoAa_5Fm1PBc6Kz23CimA9LPOd2SHjo-1785441917.8946178-1.0.1.1-7sY.VbCjN.XyJfJVVQnWZEEQBwDiY.ZCyh8UrVGwzMT5a8s0.ip8Y5yKAYegTsaYBScNX3ri9dsfH3p.zRu7HMBULrtjsXYQX6A4FFJl9YfjKkcIIUmWKKW7ltJUPX8sdaCE5tYc3T2dCH7X1GX8wg; HttpOnly; SameSite=None; Secure; Path=/; Domain=etoro.com; Expires=Thu, 30 Jul 2026 20:35:18 GMT
+set-cookie: __cflb=02DiuEAg8LPSYevHEYjnpbgJGw1ZD2QadDyzRsBzQVb2L; HttpOnly; SameSite=None; Secure; Path=/; Expires=Fri, 31 Jul 2026 19:05:18 GMT
+cf-cache-status: DYNAMIC
+strict-transport-security: max-age=15552000; includeSubDomains; preload
+x-content-type-options: nosniff
+server: cloudflare
+cf-ray: a236fa32df97532b-SEA
+alt-svc: h3=":443"; ma=86400
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>301 Moved Permanently</title>
+</head><body>
+<h1>Moved Permanently</h1><p>The document has moved <a href="https://www.etoro.com/api/login/v1/forgot-password/">here</a>.</p>
+</body></html>
+=== REQ#19 reset_token ===
+CMD: https://www.etoro.com/login/reset-password?token=fake-token-test
+http_code=200 size=179384
+HTTP/2 200 
+date: Thu, 30 Jul 2026 20:05:18 GMT
+content-type: text/html; charset=utf-8
+x-content-type-options: nosniff
+x-xss-protection: 1; mode=block
+strict-transport-security: max-age=15552000; includeSubDomains; preload
+cache-control: no-cache, no-store, must-revalidate, pre-check=0, post-check=0
+expires: Tue, 31 Mar 1981 05:00:00 GMT
+content-security-policy: frame-ancestors 'self' file://*
+x-frame-options: allow-fromfile://*
+vary: Accept-Encoding
+access-control-expose-headers: x-set-cookie, x-dd-b
+cf-cache-status: DYNAMIC
+set-cookie: eToroLocale=en-gb; Path=/
+set-cookie: __cf_bm=Y_ri5le_ydru81LRg0rPrZlQm8et2dPTi2hmkdiL_P4-1785441918.1000261-1.0.1.1-275JGY025GD4uBEI9uPV8DEfFExfmi8lD8.org4ao54iNVWyBlDsjjt6WVCSKx2qwc6F_L69TYVks8BLaog0jU_Vy_VdDCDUxO1adXmGlxIWCML50xZSf4YbzYvCYs0PE1aeG50Ovlj7PaD7djMAUw; HttpOnly; SameSite=None; Secure; Path=/; Domain=etoro.com; Expires=Thu, 30 Jul 2026 20:35:18 GMT
+set-cookie: __cflb=02DiuEAg8LPSYevHEYjnpbgJGw1ZD2QadEiox4ke2mFWk; HttpOnly; SameSite=None; Secure; Path=/; Expires=Fri, 31 Jul 2026 19:05:18 GMT
+access-control-allow-headers: x-datadome-clientid
+server: cloudflare
+cf-ray: a236fa3418c26ce5-SEA
+alt-svc: h3=":443"; ma=86400
+<!DOCTYPE html>
+<html>
+<head data-meta-tags="" data-assets-version="v651.1310.0">
+    <meta charset="utf-8"/>
+    
+    
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no, minimal-ui">
+    <meta name="msapplication-tap-highlight" content="no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <m
+=== REQ#20 sts_oidc ===
+CMD: https://www.etoro.com/api/sts/.well-known/openid-configuration
+http_code=403 size=1707
+HTTP/2 403 
+date: Thu, 30 Jul 2026 20:05:18 GMT
+content-type: text/html;charset=utf-8
+access-control-allow-origin: *
+cache-control: max-age=0, private, no-cache, no-store, must-revalidate
+x-content-type-options: nosniff
+pragma: no-cache
+accept-ch: Sec-CH-UA,Sec-CH-UA-Mobile,Sec-CH-UA-Platform,Sec-CH-UA-Arch,Sec-CH-UA-Full-Version-List,Sec-CH-UA-Model,Sec-CH-Device-Memory
+access-control-allow-credentials: true
+access-control-expose-headers: x-dd-b, x-set-cookie
+access-control-expose-headers: x-set-cookie, x-dd-b
+charset: utf-8
+x-dd-b: 1
+x-datadome: protected
+x-datadome-cid: AHrlqAAAAAMAmM_8QxgsxysAI6VxCQ==
+strict-transport-security: max-age=15552000; includeSubDomains; preload
+set-cookie: datadome=~pu_XsWunk2uWXfVs_eN9GNyM9lH4Y9dytIiJS3IJUEMrCfeVwac8pV1SLUZEqLLtFubHVK1MzBbMXn2KYjD53YfgGeKQpq8iFIojS_R0qm5qzW3VpxF~z7ljkAy2Rqk; Max-Age=604800; Domain=.etoro.com; Path=/; Secure; SameSite=Lax
+set-cookie: __cf_bm=a_fLmMMOUUoPjOAO8Ve09hMOtS7aKGRoxTm5AbGzsrI-1785441918.6046817-1.0.1.1-hGAcZFR_v8eHRKSJbPzn7E6FMBixMQOms1qkEvhzb8Kqnb53JJuNJsyAFilpoRSSLEc.IMNVQq7wad0L_xsUALex_BtkD7Mn.fLbJ.HHSZbL6WZLKTyYhyZSFKhGXjvCYJfjIOCpH4lt7EtnliRrmQ; HttpOnly; SameSite=None; Secure; Path=/; Domain=etoro.com; Expires=Thu, 30 Jul 2026 20:35:18 GMT
+access-control-allow-headers: x-datadome-clientid
+server: cloudflare
+<html lang="en"><head><title>etoro.com</title><style>#cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}}</style></head><body style="margin:0"><p id="cmsg">Please enable JS and disable any ad blocker</p><script data-cfasync="false">var dd={'rt':'c','cid':'AHrlqAAAAAMAmM_8QxgsxysAI6VxCQ==','hsh':'0AFF1257D19077E2E1F5ECC8506ED4','t':'fe','qp':'','s':51355,'e':'c138ae0b241a29112182455d805275f299c1be07bf5ba3d1f190b10da5125e9b01326b3477ef65a963c0024ee13f7bb6','host':'g
+TOTAL_REQ=20

@@ -1,0 +1,642 @@
+=== REQ#1 logininfo_billgates ===
+URL: https://www.etoro.com/api/logininfo/v1.1/users/billgates/logininfo
+http_code=404 size=0
+--- headers (selected) ---
+HTTP/2 404 
+set-cookie: __cf_bm=skqAXBNAxD3Kib_3VzHjZGozEWZtlNninjwmTnjvi9s-1785441960.5032365-1.0.1.1-qYLhLhNIrQDxvkJToVPoI_es10l9cQScNH2RZMR1DGGKaWODXBpR5r.NmUGA6snjLhf0cwpCWLFWQgXiwiMFfWqhkZM98fuld25tVkk5xjan8LgFX05bM_bNSpLAlkhqKXadlpH9MXHSbquxsTdVaA; HttpOnly; SameSite=None; Secure; Path=/; Domain=etoro.com; Expires=Thu, 30 Jul 2026 20:36:00 GMT
+set-cookie: __cflb=02DiuJPdYWQEVhSw8W7FHgzv43YXocWoPDYsVdpSdbEFN; HttpOnly; SameSite=None; Secure; Path=/; Expires=Fri, 31 Jul 2026 19:06:00 GMT
+x-content-type-options: nosniff
+server: cloudflare
+BODY_SNIP:
+
+=== REQ#2 logininfo_pub ===
+URL: https://www.etoro.com/api/logininfo/v1.1/users/JeppeKirkBonde/logininfo
+http_code=404 size=0
+--- headers (selected) ---
+HTTP/2 404 
+set-cookie: __cf_bm=Wl1l61mSdaYG79onq8P11ZNpmXZzknHwPQ.JgOoE4EA-1785441960.731222-1.0.1.1-JfMYm4vn0mZZPTN817eqM.yX3b81nAuTJ5pUB068QzvgJpY..GfdhX4F0V139WCYSFXCfdZWfidyhi0KKvaeCgLCNQMJH90NXB35SpVQQIXMz30ynGUnTQ63MXoS0p1CNiSxizeIgiJ.4wNHy1dvXw; HttpOnly; SameSite=None; Secure; Path=/; Domain=etoro.com; Expires=Thu, 30 Jul 2026 20:36:00 GMT
+set-cookie: __cflb=02DiuJPdYWQEVhSw8W9eRHvZna2hgv14f7DxcBW58dQ5J; HttpOnly; SameSite=None; Secure; Path=/; Expires=Fri, 31 Jul 2026 19:06:00 GMT
+x-content-type-options: nosniff
+server: cloudflare
+BODY_SNIP:
+
+=== REQ#3 sapi_pub_portfolio ===
+URL: https://www.etoro.com/sapi/trade-data/live/public/portfolios?cid=2988943
+http_code=404 size=2183
+--- headers (selected) ---
+HTTP/2 301 
+content-type: text/html
+location: http://www.etoro.com/sapi/trade-data/live/public/portfolios/?cid=2988943
+x-content-type-options: nosniff
+set-cookie: __cf_bm=6XD.fldkLp3Up8XzLby1z4QTd4xWnv0957o7OFMDp8E-1785441960.9496567-1.0.1.1-MSzOfu11JaRWAh_1vMd2zbEbvN1xBpzJVksDNBxDLSW8kRbFgsoLcrnEWPDCkbIaCsgNxUbDpquM2Pij.Gy5SKPj9AeFE2NEXsNHmzbWnZIfc07jswbQxt0.cj7cqXwZ9F2MCtKFJIloCqlCr2a1NA; HttpOnly; SameSite=None; Secure; Path=/; Domain=etoro.com; Expires=Thu, 30 Jul 2026 20:36:01 GMT
+set-cookie: __cflb=02DiuEAg8LPSYevHEYjnT7VhYXyg6u98aCubbVQ9d5VVW; HttpOnly; SameSite=None; Secure; Path=/; Expires=Fri, 31 Jul 2026 19:06:01 GMT
+server: cloudflare
+HTTP/2 404 
+content-type: text/html
+x-content-type-options: nosniff
+set-cookie: __cf_bm=wmQ6cBfbwkVYVZrb6grOPg8.ErR2fxsNuL.xyhpyDS0-1785441961.143411-1.0.1.1-z3k4b_tKjvTVp4ZdVrp43cMmW_4OWOoBpX6XohhUbOqtSOOo7Ql1TrUbhNTQcJkG_JVLmbCIQflxcdRQUQxSyPbB5z72eoR.qcJTr6VK._QTs617Eurlqvu6vKSooHc7IQi.u3borP.ftbyhYoA.yw; HttpOnly; SameSite=None; Secure; Path=/; Domain=etoro.com; Expires=Thu, 30 Jul 2026 20:36:01 GMT
+set-cookie: __cflb=02DiuEAg8LPSYevHEYjnT7VhYXyg6u98aDeR7gxoFM9yv; HttpOnly; SameSite=None; Secure; Path=/; Expires=Fri, 31 Jul 2026 19:06:01 GMT
+server: cloudflare
+BODY_SNIP:
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<title>404 - File or directory not found.</title>
+<style type="text/css">
+<!--
+body{margin:0;font-size:.7em;font-family:Verdana, Arial, Helvetica, sans-serif;background:#EEEEEE;}
+fieldset{padding:0 15px 10px 15px;} 
+h1{font-size:2.4em;margin:0;color:#FFF;}
+h2{font-size:1.7em;margin:0;color:#CC0000;} 
+h3{font-size:1.2em;margin:10px 0 0 0;color:#000000;} 
+#header{width:96%;margin:0 0 0 0;padding:6px 2% 6px 2%;font-family:"trebuchet MS", Verdana, sans-serif;color:#FFF;
+background-color:#555555;}
+#content{margin:0 0 0 2%;position:relative;}
+.content-container{background:#FFF;width:96%;margin-top:8px;padding:10px;position:relative;}
+-->
+</style>
+</head>
+<body>
+<div id="header"><h1>Server Error</h1></div>
+<div id="content">
+ <div class="content-container"><fieldset>
+  <h2>404 - File or directory not found.</h2>
+  <h3>The resource you are looking for might have been removed, had its name changed, or is temporarily unavailable.</h3>
+ </fieldset></div>
+</div>
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a236fb411b7612d4',t:'MTc4NTQ0MTk2MQ=='};var a=document.createElement('script');a.src='/cdn-cgi
+=== REQ#4 sapi_user_gain ===
+URL: https://www.etoro.com/sapi/userstats/UserGain?cid=2988943
+http_code=404 size=2183
+--- headers (selected) ---
+HTTP/2 404 
+content-type: text/html
+set-cookie: __cf_bm=w95_pij5OURm0urP9vBuEHK.dPhXqRLDdMEeziXMNeg-1785441961.3837738-1.0.1.1-Kgs5qp0Dquxdu7gNK0lxKUM8cywylgwcQVGPOTRV2nen3EPvIZyVk4r4382yjQVtqcUX8EWJi6S2J2LgEdJcBOCw9_ShA_iSVlZsvwbyNEkopsZr7x3Jjl_F22FnqTALE.epj7Ku_UAsgsjrTxL3MA; HttpOnly; SameSite=None; Secure; Path=/; Domain=etoro.com; Expires=Thu, 30 Jul 2026 20:36:01 GMT
+set-cookie: __cflb=02DiuHFHtLzUwjSx3dxei13VEvFX3J7W4M6xvaaqDEXQG; HttpOnly; SameSite=None; Secure; Path=/; Expires=Fri, 31 Jul 2026 19:06:01 GMT
+x-content-type-options: nosniff
+server: cloudflare
+BODY_SNIP:
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<title>404 - File or directory not found.</title>
+<style type="text/css">
+<!--
+body{margin:0;font-size:.7em;font-family:Verdana, Arial, Helvetica, sans-serif;background:#EEEEEE;}
+fieldset{padding:0 15px 10px 15px;} 
+h1{font-size:2.4em;margin:0;color:#FFF;}
+h2{font-size:1.7em;margin:0;color:#CC0000;} 
+h3{font-size:1.2em;margin:10px 0 0 0;color:#000000;} 
+#header{width:96%;margin:0 0 0 0;padding:6px 2% 6px 2%;font-family:"trebuchet MS", Verdana, sans-serif;color:#FFF;
+background-color:#555555;}
+#content{margin:0 0 0 2%;position:relative;}
+.content-container{background:#FFF;width:96%;margin-top:8px;padding:10px;position:relative;}
+-->
+</style>
+</head>
+<body>
+<div id="header"><h1>Server Error</h1></div>
+<div id="content">
+ <div class="content-container"><fieldset>
+  <h2>404 - File or directory not found.</h2>
+  <h3>The resource you are looking for might have been removed, had its name changed, or is temporarily unavailable.</h3>
+ </fieldset></div>
+</div>
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a236fb42acea5195',t:'MTc4NTQ0MTk2MQ=='};var a=document.createElement('script');a.src='/cdn-cgi
+=== REQ#5 sapi_risk_score ===
+URL: https://www.etoro.com/sapi/riskscore/UserRisk?cid=2988943
+http_code=404 size=2183
+--- headers (selected) ---
+HTTP/2 301 
+content-type: text/html
+location: http://www.etoro.com/sapi/riskscore/UserRisk/?cid=2988943
+x-content-type-options: nosniff
+set-cookie: __cf_bm=uxGVQ5ehq.0V5gOKruiaxR9gcEkmAO6MPdqxcrNgMog-1785441961.5943837-1.0.1.1-zyU3OOKdzpr3ZwLaY7pO5RLXV0.c8Gk9iF2FhvYgsXeiZttPOYOtGLtNme8jHL95zSt5xK9IzVVGTlMmq5t08DGyXvQUhjfkWwU1TjsaK.CPvdhJpHKX9MP5dSpa6kKgOREPD3hFbgxibrLmsKqsnQ; HttpOnly; SameSite=None; Secure; Path=/; Domain=etoro.com; Expires=Thu, 30 Jul 2026 20:36:01 GMT
+set-cookie: __cflb=02DiuEAg8LPSYevHEYjnpbgJGw1ZD2Qac9yLPnvJhJT96; HttpOnly; SameSite=None; Secure; Path=/; Expires=Fri, 31 Jul 2026 19:06:01 GMT
+server: cloudflare
+HTTP/2 404 
+content-type: text/html
+x-content-type-options: nosniff
+set-cookie: __cf_bm=qGOuP2I7yKfzEI.xAtwNfYGOpzFdlJxNfa3gttdbpss-1785441961.789311-1.0.1.1-gjNlpsCKaWeaYlynUYsuCHMFAmM8pQUz9P8SHIsvL5jiX.s9x6IxVm2ZBcELXCu7.gEZZ7bpMAZx9MAbPcJ7Pqa13So3DSzvbzScL9sKcnp1jeomXlOaLAGq2pxIxvfp_xDLvUZKv.X4gdneNlxfhQ; HttpOnly; SameSite=None; Secure; Path=/; Domain=etoro.com; Expires=Thu, 30 Jul 2026 20:36:01 GMT
+set-cookie: __cflb=02DiuEAg8LPSYevHEYjnpbgJGw1ZD2Qac9yLPnvJhJT96; HttpOnly; SameSite=None; Secure; Path=/; Expires=Fri, 31 Jul 2026 19:06:01 GMT
+server: cloudflare
+BODY_SNIP:
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<title>404 - File or directory not found.</title>
+<style type="text/css">
+<!--
+body{margin:0;font-size:.7em;font-family:Verdana, Arial, Helvetica, sans-serif;background:#EEEEEE;}
+fieldset{padding:0 15px 10px 15px;} 
+h1{font-size:2.4em;margin:0;color:#FFF;}
+h2{font-size:1.7em;margin:0;color:#CC0000;} 
+h3{font-size:1.2em;margin:10px 0 0 0;color:#000000;} 
+#header{width:96%;margin:0 0 0 0;padding:6px 2% 6px 2%;font-family:"trebuchet MS", Verdana, sans-serif;color:#FFF;
+background-color:#555555;}
+#content{margin:0 0 0 2%;position:relative;}
+.content-container{background:#FFF;width:96%;margin-top:8px;padding:10px;position:relative;}
+-->
+</style>
+</head>
+<body>
+<div id="header"><h1>Server Error</h1></div>
+<div id="content">
+ <div class="content-container"><fieldset>
+  <h2>404 - File or directory not found.</h2>
+  <h3>The resource you are looking for might have been removed, had its name changed, or is temporarily unavailable.</h3>
+ </fieldset></div>
+</div>
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a236fb452c76760a',t:'MTc4NTQ0MTk2MQ=='};var a=document.createElement('script');a.src='/cdn-cgi
+=== REQ#6 sapi_rankings ===
+URL: https://www.etoro.com/sapi/rankings/rankings/?PopularInvestor=true&page=1&pageSize=1
+http_code=404 size=59
+--- headers (selected) ---
+HTTP/2 404 
+content-type: application/json; charset=utf-8
+set-cookie: __cf_bm=e7B_OcX4RF1VAVU8WIpVwEo.GIEwQjIeM1vJQZ3odS0-1785441962.014886-1.0.1.1-rtLIu6WqoMIcZTKmFz_TDIYWpmU6S7p5Hj8xKswXjWYRj1cS05Ext3nKbef.VBXnq2NCEH6Hsr5czCTVOaCPs8JrJkZeG0R4NjBRUDegR9wFItjkD8n5.KmnVQW8DW_PjhN_ZT4fxKR7jjz2CHvaig; HttpOnly; SameSite=None; Secure; Path=/; Domain=etoro.com; Expires=Thu, 30 Jul 2026 20:36:02 GMT
+set-cookie: __cflb=0H28vh1t3Tw2Guk9V2SZboWWXSpXfdWYV8sWeQ2bsRE; HttpOnly; SameSite=None; Secure; Path=/; Expires=Fri, 31 Jul 2026 19:06:02 GMT
+x-content-type-options: nosniff
+server: cloudflare
+BODY_SNIP:
+{
+  "Status": "ERROR",
+  "ErrorText": "Missing Period"
+}
+=== REQ#7 personaldetails ===
+URL: https://www.etoro.com/api/users/v1/2988943/personaldetails/
+http_code=200 size=358111
+--- headers (selected) ---
+HTTP/2 301 
+content-type: text/html
+location: http://www.etoro.com/
+x-content-type-options: nosniff
+set-cookie: __cf_bm=57OHnQZNXRgpDzQkN.pejzwvk_ZDY4wWQwd0YRWHxec-1785441962.6224656-1.0.1.1-gZK2QBHAoCcuBGtuw6skDIEbOe6fY_jhoyjBI0b3U626UOcBT0y8_EP5hRSq3fH85zlYnr70NvRzceLupINLunambTDbE83edEIk3tBk1ZJ3dPss7soKaqfHOVU0E9169YuthUECT3OGAQHwtVfeZw; HttpOnly; SameSite=None; Secure; Path=/; Domain=etoro.com; Expires=Thu, 30 Jul 2026 20:36:02 GMT
+set-cookie: __cflb=02DiuEAg8LPSYevHEYjnT7VhYXyg6u98aEPEdtXSscpUL; HttpOnly; SameSite=None; Secure; Path=/; Expires=Fri, 31 Jul 2026 19:06:02 GMT
+server: cloudflare
+HTTP/2 200 
+content-type: text/html; charset=utf-8
+server: cloudflare
+x-content-type-options: nosniff
+x-app-version: 0.24.2
+x-middleware-rewrite: /en/
+set-cookie: __cf_bm=F6QmRT9IlPkkFejPEMAM4KS8gbNoGwfXmjkuhc8NQ4c-1785441962.8126698-1.0.1.1-FMVYZVJ7sbqtnOql2_RF82w7OGq9Ut2DFFsK1pg2o7c2Qh8nvDdTFb7QtQaZJUI.hjPrW8I_E2bgua5uHmsH3zFgTT3qqI6i_uaRhC2bU6z9GzFjIyE9e.9E5m85FKvExHHyGz0cgS7_2wI8HumROA; HttpOnly; SameSite=None; Secure; Path=/; Domain=etoro.com; Expires=Thu, 30 Jul 2026 20:36:02 GMT
+BODY_SNIP:
+<!DOCTYPE html><html lang="en" dir="ltr" data-theme="dark"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/css/56e90093373253eb.css" data-precedence="next"/><link rel="stylesheet" href="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/css/a277729144aac3c1.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/chunks/webpack-89a9d143a5d0b4d2.js"/><script src="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/chunks/d5efe53b-a82b3c8b5fd3ee18.js" async=""></script><script src="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/chunks/1009-d2ec125b44635bba.js" async=""></script><script src="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/chunks/main-app-0e78c129d34916df.js" async=""></script><script src="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/chunks/app/global-error-685189e4ffb8829d.js" async=""></script><script src="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa
+=== REQ#8 usermetadata ===
+URL: https://www.etoro.com/api/usermetadata/v1/users/2988943/
+http_code=200 size=358111
+--- headers (selected) ---
+HTTP/2 301 
+content-type: text/html
+location: http://www.etoro.com/
+set-cookie: __cf_bm=6h2SAIt6lbbwOpxgEORDsvuAADSUYSshh4yJm8uBGAo-1785441962.9142835-1.0.1.1-Ble3190yn274H4DHBDGm6cOb.tkZrO04IdTMTDUVuyZ9P4GVd4tav5JiignO4OOr_lCXWzAyATmgaJwdKRuOotZgcCh3OCtxDw6H5G8zijdbhnL_d0yJoANjQ3MOp_lZRFsEGZvorcORJK4.GEUr8Q; HttpOnly; SameSite=None; Secure; Path=/; Domain=etoro.com; Expires=Thu, 30 Jul 2026 20:36:03 GMT
+set-cookie: __cflb=02DiuEAg8LPSYevHEYjnpbgJGw1ZD2QacAi9uzUxKa7dW; HttpOnly; SameSite=None; Secure; Path=/; Expires=Fri, 31 Jul 2026 19:06:03 GMT
+x-content-type-options: nosniff
+server: cloudflare
+HTTP/2 200 
+content-type: text/html; charset=utf-8
+server: cloudflare
+x-content-type-options: nosniff
+x-app-version: 0.24.2
+x-middleware-rewrite: /en/
+set-cookie: __cf_bm=dhrj2Ac.CTTL37PmM3o0y9KLU.Ce1RyWBVe5BLehCaI-1785441963.0945525-1.0.1.1-lkuPLTorneiLIb7ubuMmpwmLqqE4k7UfuYlNgIbRDraTC40F.OXxQm51IRKO8xYJJktpcvTf1kux41xx0NryFgROqpPip0pdTxjKVbCUOM8rbcTqBzhn8nDCDdJME2yxYZ8U5JczqrCxduTF9D45bg; HttpOnly; SameSite=None; Secure; Path=/; Domain=etoro.com; Expires=Thu, 30 Jul 2026 20:36:03 GMT
+BODY_SNIP:
+<!DOCTYPE html><html lang="en" dir="ltr" data-theme="dark"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/css/56e90093373253eb.css" data-precedence="next"/><link rel="stylesheet" href="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/css/a277729144aac3c1.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/chunks/webpack-89a9d143a5d0b4d2.js"/><script src="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/chunks/d5efe53b-a82b3c8b5fd3ee18.js" async=""></script><script src="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/chunks/1009-d2ec125b44635bba.js" async=""></script><script src="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/chunks/main-app-0e78c129d34916df.js" async=""></script><script src="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/chunks/app/global-error-685189e4ffb8829d.js" async=""></script><script src="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa
+=== REQ#9 account_balance ===
+URL: https://www.etoro.com/api/account/v1/users/2988943/balance
+http_code=404 size=0
+--- headers (selected) ---
+HTTP/2 404 
+set-cookie: __cf_bm=0j9n_sMcuMU_U3oNZQzVJ6XSE1k0IFVhtmQOu6wCgxc-1785441963.1893117-1.0.1.1-GOpaGRF2r1W.Eo19SJ14EOJHOGTJEqiEamWsCbDlkj1wTr7uNRKFQoo93tyE.WFg3XlpmMFFY9Bmj2ECXYeA7Zw.r5rK4Eck6z0djMgZrJp0wsS_ehFyt8eduIBMdtij0sXb_aFAQ8TVt8rhXgKwow; HttpOnly; SameSite=None; Secure; Path=/; Domain=etoro.com; Expires=Thu, 30 Jul 2026 20:36:03 GMT
+set-cookie: __cflb=02DiuHkMaVnLENCWBu9WZEG7rrFoF3Ucxu5m9QrooTfrc; HttpOnly; SameSite=None; Secure; Path=/; Expires=Fri, 31 Jul 2026 19:06:03 GMT
+x-content-type-options: nosniff
+server: cloudflare
+BODY_SNIP:
+
+=== REQ#10 account_cash ===
+URL: https://www.etoro.com/api/trading/v1/users/2988943/accountinfo
+http_code=200 size=358111
+--- headers (selected) ---
+HTTP/2 301 
+content-type: text/html
+location: http://www.etoro.com/api/trading/v1/users/2988943/accountinfo/
+x-content-type-options: nosniff
+set-cookie: __cf_bm=cagD6mfdXNFWu31JCNIIh2r95EyAyLakH_OzN_7rYuM-1785441963.4369502-1.0.1.1-.EimFPloL.5GIcD7Yp46MWWxw2GvQtA79U08LVGSN5Uznnf1C5dwi6ydy0Vhc_SM0iZLw9latVqsPzntHvoSB50hpsm.Sfr_7Os4O.AlRV4QQOU4XDheNaVncgl3xv4jZ1lvVeB5qhI2NJlPC6hBLw; HttpOnly; SameSite=None; Secure; Path=/; Domain=etoro.com; Expires=Thu, 30 Jul 2026 20:36:03 GMT
+set-cookie: __cflb=02DiuEAg8LPSYevHEYjnpbgJGw1ZD2QacBSySC3bwqn7v; HttpOnly; SameSite=None; Secure; Path=/; Expires=Fri, 31 Jul 2026 19:06:03 GMT
+server: cloudflare
+HTTP/2 301 
+content-type: text/html
+location: http://www.etoro.com/
+x-content-type-options: nosniff
+set-cookie: __cf_bm=DqrLrwxn7TXcIUkwyyboayYg9e3iXuba9EgTSsqWCbM-1785441963.6111257-1.0.1.1-e.OkFZRieuI373S1HJJgSh_kql60RydGceJZ3MIuaWyYJKPavqd6TX_t4.rb5BOhoepUN3kr_f6rLICi7al5IowC2dpDf2bmEVGLLqLpyf08b1T5FPzDaVAe14qfOMbnETXP7.a_85vCslfujRmWqQ; HttpOnly; SameSite=None; Secure; Path=/; Domain=etoro.com; Expires=Thu, 30 Jul 2026 20:36:04 GMT
+set-cookie: __cflb=02DiuEAg8LPSYevHEYjnpbgJGw1ZD2QacBSySC3bwqn7v; HttpOnly; SameSite=None; Secure; Path=/; Expires=Fri, 31 Jul 2026 19:06:04 GMT
+server: cloudflare
+HTTP/2 200 
+content-type: text/html; charset=utf-8
+server: cloudflare
+x-content-type-options: nosniff
+x-app-version: 0.24.2
+x-middleware-rewrite: /en/
+set-cookie: __cf_bm=oy_KqIqoecEZWRnfNwNFaezCHTn0V5ebzSEbdoVfSNM-1785441964.2867901-1.0.1.1-xbZSK2ZJtZM1dukbtYhYNItAhhMR9_NeO3FjgoQeFO9Vlc94lItlHnI2SEG02rbg7lKdjrZD4ClhjU02DIpbw3nkGMguz8qsCVxy2qJCScLM2FA8BmHXpQXZOQglUirPCTOzTwMGMcB.5NjREBjImA; HttpOnly; SameSite=None; Secure; Path=/; Domain=etoro.com; Expires=Thu, 30 Jul 2026 20:36:04 GMT
+BODY_SNIP:
+<!DOCTYPE html><html lang="en" dir="ltr" data-theme="dark"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/css/56e90093373253eb.css" data-precedence="next"/><link rel="stylesheet" href="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/css/a277729144aac3c1.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/chunks/webpack-89a9d143a5d0b4d2.js"/><script src="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/chunks/d5efe53b-a82b3c8b5fd3ee18.js" async=""></script><script src="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/chunks/1009-d2ec125b44635bba.js" async=""></script><script src="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/chunks/main-app-0e78c129d34916df.js" async=""></script><script src="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/chunks/app/global-error-685189e4ffb8829d.js" async=""></script><script src="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa
+=== REQ#11 kyc_status ===
+URL: https://www.etoro.com/api/kyc/v1/users/2988943/status
+http_code=200 size=358111
+--- headers (selected) ---
+HTTP/2 301 
+content-type: text/html
+location: http://www.etoro.com/api/kyc/v1/users/2988943/status/
+x-content-type-options: nosniff
+set-cookie: __cf_bm=jBctmXzKhDjIs5SlUtyZFSoouaawSDh9yRiK3PeXF3A-1785441964.382916-1.0.1.1-PzSo2QfBcXaWlkF5ARN26xcv1e20z.hg9UchzzPGGM3HKguOWLfEYuvwaMpMi1w8MdKxeXuqz1XkCmLe.GnMbljllXkiWkqdQDsl6EO60VftJXiWz2fE0wL5SfKHqiHyVpPoHUd2Wr3NLbcGMQVkAw; HttpOnly; SameSite=None; Secure; Path=/; Domain=etoro.com; Expires=Thu, 30 Jul 2026 20:36:04 GMT
+set-cookie: __cflb=02DiuEAg8LPSYevHEYjnpbgJGw1ZD2QacCBnxPcFa7ScL; HttpOnly; SameSite=None; Secure; Path=/; Expires=Fri, 31 Jul 2026 19:06:04 GMT
+server: cloudflare
+HTTP/2 301 
+content-type: text/html
+location: http://www.etoro.com/
+x-content-type-options: nosniff
+set-cookie: __cf_bm=XpcvGIpZQTOqVgWb6RCKEFxt3d0.YzTNUG6hb.zKRtE-1785441964.578492-1.0.1.1-75TqFO93DgQ55fjzNzdn0cf5XMhESLrc_wgSLJdCCWrBGbpq0qfD6RNeVGtDueKayNxBzu5n0a2W47Y8NdRfudJo1brK1LbfKbr34OPdU.vTHdPvTpBXVlQtTJZ_vhl2IReUKSHjBezxmLHF_adpAg; HttpOnly; SameSite=None; Secure; Path=/; Domain=etoro.com; Expires=Thu, 30 Jul 2026 20:36:04 GMT
+set-cookie: __cflb=02DiuEAg8LPSYevHEYjnpbgJGw1ZD2QacCBnxPcFa7ScL; HttpOnly; SameSite=None; Secure; Path=/; Expires=Fri, 31 Jul 2026 19:06:04 GMT
+server: cloudflare
+HTTP/2 200 
+content-type: text/html; charset=utf-8
+server: cloudflare
+x-content-type-options: nosniff
+x-app-version: 0.24.2
+x-middleware-rewrite: /en/
+set-cookie: __cf_bm=WlTyxVZFgwQ7xeNguVIrIiqY4hgHbhYbdkjlFjVbNCE-1785441964.757684-1.0.1.1-QMBL88XuV0m.k077XNz4t8wCeCq3OncF5Vl8JNsK4ONCJie4xl_22Z8t41Wsf_NbT8pCu7uR4_urP0zCd9gSSvs1CiHifOugyMGAya_6iDgvAlzpQ8yGxCIkn8QSIuhRWOzXHyRQKyGIDu_zEj8YuA; HttpOnly; SameSite=None; Secure; Path=/; Domain=etoro.com; Expires=Thu, 30 Jul 2026 20:36:04 GMT
+BODY_SNIP:
+<!DOCTYPE html><html lang="en" dir="ltr" data-theme="dark"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/css/56e90093373253eb.css" data-precedence="next"/><link rel="stylesheet" href="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/css/a277729144aac3c1.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/chunks/webpack-89a9d143a5d0b4d2.js"/><script src="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/chunks/d5efe53b-a82b3c8b5fd3ee18.js" async=""></script><script src="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/chunks/1009-d2ec125b44635bba.js" async=""></script><script src="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/chunks/main-app-0e78c129d34916df.js" async=""></script><script src="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/chunks/app/global-error-685189e4ffb8829d.js" async=""></script><script src="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa
+=== REQ#12 kyc_docs ===
+URL: https://www.etoro.com/api/kyc/v1/users/2988943/documents
+http_code=200 size=358111
+--- headers (selected) ---
+HTTP/2 301 
+content-type: text/html
+location: http://www.etoro.com/api/kyc/v1/users/2988943/documents/
+x-content-type-options: nosniff
+set-cookie: __cf_bm=6LCGvutCJvZiGJ5Cpgt8aZEDh47PQifuaMBjFNlIsMY-1785441964.8434753-1.0.1.1-7JWCSig9Fcul.1yhDXXVQj1nn78I14YovDUFjD3gItQK0T3j7ScV6yD4Tcq1ubL1cEUxBQME3sFlST8iRwMq7a96VJZ1pPYPyjK266jN2ahICYFXgv6IjyuLhJlItpbc7In1g2BTjx5X6ovycMaPWg; HttpOnly; SameSite=None; Secure; Path=/; Domain=etoro.com; Expires=Thu, 30 Jul 2026 20:36:04 GMT
+set-cookie: __cflb=02DiuEAg8LPSYevHEYjnT7VhYXyg6u98aFrsgHek8A9TA; HttpOnly; SameSite=None; Secure; Path=/; Expires=Fri, 31 Jul 2026 19:06:04 GMT
+server: cloudflare
+HTTP/2 301 
+content-type: text/html
+location: http://www.etoro.com/
+x-content-type-options: nosniff
+set-cookie: __cf_bm=J_stAd3Mt99OTd_jV4ylB9y6XKp4UNyC5IZ5GjHUuBw-1785441965.0046654-1.0.1.1-hfsEvCTYUvvvIMf4NUg0X3R60fnZjSLrU1Pa1uv4OqTMRZ35_0IxPS9HPzxtYc5JD_cJg7nqas0ybuEw2lrZRNDWjTUwZIWJ3B7KnPkAoho4s6upa8UALhpRAa1v0In5eUOB6kG87W9nE76yaBurcg; HttpOnly; SameSite=None; Secure; Path=/; Domain=etoro.com; Expires=Thu, 30 Jul 2026 20:36:05 GMT
+set-cookie: __cflb=02DiuEAg8LPSYevHEYjnT7VhYXyg6u98aGbhCVDPkRowa; HttpOnly; SameSite=None; Secure; Path=/; Expires=Fri, 31 Jul 2026 19:06:05 GMT
+server: cloudflare
+HTTP/2 200 
+content-type: text/html; charset=utf-8
+server: cloudflare
+x-content-type-options: nosniff
+x-app-version: 0.24.2
+x-middleware-rewrite: /en/
+set-cookie: __cf_bm=ClLDKUaYHs_EEEI1QLYSWg61F6jI8WItWPBbVZr6_44-1785441965.168168-1.0.1.1-bqRGngm3DgvDzIg1C4f5E1VfWR.bNR2Nx9oU04n9NvXT0hUn.yezk12kRZ0VWZKYsLbJ7hu9K34eGWduocfuvmYSAMZiJ752HnytT0_TzegLK_yuN.0EWb_dt0dqE2i52SF2b6M0PcvyMvJInqeTVw; HttpOnly; SameSite=None; Secure; Path=/; Domain=etoro.com; Expires=Thu, 30 Jul 2026 20:36:05 GMT
+BODY_SNIP:
+<!DOCTYPE html><html lang="en" dir="ltr" data-theme="dark"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/css/56e90093373253eb.css" data-precedence="next"/><link rel="stylesheet" href="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/css/a277729144aac3c1.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/chunks/webpack-89a9d143a5d0b4d2.js"/><script src="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/chunks/d5efe53b-a82b3c8b5fd3ee18.js" async=""></script><script src="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/chunks/1009-d2ec125b44635bba.js" async=""></script><script src="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/chunks/main-app-0e78c129d34916df.js" async=""></script><script src="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/chunks/app/global-error-685189e4ffb8829d.js" async=""></script><script src="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa
+=== REQ#13 withdrawals ===
+URL: https://www.etoro.com/api/withdrawal/v1/users/2988943/requests
+http_code=200 size=358111
+--- headers (selected) ---
+HTTP/2 301 
+content-type: text/html
+location: http://www.etoro.com/api/withdrawal/v1/users/2988943/requests/
+x-content-type-options: nosniff
+set-cookie: __cf_bm=_S3Bob419JTZp6d5dzZRGYnroIpE1QRfQnSJU1UFqlk-1785441965.264313-1.0.1.1-cIT1DQy44EJsL.Pe9joYYbJkMSuY20HCs5tX2YWwiOhIl217usmY9suH3jSqAOPKTaIKzpFvhkBPdKsF7r7N0IVTnCKD_ecQCccGfJVgeLkEzJ_AIewzNG4pNWUC1DRDSlJHoijwNFQYN3bSkYw7ig; HttpOnly; SameSite=None; Secure; Path=/; Domain=etoro.com; Expires=Thu, 30 Jul 2026 20:36:05 GMT
+set-cookie: __cflb=02DiuEAg8LPSYevHEYjnpbgJGw1ZD2QacCvcUbAuCP76k; HttpOnly; SameSite=None; Secure; Path=/; Expires=Fri, 31 Jul 2026 19:06:05 GMT
+server: cloudflare
+HTTP/2 301 
+content-type: text/html
+location: http://www.etoro.com/
+x-content-type-options: nosniff
+set-cookie: __cf_bm=.4bxfrWj3wAFZ9tUlZk16F6v1yOVkl4wi3dxH9SeFfQ-1785441965.4763277-1.0.1.1-yaPYamDHA0M32UmX5g4yABYh2mK3x.1.IbAtZkPp2O3cKdKkgn5aGIqdVyiFo2Zb.MZb0EomEt74ExHcvpjp28_j0Ixmso1IJqnrn2TAl_cK470c.FNTCgq.g2CX8VCe3l2F3pNdhFcqoJCFrWHrcA; HttpOnly; SameSite=None; Secure; Path=/; Domain=etoro.com; Expires=Thu, 30 Jul 2026 20:36:05 GMT
+set-cookie: __cflb=02DiuEAg8LPSYevHEYjnpbgJGw1ZD2QacCvcUbAuCP76k; HttpOnly; SameSite=None; Secure; Path=/; Expires=Fri, 31 Jul 2026 19:06:05 GMT
+server: cloudflare
+HTTP/2 200 
+content-type: text/html; charset=utf-8
+server: cloudflare
+x-content-type-options: nosniff
+x-app-version: 0.24.2
+x-middleware-rewrite: /en/
+set-cookie: __cf_bm=jPkhIgyfeFUrzE47w1.iakeTJ3WPMkak4VaFxg3_ny8-1785441965.6584668-1.0.1.1-d8O8yK43oKlB8WeWTbUrtRvwgi3lmjO2pWXLHGPXmO8TJL_346y9LGPIMV_eKxA5UIUJfTic1yg7g8QBxa81M3MP1PDARp.jbFY_03gS0ja.ZzA1MBuDaSRcLBdTTwPbi.HjHpPnlmF4rfCGyl.cfA; HttpOnly; SameSite=None; Secure; Path=/; Domain=etoro.com; Expires=Thu, 30 Jul 2026 20:36:05 GMT
+BODY_SNIP:
+<!DOCTYPE html><html lang="en" dir="ltr" data-theme="dark"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/css/56e90093373253eb.css" data-precedence="next"/><link rel="stylesheet" href="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/css/a277729144aac3c1.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/chunks/webpack-89a9d143a5d0b4d2.js"/><script src="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/chunks/d5efe53b-a82b3c8b5fd3ee18.js" async=""></script><script src="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/chunks/1009-d2ec125b44635bba.js" async=""></script><script src="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/chunks/main-app-0e78c129d34916df.js" async=""></script><script src="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/chunks/app/global-error-685189e4ffb8829d.js" async=""></script><script src="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa
+=== REQ#14 messages ===
+URL: https://www.etoro.com/api/messages/v1/users/2988943/inbox
+http_code=200 size=358111
+--- headers (selected) ---
+HTTP/2 301 
+content-type: text/html
+location: http://www.etoro.com/api/messages/v1/users/2988943/inbox/
+x-content-type-options: nosniff
+set-cookie: __cf_bm=0Vs8rAz3S6h8W2raR8.NtseuQyTwOjpSAoABtXzFszQ-1785441965.768587-1.0.1.1-wSVKu7dpOJYUPIbgRxXD3062Oiopa5qgOx15CJJkfPnwlGwDZDzluFblSTgcjMQbPXj_ujluLornfzvca8mzgb8_vT4SfkwN4mZn5KERgWczew3BPA3v4SglzzrklRAHkZUfu4NmcxyKzPkOMoFmoA; HttpOnly; SameSite=None; Secure; Path=/; Domain=etoro.com; Expires=Thu, 30 Jul 2026 20:36:05 GMT
+set-cookie: __cflb=02DiuEAg8LPSYevHEYjnpbgJGw1ZD2QacCvcUbAuCP76k; HttpOnly; SameSite=None; Secure; Path=/; Expires=Fri, 31 Jul 2026 19:06:05 GMT
+server: cloudflare
+HTTP/2 301 
+content-type: text/html
+location: http://www.etoro.com/
+x-content-type-options: nosniff
+set-cookie: __cf_bm=myceGh6pzUxpvuCZHMDe0NSENxEG3eE14WksSy3lZ90-1785441965.9538295-1.0.1.1-NyoRCG_DZjEgBUe8JbfXckt2f3dbNh7apRd9wy.anEgRH16SfDwgpkewl4WZLq6tS2Lo4ehSPZ7vSmn4lEW8xosUNXPZETB8Es6XwTZ6AWv.Xm2Oo635FU6j3jk2avz2A6R35_c00BxjFCiexOaQYA; HttpOnly; SameSite=None; Secure; Path=/; Domain=etoro.com; Expires=Thu, 30 Jul 2026 20:36:06 GMT
+set-cookie: __cflb=02DiuEAg8LPSYevHEYjnpbgJGw1ZD2QacCvcUbAuCP76k; HttpOnly; SameSite=None; Secure; Path=/; Expires=Fri, 31 Jul 2026 19:06:06 GMT
+server: cloudflare
+HTTP/2 200 
+content-type: text/html; charset=utf-8
+server: cloudflare
+x-content-type-options: nosniff
+x-app-version: 0.24.2
+x-middleware-rewrite: /en/
+set-cookie: __cf_bm=Hx9k4JyD_i0wG6xALn8n6rm4k.wgTGuvgeNFKXOLWGM-1785441966.129784-1.0.1.1-L.2EI9zXnxU.oZ8uzwqPLUvFk25l2N2I1oD4a9EW0aPX7JDUrNdrp4OG7SuRwQFDI62PN0fnLaG.gGbYhHQqtB5F9RDmSdu9VQfl_WEWpPGIkBZXYgoc2H0UFOXIjhKKD9JqbuUwccxSytbrba5DpQ; HttpOnly; SameSite=None; Secure; Path=/; Domain=etoro.com; Expires=Thu, 30 Jul 2026 20:36:06 GMT
+BODY_SNIP:
+<!DOCTYPE html><html lang="en" dir="ltr" data-theme="dark"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/css/56e90093373253eb.css" data-precedence="next"/><link rel="stylesheet" href="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/css/a277729144aac3c1.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/chunks/webpack-89a9d143a5d0b4d2.js"/><script src="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/chunks/d5efe53b-a82b3c8b5fd3ee18.js" async=""></script><script src="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/chunks/1009-d2ec125b44635bba.js" async=""></script><script src="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/chunks/main-app-0e78c129d34916df.js" async=""></script><script src="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/chunks/app/global-error-685189e4ffb8829d.js" async=""></script><script src="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa
+=== REQ#15 api_keys ===
+URL: https://www.etoro.com/api/publicapi/v1/users/2988943/keys
+http_code=200 size=358111
+--- headers (selected) ---
+HTTP/2 301 
+content-type: text/html
+location: http://www.etoro.com/api/publicapi/v1/users/2988943/keys/
+x-content-type-options: nosniff
+set-cookie: __cf_bm=p8x8q_HcH1zPU0sErDcoBtyi5iVAdK79BJEXCOAZKkU-1785441966.2221813-1.0.1.1-uc4cCSW0G5W3TtJdhV_bTpcJ1CH1G5bZLARIz7bV_TfQczEZS871so3YZH4x.x.Xo5OMfySwOAcbojX9N6KJEv98KdJJjkDxBKSKxPcqTzQaerw61W8zcoYzvp87fvVRF9rGLPtyyVF74j__zC7poA; HttpOnly; SameSite=None; Secure; Path=/; Domain=etoro.com; Expires=Thu, 30 Jul 2026 20:36:06 GMT
+set-cookie: __cflb=02DiuEAg8LPSYevHEYjnT7VhYXyg6u98aHLWign3NhURz; HttpOnly; SameSite=None; Secure; Path=/; Expires=Fri, 31 Jul 2026 19:06:06 GMT
+server: cloudflare
+HTTP/2 301 
+content-type: text/html
+location: http://www.etoro.com/
+set-cookie: __cf_bm=xx_g6OVVsKX0SgU0.FvBjNsnBMe1WDdXhy6f_OBs1_w-1785441966.392442-1.0.1.1-9ZAdEve4TtxiS_UipPhGWFIYMAeN1_0HaCc_yjpkuJ3ZG2YZMPQmxEj9bmoiHx7jTcyArMMBWwLT.pnt4ydUFAW5KVR3bp9ZyfR5F8eFVTErnRd51lQzXv7pAnnF2GC31KmbkT8KrQKYq9Egx7AIpQ; HttpOnly; SameSite=None; Secure; Path=/; Domain=etoro.com; Expires=Thu, 30 Jul 2026 20:36:06 GMT
+set-cookie: __cflb=02DiuEAg8LPSYevHEYjnT7VhYXyg6u98aHLWign3NhURz; HttpOnly; SameSite=None; Secure; Path=/; Expires=Fri, 31 Jul 2026 19:06:06 GMT
+x-content-type-options: nosniff
+server: cloudflare
+HTTP/2 200 
+content-type: text/html; charset=utf-8
+server: cloudflare
+x-content-type-options: nosniff
+x-app-version: 0.24.2
+x-middleware-rewrite: /en/
+set-cookie: __cf_bm=TJOd4_O6YITn7bD_37nz1Aay6.qCZKNkX0PKMml6P9s-1785441966.5687141-1.0.1.1-NqEWqqmWxfLRVhzx_.JvcjlB9wYl.o_2FUfIcqAZkHRM_oMiMthSFERYbBQ5nxH_AA7XqQEBgdIR1ruf00tPxLaxgqrY8Sfy2oaDoJBvhewWFRrDN0TzDrnBDGOkWANLmpaLWe.lPQkTJb4V2mFWag; HttpOnly; SameSite=None; Secure; Path=/; Domain=etoro.com; Expires=Thu, 30 Jul 2026 20:36:06 GMT
+BODY_SNIP:
+<!DOCTYPE html><html lang="en" dir="ltr" data-theme="dark"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/css/56e90093373253eb.css" data-precedence="next"/><link rel="stylesheet" href="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/css/a277729144aac3c1.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/chunks/webpack-89a9d143a5d0b4d2.js"/><script src="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/chunks/d5efe53b-a82b3c8b5fd3ee18.js" async=""></script><script src="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/chunks/1009-d2ec125b44635bba.js" async=""></script><script src="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/chunks/main-app-0e78c129d34916df.js" async=""></script><script src="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/chunks/app/global-error-685189e4ffb8829d.js" async=""></script><script src="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa
+=== REQ#16 billing_user ===
+URL: https://billing.etoro.com/api/v1/users/2988943
+http_code=200 size=358111
+--- headers (selected) ---
+HTTP/2 301 
+location: https://www.etoro.com/
+HTTP/2 200 
+content-type: text/html; charset=utf-8
+server: cloudflare
+x-content-type-options: nosniff
+x-app-version: 0.24.2
+x-middleware-rewrite: /en/
+set-cookie: __cf_bm=soxmEVNvU9mngMhwGp3xqT3OkhKmNO_R2ZfrscvWDSs-1785441967.1205604-1.0.1.1-r.0Le7GMVr2RYk_QFR4wbEYYBMH_WaK7ONe7H8oP7EeR7LBf2DJTsgp8FQWrqbLSoktsbGIIaqlQrW99Kab7QF_uN9GTcEmeVzt1VBDxfcmftuJmdC_O1qB6iB.zM3MsH.bEQPqumd7cs9Z0Bo8NDg; HttpOnly; SameSite=None; Secure; Path=/; Domain=etoro.com; Expires=Thu, 30 Jul 2026 20:36:07 GMT
+BODY_SNIP:
+<!DOCTYPE html><html lang="en" dir="ltr" data-theme="dark"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/css/56e90093373253eb.css" data-precedence="next"/><link rel="stylesheet" href="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/css/a277729144aac3c1.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/chunks/webpack-89a9d143a5d0b4d2.js"/><script src="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/chunks/d5efe53b-a82b3c8b5fd3ee18.js" async=""></script><script src="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/chunks/1009-d2ec125b44635bba.js" async=""></script><script src="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/chunks/main-app-0e78c129d34916df.js" async=""></script><script src="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/chunks/app/global-error-685189e4ffb8829d.js" async=""></script><script src="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa
+=== REQ#17 wallet_user ===
+URL: https://wallet.etoro.com/api/v1/users/2988943/balance
+http_code=502 size=16
+--- headers (selected) ---
+HTTP/2 502 
+content-type: text/plain; charset=UTF-8
+x-frame-options: SAMEORIGIN
+server: cloudflare
+BODY_SNIP:
+error code: 502
+
+=== REQ#18 tapi_real_portfolio ===
+URL: https://tapi-real.etoro.com/api/v1/user/2988943/portfolio
+http_code=404 size=55
+--- headers (selected) ---
+HTTP/2 404 
+content-type: application/json
+x-robots-tag: noindex
+set-cookie: __cf_bm=PE44YszMSNEH2CJEt2G1zfEH4yPJidDW7nM3EAwPDWs-1785441967.8296192-1.0.1.1-GqBWxdNLFXm864cdVKuEEwZPhnW2tWo.OfbIkd0ZcpykyQglf0v_ZbFPlWR5QmLt60jBDU6cNXkC2FxEDRYcoekM8L.Pj8PnfJWrOfKa._.aT8NzjKA2FTKhupkGr0OIR9NZIfXzTQ1TSnj_9SQReg; HttpOnly; SameSite=None; Secure; Path=/; Domain=etoro.com; Expires=Thu, 30 Jul 2026 20:36:08 GMT
+set-cookie: __cflb=04dToRzoDsFaMqr7AR77oMMrFyrpZHGDhUoLkkdA92; HttpOnly; SameSite=None; Secure; Path=/; Expires=Fri, 31 Jul 2026 19:06:08 GMT
+x-content-type-options: nosniff
+server: cloudflare
+BODY_SNIP:
+{"StatusCodeId":404,"Message":"Internal Server Error."}
+=== REQ#19 tapi_real_balance ===
+URL: https://tapi-real.etoro.com/api/v1/user/2988943/account/balance
+http_code=404 size=55
+--- headers (selected) ---
+HTTP/2 404 
+content-type: application/json
+x-robots-tag: noindex
+set-cookie: __cf_bm=aPLbZUzSQYTjexHljpKXgP5UWRxd2T8lSfdpL3Fasrg-1785441968.1112792-1.0.1.1-MN7dFk8WZGPRDXbp.7YgfIf3Sh3UO32NJx4q836ODqQklsF.7lTfp6kKLl656CODSy09NZ2d_mq9YLsTNU71sFal2LPr4jgHRt.oTbg8XfenqKVG0SV2KNdbGpOWOVeo5aaZlCTeR25Wt2SkZypUOg; HttpOnly; SameSite=None; Secure; Path=/; Domain=etoro.com; Expires=Thu, 30 Jul 2026 20:36:08 GMT
+set-cookie: __cflb=04dToRzoDsFaMqr7AR77oMMrFyrpZHGxWzzuQNtpdS; HttpOnly; SameSite=None; Secure; Path=/; Expires=Fri, 31 Jul 2026 19:06:08 GMT
+x-content-type-options: nosniff
+server: cloudflare
+BODY_SNIP:
+{"StatusCodeId":404,"Message":"Internal Server Error."}
+=== REQ#20 tapi_demo_root ===
+URL: https://tapi-demo.etoro.com/api/v1/user/2988943/portfolio
+http_code=404 size=55
+--- headers (selected) ---
+HTTP/2 404 
+content-type: application/json
+x-robots-tag: noindex
+set-cookie: __cf_bm=yOtFYDKeVt21ROEeJ_q6fJHUW9Ce1Nh2CUk3tlRz7GE-1785441968.364564-1.0.1.1-1QAi3BvpUHf0920_LX2z_3kzQ3YbqxJ2_1PconYRRwDNeE3.DN6H_JgTNojhBjJPPYXnfUO4PyF50_MPD9oYmz4747.xZ8StVt4W6cj677HfjwoSnrGS2f1bigHihgoYtyPvUC3UXpobx7gjVofnKw; HttpOnly; SameSite=None; Secure; Path=/; Domain=etoro.com; Expires=Thu, 30 Jul 2026 20:36:08 GMT
+set-cookie: __cflb=02DiuJ9bHEWqsi7iMfZmbGZ6VPF1RgAZKtiyX1eFecjZN; HttpOnly; SameSite=None; Secure; Path=/; Expires=Fri, 31 Jul 2026 19:06:08 GMT
+x-content-type-options: nosniff
+server: cloudflare
+BODY_SNIP:
+{"StatusCodeId":404,"Message":"Internal Server Error."}
+=== REQ#21 public_api_root ===
+URL: https://public-api.etoro.com/api/v1/market-data/instruments
+http_code=401 size=58
+--- headers (selected) ---
+HTTP/2 401 
+content-type: application/json
+server: cloudflare
+BODY_SNIP:
+{"errorCode":"Unauthorized","errorMessage":"Unauthorized"}
+=== REQ#22 public_api_user ===
+URL: https://public-api.etoro.com/api/v1/users/2988943/portfolio
+http_code=401 size=58
+--- headers (selected) ---
+HTTP/2 401 
+content-type: application/json
+server: cloudflare
+BODY_SNIP:
+{"errorCode":"Unauthorized","errorMessage":"Unauthorized"}
+=== REQ#23 uapi_front ===
+URL: https://uapi-front.etoro.com/api/v1/users/2988943/profile
+http_code=530 size=17
+--- headers (selected) ---
+HTTP/2 530 
+content-type: text/plain; charset=UTF-8
+x-frame-options: SAMEORIGIN
+server: cloudflare
+BODY_SNIP:
+error code: 1016
+
+=== REQ#24 watchlistapi ===
+URL: https://watchlistapi.etoro.com/api/v1/watchlists?cid=2988943
+http_code=403 size=5480
+--- headers (selected) ---
+HTTP/2 403 
+content-type: text/html; charset=UTF-8
+x-frame-options: SAMEORIGIN
+x-content-type-options: nosniff
+set-cookie: __cf_bm=qoYjnHPZrGnt9rA7pD9Df7Ssnp5p3iNRItNHr8cZkn4-1785441968.8202064-1.0.1.1-bhA0pa537SndRpZWpdMeNO80viMlg.syPcunOkC7AFL0kuTORLKrEvirwoBNESOuVuLm4sYhO4e2ZWVdkRtVwo3heII3GPIXI6UtXjek1N8OINKM7W_myTxxuVyk0pI8OTEj7urvCIL9FI9gKHgzgg; HttpOnly; SameSite=None; Secure; Path=/; Domain=etoro.com; Expires=Thu, 30 Jul 2026 20:36:08 GMT
+server: cloudflare
+BODY_SNIP:
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en-US"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en-US"> <!--<![endif]-->
+<head>
+<title>Attention Required! | Cloudflare</title>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta name="robots" content="noindex, nofollow" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="stylesheet" id="cf_styles-css" href="/cdn-cgi/styles/cf.errors.css" />
+<!--[if lt IE 9]><link rel="stylesheet" id='cf_styles-ie-css' href="/cdn-cgi/styles/cf.errors.ie.css" /><![endif]-->
+<style>body{margin:0;padding:0}</style>
+
+
+<!--[if gte IE 10]><!-->
+<script>
+  if (!navigator.cookieEnabled) {
+    window.addEventListener('DOMContentLoaded', function () {
+      var cookieEl = document.getElementById('cookie-alert');
+      cookieEl.style.display = 'block';
+    })
+  }
+</script>
+<!--<![endif]-->
+
+</head>
+<body>
+  <div id="cf-wrapper">
+    <div class="cf-alert cf-alert-error cf-cookie-error" id="cookie-alert" data-translate="enable_cookies">Please enable cookies.</div>
+    <div id="cf-error-details" class="cf-error-details-wrapper">
+      <div class="cf-wrapper cf-header cf-error-overview">
+        <h1 data-translate="block_headline">Sor
+=== REQ#25 sso_userinfo ===
+URL: https://www.etoro.com/api/sso/v1/userinfo
+http_code=401 size=96
+--- headers (selected) ---
+HTTP/2 401 
+content-type: application/json; charset=utf-8
+set-cookie: __cf_bm=mKIQX3sheEmQRupuLokXOKM_5sUWCGqQpghEoQ.KiW0-1785441968.8701494-1.0.1.1-yveC6wkOAIIRfSKSCOuadwRHzdwtTG3x2HHChYm2SK5rehQVpfEBfpBJowgYOcEOgxyuBkRGkh7JXZHUMtrxsuvqaYAdgnKVzOFcWQzPVLm0vZXeGhKdYmxYeSDsTI8RHKVk.9rfg9V4C73R86X9OA; HttpOnly; SameSite=None; Secure; Path=/; Domain=etoro.com; Expires=Thu, 30 Jul 2026 20:36:09 GMT
+set-cookie: __cflb=02DiuJeZFAjee67RLJFAsnfLkozSdhHizwLBUJWVZ5Jtt; HttpOnly; SameSite=None; Secure; Path=/; Expires=Fri, 31 Jul 2026 19:06:09 GMT
+x-content-type-options: nosniff
+server: cloudflare
+BODY_SNIP:
+{"errorCode":"Unauthorized","errorMessage":"Unauthorized","errorData":{"error":"access_denied"}}
+=== REQ#26 sapi_private_portfolio ===
+URL: https://www.etoro.com/sapi/trade-data/history/users/2988943/portfolio/live
+http_code=404 size=2183
+--- headers (selected) ---
+HTTP/2 301 
+content-type: text/html
+location: http://www.etoro.com/sapi/trade-data/history/users/2988943/portfolio/live/
+x-content-type-options: nosniff
+set-cookie: __cf_bm=odGcPNrrIK49_mhsmeu3ZLQFjCceHKbpjoinenYfirw-1785441969.106193-1.0.1.1-A87bcMIUI9I5RYXuNH1GYQ89O2JkQA8gTmmqOFmZNzJP0F3dJ9AZnq7AqN3Yb9v.yM.BaRVfuIB2ub5JMzVI83ss.uvCSpO5bwz7lyJNaDdJHhTW.rVbYcSn_o1Mh0aGOzCUAQTsfeKDpmcMgLvZEw; HttpOnly; SameSite=None; Secure; Path=/; Domain=etoro.com; Expires=Thu, 30 Jul 2026 20:36:09 GMT
+set-cookie: __cflb=02DiuEAg8LPSYevHEYjnT7VhYXyg6u98aKYyHHTzFWTuE; HttpOnly; SameSite=None; Secure; Path=/; Expires=Fri, 31 Jul 2026 19:06:09 GMT
+server: cloudflare
+HTTP/2 404 
+content-type: text/html
+x-content-type-options: nosniff
+set-cookie: __cf_bm=B9toshu7z2Wh0844KrowXXz6dCvOAG0wnfzvk6Wnt6s-1785441969.2797408-1.0.1.1-0RnaEWBj3xF42gSL0KCKW.XS9PyYtQzdT9l0wtDk.uWvS2T7cQ89Vx1BD1AWEorX4acIT4iSiE4dz3yX87IuWozrKOhjMiasplfgRPdFU.VySoCFRt_lg8ow6OGegBPJpqHeA.ZB1HO0hzfCmerqSw; HttpOnly; SameSite=None; Secure; Path=/; Domain=etoro.com; Expires=Thu, 30 Jul 2026 20:36:09 GMT
+set-cookie: __cflb=02DiuEAg8LPSYevHEYjnT7VhYXyg6u98aKYyHHTzFWTuE; HttpOnly; SameSite=None; Secure; Path=/; Expires=Fri, 31 Jul 2026 19:06:09 GMT
+server: cloudflare
+BODY_SNIP:
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<title>404 - File or directory not found.</title>
+<style type="text/css">
+<!--
+body{margin:0;font-size:.7em;font-family:Verdana, Arial, Helvetica, sans-serif;background:#EEEEEE;}
+fieldset{padding:0 15px 10px 15px;} 
+h1{font-size:2.4em;margin:0;color:#FFF;}
+h2{font-size:1.7em;margin:0;color:#CC0000;} 
+h3{font-size:1.2em;margin:10px 0 0 0;color:#000000;} 
+#header{width:96%;margin:0 0 0 0;padding:6px 2% 6px 2%;font-family:"trebuchet MS", Verdana, sans-serif;color:#FFF;
+background-color:#555555;}
+#content{margin:0 0 0 2%;position:relative;}
+.content-container{background:#FFF;width:96%;margin-top:8px;padding:10px;position:relative;}
+-->
+</style>
+</head>
+<body>
+<div id="header"><h1>Server Error</h1></div>
+<div id="content">
+ <div class="content-container"><fieldset>
+  <h2>404 - File or directory not found.</h2>
+  <h3>The resource you are looking for might have been removed, had its name changed, or is temporarily unavailable.</h3>
+ </fieldset></div>
+</div>
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a236fb73fa242ee0',t:'MTc4NTQ0MTk2OQ=='};var a=document.createElement('script');a.src='/cdn-cgi
+=== REQ#27 sapi_stats ===
+URL: https://www.etoro.com/sapi/userstats/stats/user/2988943
+http_code=404 size=2183
+--- headers (selected) ---
+HTTP/2 404 
+content-type: text/html
+x-content-type-options: nosniff
+set-cookie: __cf_bm=R9VLQ618sMlH9wzG_LtBWhtzUVSa95SE5cpToKZRnvo-1785441969.4914768-1.0.1.1-ACkNi7xBzTk_OEgV4X1kXuMC6MpkHTn3pQkpylTSmLOU_4g8LqfN6b.HXzeJTx_aRYRq6F5em0uYL_ckhW.UYlRIEpBSyyOQBUvpXev25AGA_wIq_uc0TS27YhoKqIJwZoBIR091bIKL0W42lbIuqw; HttpOnly; SameSite=None; Secure; Path=/; Domain=etoro.com; Expires=Thu, 30 Jul 2026 20:36:10 GMT
+set-cookie: __cflb=02DiuHFHtLzUwjSx3dxei13VEvFX3J7W4T1X6B62DPqKa; HttpOnly; SameSite=None; Secure; Path=/; Expires=Fri, 31 Jul 2026 19:06:10 GMT
+server: cloudflare
+BODY_SNIP:
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<title>404 - File or directory not found.</title>
+<style type="text/css">
+<!--
+body{margin:0;font-size:.7em;font-family:Verdana, Arial, Helvetica, sans-serif;background:#EEEEEE;}
+fieldset{padding:0 15px 10px 15px;} 
+h1{font-size:2.4em;margin:0;color:#FFF;}
+h2{font-size:1.7em;margin:0;color:#CC0000;} 
+h3{font-size:1.2em;margin:10px 0 0 0;color:#000000;} 
+#header{width:96%;margin:0 0 0 0;padding:6px 2% 6px 2%;font-family:"trebuchet MS", Verdana, sans-serif;color:#FFF;
+background-color:#555555;}
+#content{margin:0 0 0 2%;position:relative;}
+.content-container{background:#FFF;width:96%;margin-top:8px;padding:10px;position:relative;}
+-->
+</style>
+</head>
+<body>
+<div id="header"><h1>Server Error</h1></div>
+<div id="content">
+ <div class="content-container"><fieldset>
+  <h2>404 - File or directory not found.</h2>
+  <h3>The resource you are looking for might have been removed, had its name changed, or is temporarily unavailable.</h3>
+ </fieldset></div>
+</div>
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a236fb754f49df1f',t:'MTc4NTQ0MTk2OQ=='};var a=document.createElement('script');a.src='/cdn-cgi
+=== REQ#28 accounts_api ===
+URL: https://accounts.etoro.com/api/v1/users/2988943
+http_code=200 size=358111
+--- headers (selected) ---
+HTTP/2 301 
+location: https://www.etoro.com/
+HTTP/2 200 
+content-type: text/html; charset=utf-8
+server: cloudflare
+x-content-type-options: nosniff
+x-app-version: 0.24.2
+x-middleware-rewrite: /en/
+set-cookie: __cf_bm=2E4m_hvzvfBOiacve96NWGoECZJhfFHQpKhpmiWPzCM-1785441970.5440037-1.0.1.1-UkDU4iegQxBLEmfyks1ujksPc441gQ6H7Rq1Hd_ijqYI4QlK7f.iNYPCQndcp0mhfd.V8ehKIddtklvevd9O5bpbRUkMB40Czr0gbX2EtENoyTNjCLn3LtUEfhodHTZeLgPlgxGLkmO1tRJU4H5F4w; HttpOnly; SameSite=None; Secure; Path=/; Domain=etoro.com; Expires=Thu, 30 Jul 2026 20:36:10 GMT
+BODY_SNIP:
+<!DOCTYPE html><html lang="en" dir="ltr" data-theme="dark"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/css/56e90093373253eb.css" data-precedence="next"/><link rel="stylesheet" href="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/css/a277729144aac3c1.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/chunks/webpack-89a9d143a5d0b4d2.js"/><script src="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/chunks/d5efe53b-a82b3c8b5fd3ee18.js" async=""></script><script src="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/chunks/1009-d2ec125b44635bba.js" async=""></script><script src="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/chunks/main-app-0e78c129d34916df.js" async=""></script><script src="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa5c-444d-a033-5a9e21ba96c1/_next/static/chunks/app/global-error-685189e4ffb8829d.js" async=""></script><script src="https://marketing.etorostatic.com/etoro-website/static/f4ff718d-aa
+=== REQ#29 api_etoro_root ===
+URL: https://api.etoro.com/v1/users/2988943
+http_code=404 size=54
+--- headers (selected) ---
+HTTP/2 404 
+content-type: application/json
+BODY_SNIP:
+{ "statusCode": 404, "message": "Resource not found" }
+TOTAL=29
