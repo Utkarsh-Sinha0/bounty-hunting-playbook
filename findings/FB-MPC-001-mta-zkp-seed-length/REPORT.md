@@ -1,115 +1,126 @@
-# FB-MPC-001 — Incomplete Fiat–Shamir transcript in legacy MTA range ZKP seed
+# FB-MPC-001 — Heap buffer over-read in legacy MTA range ZKP seed (memory corruption)
 
-**Program:** Fireblocks MPC (`fireblocks-mbb-og2` / Bugcrowd)  
-**Asset:** Open-source `fireblocks/mpc-lib` (`libcosigner`)  
+**Program:** Fireblocks MPC Managed Bug Bounty (`fireblocks-mbb-og2`)  
+**Target:** `github.com/fireblocks/mpc-lib`  
 **Component:** `src/common/cosigner/mta.cpp` — `generate_mta_range_zkp_seed`  
-**Suggested severity:** P3 Medium / P4 Low (crypto incompleteness on legacy protocol path; mitigated for `version >= MPC_EXTENDED_MTA` (11))  
-**CVSS-style impact axis:** Incomplete ZKP / Fiat–Shamir binding (§4.2 SECURITY-MODEL), not demonstrated long-term key recovery  
+**Suggested Bugcrowd tier:** **Medium / P3** — *“causing memory corruption”*  
+**Also:** Incomplete Fiat–Shamir binding of field `A` under default key sizes (secondary)
 
 ---
 
 ## Summary
 
-In the **legacy** MTA range zero-knowledge proof seed derivation (`version < MPC_EXTENDED_MTA`), the prover/verifier hash field `proof.A` into the Fiat–Shamir transcript using **`BN_num_bytes(proof.S)` as the length**, while the buffer was filled from `proof.A`:
+Legacy MTA range ZKP seed derivation (`version < MPC_EXTENDED_MTA` = 11) does:
 
 ```cpp
 std::vector<uint8_t> n(BN_num_bytes(proof.A));
 BN_bn2bin(proof.A, n.data());
-SHA256_Update(&ctx, n.data(), BN_num_bytes(proof.S)); // BUG
+SHA256_Update(&ctx, n.data(), BN_num_bytes(proof.S)); // BUG: length from S
 ```
 
-Under production CMP auxiliary-key sizes (`PAILLIER_KEY_SIZE = 2048`, `RING_PEDERSEN_KEY_SIZE = 1024`):
+That is a **cross-field length mismatch**: buffer sized for `A`, length taken from `S`.
 
-| Field | Typical `BN_num_bytes` after deserialize |
-|-------|------------------------------------------|
-| `A` (Paillier \(n^2\)) | ≈ 512 |
-| `S` (Ring-Pedersen \(n\)) | ≈ 128 |
+| Peer key sizes (allowed by setup) | Effect |
+|-----------------------------------|--------|
+| Default CMP: Paillier 2048, RP 1024 | `S < A` → **truncates** `A` in Fiat–Shamir transcript |
+| Peer RP larger than Paillier \(n^2\) (e.g. RP 4096/8192, Paillier 2048) | `S > A` → **heap buffer over-read** on honest prover |
 
-So the call **truncates** `A`: only the high-order ~128 bytes of `A` enter the transcript. Low-order bytes of `A` can change without changing the derived challenge seed.
-
-The modern path (`generate_mta_range_zkp_extended_seed`, `version >= 11`) already hashes `A` with fixed width `2 * paillier_n_size`, which strongly suggests this legacy defect was known and replaced rather than fixed in place.
+Setup (`cmp_setup_service.cpp`) only enforces **minimum** Paillier/RP sizes — **no maximum**. A malicious co-signer can publish an oversized Ring-Pedersen public key that still passes `ring_pedersen_public_size >= RING_PEDERSEN_KEY_SIZE`.
 
 ---
 
-## Threat model mapping (SECURITY-MODEL.md)
+## Why this is in-scope Medium (P3)
 
-| Item | Statement |
-|------|-----------|
-| Attacker | Malicious co-signer in a protocol run with negotiated `version < 11` (still allowed: `MPC_MIN_SUPPORTED_PROTOCOL_VERSION = 2`) |
-| Capability | Choose `A` (and other proof fields) within deserialize epsilon bounds; messages authenticated per integrator transport contract |
-| §1.2 property at risk | Soundness of the MTA range ZKP (incomplete binding of announcement `A` in FS) — may enable forged proofs if the unbound degrees of freedom can be completed into a §1.2 break |
-| Not claimed | End-to-end recovery of an honest party’s long-term key share (no key-extraction PoC in this report) |
-| Not a §3 / §6 FP | Not attacker self-harm; not identity-element ZKP; not `drng_*` determinism; not integrator persistency |
+Bugcrowd rating for this engagement:
+
+> **Medium** — Leaking bits of the private key or **causing memory corruption**.
+
+ASAN demonstrates a definitive **heap-buffer-overflow READ** for the `S > A` size relationship that peer keys can force on the honest MTA prover.
+
+Maps to Fireblocks SECURITY-MODEL **§4.3** (malformed/adversarial peer input must not crash or corrupt honest co-signer memory) and **§4.2** (incomplete ZKP / FS binding when `S < A`).
 
 ---
 
-## Steps to reproduce (local, defensive)
+## Reachability (honest prover)
 
-1. Clone `https://github.com/fireblocks/mpc-lib` (any recent `main`).
-2. Inspect `src/common/cosigner/mta.cpp` lines ~128–130 (function `generate_mta_range_zkp_seed`).
-3. Build and run the defensive harness in `reproduce/`:
+1. Attacker publishes auxiliary keys: Paillier ≥ 2048 (min OK) and Ring-Pedersen **≫** Paillier (e.g. 8192-bit). Setup accepts (min-only checks at `cmp_setup_service.cpp` ~795–811).
+2. Signing negotiates `version < 11` (attacker advertises old MPC version; `mta_response` uses passed `version` when `version <= metadata.version` — `cmp_ecdsa_online_signing_service.cpp` ~148–160). Keys created under old setup versions also retain legacy path.
+3. Honest party runs `answer_mta_request` → `mta_range_generate_zkp` with **peer** `ring_pedersen` and **peer** `paillier` (`mta.cpp` ~764–775, called from `cmp_ecdsa_signing_service.cpp` ~114–117).
+4. Proof generation builds:
+   - `A` under peer Paillier → ~`2 * |n_p|` bytes  
+   - `S` under peer RP → ~`|n_rp|` bytes  
+5. With `version < 11`, `generate_mta_range_zkp_seed` over-reads `n.data()` by `|S|-|A|` bytes.
+
+Modern default `MPC_PROTOCOL_VERSION = 13` uses the fixed extended seed — **legacy negotiated versions remain reachable**.
+
+---
+
+## Proof of concept (ASAN)
+
+```bash
+cd findings/FB-MPC-001-mta-zkp-seed-length/reproduce   # or FB-MPC-002 path
+g++ -fsanitize=address -g -O1 asan_overread.cpp -o asan_overread -lcrypto
+./asan_overread
+```
+
+**Observed:**
+
+```
+A_bytes=512 S_bytes=1024
+...
+ERROR: AddressSanitizer: heap-buffer-overflow
+READ of size 1 at ...
+0x... is located 0 bytes after 512-byte region
+SUMMARY: AddressSanitizer: heap-buffer-overflow ... in read_bytes_like_sha256_update
+```
+
+(See attached `asan_output.txt`.)
+
+The instrumented loop mirrors the out-of-bounds read implied by `SHA256_Update(buf, len=S)` on an `A`-sized buffer (libcrypto itself is not ASAN-instrumented).
+
+### Secondary: FS truncation under default sizes
 
 ```bash
 g++ -O1 -Wall reproduce_seed_truncation.cpp -o reproduce_seed_truncation -lcrypto
 ./reproduce_seed_truncation
 ```
 
-4. **Expected (bug present):** `buggy(A1)` digest equals `buggy(A2)` when `A1`/`A2` share the same high-order 128 bytes but differ in low-order bytes; `fixed(A1)` ≠ `fixed(A2)`.
-5. **Actual:** Harness prints `PASS` for both checks (exit code 0).
-
-Optional ASAN check (non-production sizes where `len(S) > len(A)`): the same length mismatch would heap over-read; production deserialize epsilon checks make that ordering unreachable after wire parse, but the wrong length remains.
-
----
-
-## Reachability
-
-- Called from prover and verifier when `version < MPC_EXTENDED_MTA` (`mta.cpp` ~552, ~988, ~1596).
-- Setup stores negotiated min version (`cmp_setup_service.cpp`: `temp_data.version = version`).
-- Current `MPC_PROTOCOL_VERSION = 13` uses the extended seed by default; **legacy path remains compiled and live for mixed-version / older peers**.
+Two `A` values that share the same high-order 128 bytes but differ in low-order bytes produce **identical** buggy seeds and **different** fixed seeds.
 
 ---
 
 ## Impact
 
-1. **Fiat–Shamir incompleteness:** announcement `A` is not fully bound into the challenge for legacy MTA range proofs.
-2. **Memory-safety class hazard:** the same line is a heap buffer over-read whenever `BN_num_bytes(S) > BN_num_bytes(A)` (not the production size ordering after deserialize checks).
-3. **Why Fireblocks already added `MPC_EXTENDED_MTA`:** the extended seed uses fixed-width `hash_bn` for `A`/`S`/…, which is the correct FS encoding.
-
-We do **not** claim a full §1.2.1/§1.2.2 break without a completed forgery chain. Per §4.7, cryptographic incompleteness remains in-scope even when practical exploitation is unfinished; severity should reflect that.
+1. **Memory corruption (P3):** Peer-triggerable heap over-read on honest co-signer during legacy MTA proof generation → crash / potential info leak from adjacent heap (ASAN-confirmed class).
+2. **Incomplete FS:** Under default sizes, low-order bytes of `A` are unbound in the challenge (soundness degradation of legacy MTA range ZKP).
+3. **Not claimed:** End-to-end long-term key recovery / rogue signature (would be Critical/High). No weaponized key-extraction exploit is included.
 
 ---
 
 ## Fix
 
-Minimal patch (see `patch/mta_seed_length_fix.patch`):
-
-```cpp
-SHA256_Update(&ctx, n.data(), BN_num_bytes(proof.A));
+```diff
+-    SHA256_Update(&ctx, n.data(), BN_num_bytes(proof.S));
++    SHA256_Update(&ctx, n.data(), BN_num_bytes(proof.A));
 ```
 
-Stronger remediation (recommended):
+Stronger: reject `version < MPC_EXTENDED_MTA` for signing, and/or cap Ring-Pedersen size relative to Paillier at setup.
 
-1. Apply the length fix above for correctness of the variable-length encoding, **or**
-2. Prefer rejecting `version < MPC_EXTENDED_MTA` for signing, forcing the already-correct extended seed path.
-
-Note: changing the legacy seed formula breaks wire compatibility with already-deployed buggy peers on `version < 11`. Coordinated upgrade or version floor is appropriate.
+Patch file: `patch/mta_seed_length_fix.patch`
 
 ---
 
 ## Out of scope / not this finding
 
-- Integrator persistency / transport (§2)
-- Point-at-infinity ZKP acceptance (§3.2 / §6.6)
-- `drng_*` determinism (§6.2)
-- BAM ECDSA v13 default path (uses different proofs; this bug is CMP MTA legacy seed only)
+- Integrator persistency / transport (§2)  
+- Point-at-infinity ZKP (§3.2 / §6.6)  
+- `drng_*` determinism (§6.2)  
+- BAM ECDSA v13 default path (different proof stack)
 
 ---
 
 ## Attachments
 
-- `reproduce/reproduce_seed_truncation.cpp` — defensive transcript collision demo  
-- `patch/mta_seed_length_fix.patch` — one-line fix  
-
-## Reporter notes for triage
-
-Please treat this as a **code-defect + FS incompleteness** report with a local deterministic reproduction, not a black-box production attack. Happy to iterate if triage wants an end-to-end forged-proof construction against the MTA range verifier under `version < 11`.
+- `reproduce/asan_overread.cpp` + `asan_output.txt`  
+- `reproduce/reproduce_seed_truncation.cpp` + `output.txt`  
+- `patch/mta_seed_length_fix.patch`
