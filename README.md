@@ -4,53 +4,44 @@ Autonomous cloud research against open-source `fireblocks/mpc-lib`: **local find
 
 ## Finding index
 
-| ID | Title | Suggested tier | Submit? | Status |
-|----|-------|----------------|---------|--------|
-| **FB-MPC-001** | Legacy MTA seed: heap over-read when peer RP ≫ Paillier; FS truncation at default sizes | **P3 Medium** | **Yes (original)** | Ready |
-| FB-MPC-003 | Empty `container_cleaner` UB (abort under assertions) | P3/P4 | **No — duplicate of [#56](https://github.com/fireblocks/mpc-lib/pull/56)** | Reproduced; improved patch packaged |
-| FB-MPC-004 | Misaligned `uint32_t` serializers (UBSan) | P3 | **No — duplicate of [#55](https://github.com/fireblocks/mpc-lib/pull/55)** (our fix is broader) | Reproduced; full-tree patch packaged |
+| ID | Title | Tier | Submit? |
+|----|-------|------|---------|
+| **FB-MPC-001** | Legacy MTA seed: heap over-read / FS truncation | **P3** | **Yes (original)** |
+| FB-MPC-003 | Empty `container_cleaner` UB | P3/P4 | No — duplicate [#56](https://github.com/fireblocks/mpc-lib/pull/56) |
+| FB-MPC-004 | Misaligned `uint32_t` serializers | P3 | No — duplicate [#55](https://github.com/fireblocks/mpc-lib/pull/55) (broader fix packaged) |
+| FB-MPC-005 | Offline ECDSA finalize skips signature verify | P3 | Disclose prior art (Zion #07) |
+| **FB-MPC-006** | FROST peer nonce points `D`/`E` not validated | P3/P4 | **Likely original** |
+| FB-MPC-007 | Decrypted share length unchecked | P4 | Likely original |
 
-See `findings/DEEP_HUNT_P2_P3.md` for the P1/P2 negative result.
+## P1 / P2 (tuition tiers)
 
-## #55 / #56 — raised when? merged?
+**None found** after a parallel crypto-hunt team pass (setup, MtA/ZKP, FROST/BAM, memory, public research cross-check).
 
-| PR | Raised | Merged into `main`? | Bug still present? | Program map |
-|----|--------|---------------------|--------------------|-------------|
-| [#55](https://github.com/fireblocks/mpc-lib/pull/55) misaligned `uint32_t` | 2026-06-15 | **No** (`merged_at: null`) | **Yes** on tip `00ae08b7` (2026-07-30) | **P3** memory UB (not P1/P2) |
-| [#56](https://github.com/fireblocks/mpc-lib/pull/56) empty `container_cleaner` | 2026-06-16 | **No** | **Yes** (local abort reproduced) | **P3/P4** (not P1/P2) |
+External “8-bit batch gamma ⇒ P2 @ 1/256” is a **mis-model** of Fireblocks’ 5×8-bit = **~40-bit** batch soundness. Details: `findings/DEEP_HUNT_TEAM_P1_P2.md`.
 
-Neither is Critical/High under Bugcrowd: no key recovery or rogue signature.
+| Tier | Bar | Result |
+|------|-----|--------|
+| P1 Critical | Key or rogue signature (&lt;1000 aborts) | **Not found** |
+| P2 High | Same with &lt;1e9 aborts | **Not found** |
 
-## P1 / P2 (money tiers)
+## #55 / #56 status
 
-| Tier | Bar | This engagement |
-|------|-----|-----------------|
-| **P1 Critical** | Key or rogue signature (&lt;1000 aborts / none) | **Not found** |
-| **P2 High** | Same with &lt;1e9 aborts | **Not found** |
-| **P3 Medium** | Leak key bits **or memory corruption** | **FB-MPC-001** (original); #55/#56 class already public |
+Both **open, not merged** as of 2026-07-30. Still on `main`. Map to **P3/P4**, not P1/P2.
 
-Do not fabricate Critical findings. Fabricated or weaponized key-extraction claims will get you banned, not tuition.
+## Submit guidance
 
-## Submit FB-MPC-001 only
+1. Ship **FB-MPC-001** first (ASAN Medium).
+2. Optionally FB-MPC-006 / 007 as smaller originals.
+3. Do not invent Critical findings.
 
-1. Open [Fireblocks MPC on Bugcrowd](https://bugcrowd.com/engagements/fireblocks-mbb-og2).
-2. Use `findings/FB-MPC-001-mta-zkp-seed-length/REPORT.md`.
-3. Attach ASAN + truncation repros and `patch/mta_seed_length_fix.patch`.
-4. Do **not** open a public GitHub security issue.
-5. Do **not** re-submit #55/#56 as original; if you open a GitHub fix PR, credit prior art and prefer the broader FB-MPC-004 patch.
-
-## Local verify
+## Local verify (high level)
 
 ```bash
-# FB-MPC-001
+# FB-MPC-001 ASAN
 cd findings/FB-MPC-001-mta-zkp-seed-length/reproduce
 g++ -fsanitize=address -g -O1 asan_overread.cpp -o asan_overread -lcrypto && ./asan_overread
 
-# FB-MPC-003 (known-public #56)
-cd ../../FB-MPC-003-container-cleaner-empty/reproduce
-g++ -D_GLIBCXX_ASSERTIONS -g -O0 container_cleaner_empty.cpp -o cc_empty -lcrypto && ./cc_empty
-
-# FB-MPC-004 (known-public #55 class)
-cd ../../FB-MPC-004-misaligned-u32-serializers/reproduce
-g++ -fsanitize=alignment -g -O1 ubsan_unaligned_u32.cpp -o ubsan_u32 && ./ubsan_u32
+# Vendor suites after FB-MPC-005/006 patches
+./build/test/cosigner/cosigner_test cmp_offline_ecdsa
+./build/test/cosigner/cosigner_test frost,frost_attacks
 ```
