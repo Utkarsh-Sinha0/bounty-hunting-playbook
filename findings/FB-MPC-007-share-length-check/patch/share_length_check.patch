@@ -1,0 +1,34 @@
+diff --git a/src/common/cosigner/cmp_setup_service.cpp b/src/common/cosigner/cmp_setup_service.cpp
+index c22591a..e6e0dcc 100644
+--- a/src/common/cosigner/cmp_setup_service.cpp
++++ b/src/common/cosigner/cmp_setup_service.cpp
+@@ -512,6 +512,12 @@ void cmp_setup_service::add_user(const std::string& tenant_id, const std::string
+             throw_cosigner_exception(cosigner_exception::INVALID_PARAMETERS);
+         }
+         auto share = _service.decrypt_message(it->second);
++        if (share.size() != sizeof(elliptic_curve256_scalar_t))
++        {
++            LOG_ERROR("Player %" PRIu64 " sent share of unexpected length %zu (expected %zu)",
++                      i->first, share.size(), sizeof(elliptic_curve256_scalar_t));
++            throw_cosigner_exception(cosigner_exception::INVALID_PARAMETERS);
++        }
+         throw_cosigner_exception(algebra->add_scalars(algebra, &key.data, key.data, sizeof(elliptic_curve256_scalar_t), (const uint8_t*)share.data(), share.size()));
+     }
+     generate_setup_commitments(key_id, tenant_id, algorithm, algebra, players_ids, t, ttl, key.data, &pubkey, setup_commitment);
+diff --git a/src/common/cosigner/utils.cpp b/src/common/cosigner/utils.cpp
+index 5deef49..0d83392 100644
+--- a/src/common/cosigner/utils.cpp
++++ b/src/common/cosigner/utils.cpp
+@@ -74,6 +74,12 @@ void decrypt_and_rebuild_private_share(uint64_t my_player_id,
+         }
+ 
+         auto share = service.decrypt_message(my_encrypted_share->second);
++        if (share.size() != sizeof(elliptic_curve256_scalar_t))
++        {
++            LOG_ERROR("Player %" PRIu64 " sent share of unexpected length %zu (expected %zu)",
++                      src_player_data.first, share.size(), sizeof(elliptic_curve256_scalar_t));
++            throw cosigner_exception(cosigner_exception::INVALID_PARAMETERS);
++        }
+         throw_cosigner_exception(algebra->add_scalars(algebra, &private_share.data, &private_share.data[0], sizeof(elliptic_curve256_scalar_t), (const uint8_t*)share.data(), share.size()));
+     }
+ }

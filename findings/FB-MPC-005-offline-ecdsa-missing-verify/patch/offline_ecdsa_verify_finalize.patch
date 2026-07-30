@@ -1,0 +1,104 @@
+diff --git a/include/cosigner/cmp_ecdsa_offline_signing_service.h b/include/cosigner/cmp_ecdsa_offline_signing_service.h
+index b89c300..40d5ec2 100644
+--- a/include/cosigner/cmp_ecdsa_offline_signing_service.h
++++ b/include/cosigner/cmp_ecdsa_offline_signing_service.h
+@@ -46,8 +46,10 @@ public:
+     uint64_t store_presigning_data(const std::string& request_id, const std::map<uint64_t, std::vector<cmp_mta_deltas>>& deltas, std::string& key_id);
+     void ecdsa_sign(const std::string& key_id, const std::string& txid, const signing_data& data, const std::string& metadata_json, const std::set<std::string>& players, const std::set<uint64_t>& players_ids, uint64_t preprocessed_data_index, int protocol_version, 
+     std::vector<recoverable_signature>& partial_sigs);
+-    uint64_t ecdsa_offline_signature(const std::string& key_id, const std::string& txid, cosigner_sign_algorithm algorithm, const std::map<uint64_t, std::vector<recoverable_signature>>& partial_sigs, 
+-        std::vector<recoverable_signature>& sigs);
++    // Aggregates partial offline signatures and verifies each full signature
++    // against the derived public key and message (mirrors online finalize).
++    uint64_t ecdsa_offline_signature(const std::string& key_id, const std::string& txid, cosigner_sign_algorithm algorithm, const std::map<uint64_t, std::vector<recoverable_signature>>& partial_sigs,
++        const signing_data& data, std::vector<recoverable_signature>& sigs);
+ 
+     void cancel_preprocessing(const std::string& request_id);
+ 
+diff --git a/src/common/cosigner/cmp_ecdsa_offline_signing_service.cpp b/src/common/cosigner/cmp_ecdsa_offline_signing_service.cpp
+index eb4dadb..ce6d0bc 100644
+--- a/src/common/cosigner/cmp_ecdsa_offline_signing_service.cpp
++++ b/src/common/cosigner/cmp_ecdsa_offline_signing_service.cpp
+@@ -423,7 +423,7 @@ void cmp_ecdsa_offline_signing_service::ecdsa_sign(const std::string& key_id, co
+     }
+ }
+ 
+-uint64_t cmp_ecdsa_offline_signing_service::ecdsa_offline_signature(const std::string& key_id, const std::string& txid, cosigner_sign_algorithm algorithm, const std::map<uint64_t, std::vector<recoverable_signature>>& partial_sigs, std::vector<recoverable_signature>& sigs)
++uint64_t cmp_ecdsa_offline_signing_service::ecdsa_offline_signature(const std::string& key_id, const std::string& txid, cosigner_sign_algorithm algorithm, const std::map<uint64_t, std::vector<recoverable_signature>>& partial_sigs, const signing_data& data, std::vector<recoverable_signature>& sigs)
+ {
+     LOG_INFO("Entering txid = %s", txid.c_str());
+     if (partial_sigs.empty())
+@@ -445,9 +445,18 @@ uint64_t cmp_ecdsa_offline_signing_service::ecdsa_offline_signature(const std::s
+         LOG_ERROR("Can't sign ecdsa with algorithm %d", algorithm);
+         throw cosigner_exception(cosigner_exception::INVALID_PARAMETERS);
+     }
++    if (data.blocks.size() != count)
++    {
++        LOG_ERROR("Got %lu signature blocks but signing_data has %lu blocks, txid %s", count, data.blocks.size(), txid.c_str());
++        throw cosigner_exception(cosigner_exception::INVALID_PARAMETERS);
++    }
+     sigs.clear();
+ 
++    cmp_key_metadata key_md;
++    _key_persistency.load_key_metadata(key_id, key_md, false);
++
+     auto algebra = get_algebra(algorithm);
++    GFp_curve_algebra_ctx_t* curve = (GFp_curve_algebra_ctx_t*)algebra->ctx;
+     for (auto i = partial_sigs.begin(); i != partial_sigs.end(); ++i)
+     {
+         if (i->second.size() != count)
+@@ -477,6 +486,29 @@ uint64_t cmp_ecdsa_offline_signing_service::ecdsa_offline_signature(const std::s
+             throw_cosigner_exception(algebra->add_scalars(algebra, &sig.s, sig.s, sizeof(elliptic_curve256_scalar_t), it->second[i].s, sizeof(elliptic_curve256_scalar_t)));
+         }
+         make_sig_s_positive(algorithm, algebra, sig);
++
++        // Match online finalize: refuse to return an invalid aggregated signature.
++        if (data.blocks[i].data.size() != sizeof(elliptic_curve256_scalar_t))
++        {
++            LOG_ERROR("invalid message size for block %lu, txid %s", i, txid.c_str());
++            throw cosigner_exception(cosigner_exception::INVALID_PARAMETERS);
++        }
++        elliptic_curve256_point_t derived_public_key;
++        hd_derive_status derivation_status = derive_public_key_generic(algebra, derived_public_key, key_md.public_key, data.chaincode, data.blocks[i].path.data(), data.blocks[i].path.size());
++        if (derivation_status != HD_DERIVE_SUCCESS)
++        {
++            LOG_ERROR("failed to derive public key for block %lu, error %d", i, derivation_status);
++            throw cosigner_exception(cosigner_exception::INTERNAL_ERROR);
++        }
++        elliptic_curve256_scalar_t message;
++        memcpy(message, data.blocks[i].data.data(), sizeof(elliptic_curve256_scalar_t));
++        elliptic_curve_algebra_status status = GFp_curve_algebra_verify_signature(curve, &derived_public_key, &message, &sig.r, &sig.s);
++        if (status != ELLIPTIC_CURVE_ALGEBRA_SUCCESS)
++        {
++            LOG_FATAL("failed to verify offline signature for block %lu, error %d", i, status);
++            throw cosigner_exception(cosigner_exception::INTERNAL_ERROR);
++        }
++
+         sigs.push_back(sig);
+     }
+     return _service.get_id_from_keyid(key_id);
+diff --git a/test/cosigner/ecdsa_offline_test.cpp b/test/cosigner/ecdsa_offline_test.cpp
+index bf5e2ad..a7a2ea7 100644
+--- a/test/cosigner/ecdsa_offline_test.cpp
++++ b/test/cosigner/ecdsa_offline_test.cpp
+@@ -397,7 +397,19 @@ static void ecdsa_sign(std::map<uint64_t, std::unique_ptr<offline_siging_info>>&
+     std::vector<recoverable_signature> sigs;
+     for (auto i = services.begin(); i != services.end(); ++i)
+     {
+-        REQUIRE_NOTHROW(i->second->signing_service.ecdsa_offline_signature(keyid, txid, type, partial_sigs, sigs));
++        REQUIRE_NOTHROW(i->second->signing_service.ecdsa_offline_signature(keyid, txid, type, partial_sigs, data, sigs));
++    }
++
++    // Corrupted peer s must fail finalize (online path already verifies; offline must too).
++    {
++        auto corrupt = partial_sigs;
++        auto it = corrupt.begin();
++        if (it != corrupt.end() && !it->second.empty())
++        {
++            it->second[0].s[31] ^= 0x01;
++            std::vector<recoverable_signature> bad_sigs;
++            REQUIRE_THROWS_AS(services.begin()->second->signing_service.ecdsa_offline_signature(keyid, txid, type, corrupt, data, bad_sigs), cosigner_exception);
++        }
+     }
+ 
+     std::unique_ptr<elliptic_curve256_algebra_ctx_t, void(*)(elliptic_curve256_algebra_ctx_t*)> algebra(create_algebra(type), elliptic_curve256_algebra_ctx_free);

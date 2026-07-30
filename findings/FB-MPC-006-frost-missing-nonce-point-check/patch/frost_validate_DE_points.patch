@@ -1,0 +1,30 @@
+diff --git a/src/common/cosigner/frost_cosigner_client.cpp b/src/common/cosigner/frost_cosigner_client.cpp
+index 82eed1e..8f1ff15 100644
+--- a/src/common/cosigner/frost_cosigner_client.cpp
++++ b/src/common/cosigner/frost_cosigner_client.cpp
+@@ -252,6 +252,10 @@ void frost_cosigner_client::compute_partial_signature(const std::string& key_id,
+         auto& server_share = server_shares[i];
+         auto& partial_signature = partial_signatures[i];
+ 
++        // Reject infinity / invalid peer nonces (BAM ECDSA already does this for R).
++        check_a_valid_point(server_share.D, algebra);
++        check_a_valid_point(server_share.E, algebra);
++
+         const uint32_t flags = signature_request_data[i].flags;
+         const byte_vector_t& message = data.blocks[i].data;
+ 
+diff --git a/src/common/cosigner/frost_cosigner_server.cpp b/src/common/cosigner/frost_cosigner_server.cpp
+index cf7f60d..0ecaf62 100644
+--- a/src/common/cosigner/frost_cosigner_server.cpp
++++ b/src/common/cosigner/frost_cosigner_server.cpp
+@@ -358,6 +358,10 @@ void frost_cosigner_server::verify_partial_signature_and_output_signature(const
+         auto& partial_signature = partial_signatures[i];
+         auto& persistant_sig_data = server_signature_data.sig_data[i];
+ 
++        // Reject infinity / invalid peer nonces before binding them into R.
++        check_a_valid_point(partial_signature.D, algebra);
++        check_a_valid_point(partial_signature.E, algebra);
++
+         elliptic_curve256_point_t server_D;
+         elliptic_curve256_point_t server_E;
+         throw_cosigner_exception(algebra->generator_mul(algebra, &server_D, &persistant_sig_data.secret_d.data));
