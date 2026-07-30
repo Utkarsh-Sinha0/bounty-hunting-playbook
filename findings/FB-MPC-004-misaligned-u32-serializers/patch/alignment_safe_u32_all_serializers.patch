@@ -1,0 +1,483 @@
+diff --git a/include/crypto/common/byte_io.h b/include/crypto/common/byte_io.h
+new file mode 100644
+index 0000000..8d72bc6
+--- /dev/null
++++ b/include/crypto/common/byte_io.h
+@@ -0,0 +1,33 @@
++#pragma once
++
++/*
++ * Alignment-safe host-endian u32 load/store for length-prefixed wire formats.
++ *
++ * The legacy serializers used `*(uint32_t*)p` after variable-length BN payloads,
++ * which is undefined behaviour on targets that require natural alignment and
++ * can SIGBUS on aarch64. memcpy avoids the unaligned access while preserving
++ * the existing host-endian on-wire encoding.
++ */
++
++#include <stdint.h>
++#include <string.h>
++
++#ifdef __cplusplus
++extern "C" {
++#endif
++
++static inline void store_u32(uint8_t *p, uint32_t v)
++{
++    memcpy(p, &v, sizeof(v));
++}
++
++static inline uint32_t load_u32(const uint8_t *p)
++{
++    uint32_t v;
++    memcpy(&v, p, sizeof(v));
++    return v;
++}
++
++#ifdef __cplusplus
++}
++#endif
+diff --git a/src/common/cosigner/bam_well_formed_proof.cpp b/src/common/cosigner/bam_well_formed_proof.cpp
+index a200368..1e99707 100644
+--- a/src/common/cosigner/bam_well_formed_proof.cpp
++++ b/src/common/cosigner/bam_well_formed_proof.cpp
+@@ -8,6 +8,7 @@
+ #include "cosigner_bn.h"
+ #include "logging/logging_t.h"
+ #include "../crypto/paillier_commitment/paillier_commitment_internal.h"
++#include "crypto/common/byte_io.h"
+ 
+ namespace fireblocks::common::cosigner::bam_well_formed_proof
+ {
+@@ -61,7 +62,7 @@ void serialize_well_formed_proof(const uint32_t paillier_commitment_n_bitsize, c
+     
+     uint8_t* ptr = serialized.data();
+ 
+-    *(uint32_t *)ptr = paillier_size;
++    store_u32(ptr, paillier_size);
+     ptr += sizeof(uint32_t);
+     
+     if (BN_bn2binpad(proof.D, ptr, 2 * paillier_size) <= 0)
+@@ -114,7 +115,7 @@ void deserialize_well_formed_proof(const uint32_t paillier_commitment_n_bitsize,
+         throw_cosigner_exception(ZKP_VERIFICATION_FAILED);
+     }
+     
+-    const uint32_t paillier_size = *(const uint32_t *)ptr;
++    const uint32_t paillier_size = load_u32(ptr);
+     ptr += sizeof(uint32_t);
+ 
+     if (paillier_size != expected_paillier_commitment_size)
+diff --git a/src/common/cosigner/mta.cpp b/src/common/cosigner/mta.cpp
+index 0b988c6..f478722 100644
+--- a/src/common/cosigner/mta.cpp
++++ b/src/common/cosigner/mta.cpp
+@@ -21,6 +21,7 @@
+ #include <openssl/bn.h>
+ #include <openssl/rand.h>
+ #include <openssl/err.h>
++#include "crypto/common/byte_io.h"
+ 
+ namespace fireblocks::common::cosigner::mta
+ {
+@@ -182,11 +183,11 @@ static inline std::vector<uint8_t> serialize_mta_range_zkp(const mta_range_zkp&
+     const uint32_t paillier_pub_n_size = BN_num_bytes(public_key->n);
+     std::vector<uint8_t> ret(exponent_zkpok_serialized_size(ring_pedersen, private_key, public_key));
+     uint8_t *ptr = ret.data();
+-    *(uint32_t*)ptr = ring_pedersen_n_size;
++    store_u32(ptr, ring_pedersen_n_size);
+     ptr += sizeof(uint32_t);
+-    *(uint32_t*)ptr = paillier_priv_n_size;
++    store_u32(ptr, paillier_priv_n_size);
+     ptr += sizeof(uint32_t);
+-    *(uint32_t*)ptr = paillier_pub_n_size;
++    store_u32(ptr, paillier_pub_n_size);
+     ptr += sizeof(uint32_t);
+     if (BN_bn2binpad(proof.A, ptr, paillier_pub_n_size * 2) <= 0)
+     {
+@@ -268,21 +269,24 @@ static inline void deserialize_mta_range_zkp(std::vector<uint8_t> buff, const ri
+     static const constexpr uint32_t EPSILON_BYTES = 8; //max bytes that the variables can be smaller
+ 
+     const uint8_t *ptr = buff.data();
+-    if (*(uint32_t*)ptr != ring_pedersen_n_size)
++    const uint32_t got_rp = load_u32(ptr);
++    if (got_rp != ring_pedersen_n_size)
+     {
+-        LOG_ERROR("Wrong ring pedersen key size %u, expected %u", *(uint32_t*)ptr, ring_pedersen_n_size);
++        LOG_ERROR("Wrong ring pedersen key size %u, expected %u", got_rp, ring_pedersen_n_size);
+         throw_cosigner_exception(cosigner_exception::INVALID_PARAMETERS);
+     }
+     ptr += sizeof(uint32_t);
+-    if (*(uint32_t*)ptr != paillier_priv_n_size)
++    const uint32_t got_priv = load_u32(ptr);
++    if (got_priv != paillier_priv_n_size)
+     {
+-        LOG_ERROR("Wrong paillier private key size %u, expected %u", *(uint32_t*)ptr, paillier_priv_n_size);
++        LOG_ERROR("Wrong paillier private key size %u, expected %u", got_priv, paillier_priv_n_size);
+         throw_cosigner_exception(cosigner_exception::INVALID_PARAMETERS);
+     }
+     ptr += sizeof(uint32_t);
+-    if (*(uint32_t*)ptr != paillier_pub_n_size)
++    const uint32_t got_pub = load_u32(ptr);
++    if (got_pub != paillier_pub_n_size)
+     {
+-        LOG_ERROR("Wrong paillier public key size %u, expected %u", *(uint32_t*)ptr, paillier_pub_n_size);
++        LOG_ERROR("Wrong paillier public key size %u, expected %u", got_pub, paillier_pub_n_size);
+         throw_cosigner_exception(cosigner_exception::INVALID_PARAMETERS);
+     }
+     ptr += sizeof(uint32_t);
+diff --git a/src/common/crypto/commitments/damgard_fujisaki.c b/src/common/crypto/commitments/damgard_fujisaki.c
+index 242c88e..113ab8f 100644
+--- a/src/common/crypto/commitments/damgard_fujisaki.c
++++ b/src/common/crypto/commitments/damgard_fujisaki.c
+@@ -9,6 +9,7 @@
+ #include <assert.h>
+ 
+ #include <openssl/err.h>
++#include "crypto/common/byte_io.h"
+ 
+ #define MIN_KEY_LEN_IN_BITS (256)
+ #define DAMGARD_FUJISAKI_TOUGH_PRIME_BITSIZE 256
+@@ -618,7 +619,7 @@ uint8_t* damgard_fujisaki_public_serialize(const damgard_fujisaki_public_t* pub,
+     }
+         
+     // size(n)
+-    *(uint32_t*)pos =  size_n;
++    store_u32(pos, size_n);
+     pos += sizeof(uint32_t);
+     
+     // n
+@@ -629,7 +630,7 @@ uint8_t* damgard_fujisaki_public_serialize(const damgard_fujisaki_public_t* pub,
+     pos += size_n;
+ 
+     // dimension
+-    *(uint32_t*)pos =  pub->dimension;
++    store_u32(pos, pub->dimension);
+     pos += sizeof(uint32_t);
+ 
+     // t
+@@ -663,7 +664,7 @@ static inline uint32_t damgard_fujisaki_public_deserialize_internal(damgard_fuji
+     
+     // read n_len from buffer
+     // from now on use only pos pointer
+-    n_len = *(const uint32_t *)buffer;
++    n_len = load_u32(buffer);
+     const uint8_t* pos = buffer + sizeof(uint32_t);
+     
+     if (n_len > (8 * 1024))
+@@ -689,7 +690,7 @@ static inline uint32_t damgard_fujisaki_public_deserialize_internal(damgard_fuji
+     }
+     pos += n_len;
+ 
+-    pub->dimension = *(const uint32_t *)pos;
++    pub->dimension = load_u32(pos);
+     pos += sizeof(uint32_t);
+     if (pub->dimension == 0 || pub->dimension > MAX_ALLOWED_DIMENSIONS)
+     {
+diff --git a/src/common/crypto/commitments/ring_pedersen.c b/src/common/crypto/commitments/ring_pedersen.c
+index 45d965c..2a0395f 100644
+--- a/src/common/crypto/commitments/ring_pedersen.c
++++ b/src/common/crypto/commitments/ring_pedersen.c
+@@ -7,6 +7,7 @@
+ #include <openssl/bn.h>
+ #include <openssl/rand.h>
+ #include <openssl/sha.h>
++#include "crypto/common/byte_io.h"
+ 
+ #define RING_PEDERSEN_STATISTICAL_SECURITY 80
+ #define MIN_KEY_LEN_IN_BITS 256
+@@ -237,15 +238,15 @@ static uint32_t ring_pedersen_public_serialize_internal(const ring_pedersen_publ
+         return needed_len;
+     }
+         
+-    *(uint32_t*)p = n_len;
++    store_u32(p, n_len);
+     p += sizeof(uint32_t);
+     BN_bn2bin(pub->n, p);
+     p += n_len;
+-    *(uint32_t*)p = s_len;
++    store_u32(p, s_len);
+     p += sizeof(uint32_t);
+     BN_bn2bin(pub->s, p);
+     p += s_len;
+-    *(uint32_t*)p = t_len;
++    store_u32(p, t_len);
+     p += sizeof(uint32_t);
+     BN_bn2bin(pub->t, p);
+     return needed_len;
+@@ -262,7 +263,7 @@ static uint32_t ring_pedersen_public_deserialize_internal(ring_pedersen_public_t
+         return 0;
+     }
+         
+-    len = *(uint32_t*)p;
++    len = load_u32(p);
+     p += sizeof(uint32_t);
+     if (len > (buffer_len - sizeof(uint32_t) * 3))
+     {
+@@ -275,7 +276,7 @@ static uint32_t ring_pedersen_public_deserialize_internal(ring_pedersen_public_t
+     p += len;
+     buffer_len -= len;
+     
+-    len = *(uint32_t*)p;
++    len = load_u32(p);
+     p += sizeof(uint32_t);
+     if (len > (buffer_len - sizeof(uint32_t) * 2))
+     {
+@@ -287,7 +288,7 @@ static uint32_t ring_pedersen_public_deserialize_internal(ring_pedersen_public_t
+     p += len;
+     buffer_len -= len;
+ 
+-    len = *(uint32_t*)p;
++    len = load_u32(p);
+     p += sizeof(uint32_t);
+     if (len > (buffer_len - sizeof(uint32_t)))
+     {
+@@ -425,11 +426,11 @@ uint8_t *ring_pedersen_private_serialize(const ring_pedersen_private_t *priv, ui
+     }
+         
+     p += ring_pedersen_public_serialize_internal(&priv->pub, buffer, buffer_len);
+-    *(uint32_t*)p = lambda_len;
++    store_u32(p, lambda_len);
+     p += sizeof(uint32_t);
+     BN_bn2bin(priv->lambda, p);
+     p += lambda_len;
+-    *(uint32_t*)p = phi_len;
++    store_u32(p, phi_len);
+     p += sizeof(uint32_t);
+     BN_bn2bin(priv->phi_n, p);
+     return buffer;
+@@ -464,7 +465,7 @@ ring_pedersen_private_t *ring_pedersen_private_deserialize(const uint8_t *buffer
+     }
+         
+     
+-    len = *(uint32_t*)p;
++    len = load_u32(p);
+     p += sizeof(uint32_t);
+     if (len > (buffer_len - sizeof(uint32_t) * 2))
+     {
+@@ -481,7 +482,7 @@ ring_pedersen_private_t *ring_pedersen_private_deserialize(const uint8_t *buffer
+     p += len;
+     buffer_len -= len;
+ 
+-    len = *(uint32_t*)p;
++    len = load_u32(p);
+     p += sizeof(uint32_t);
+     if (len > (buffer_len - sizeof(uint32_t)))
+     {
+@@ -604,9 +605,9 @@ static inline void serialize_ring_pedersen_param_zkp(const ring_pedersen_param_p
+ {
+     uint32_t n_len = BN_num_bytes(n);
+     uint8_t *ptr = serialized_proof;
+-    *(uint32_t*)ptr = n_len;
++    store_u32(ptr, n_len);
+     ptr += sizeof(uint32_t);
+-    *(uint32_t*)ptr = RING_PEDERSEN_STATISTICAL_SECURITY;
++    store_u32(ptr, RING_PEDERSEN_STATISTICAL_SECURITY);
+     ptr += sizeof(uint32_t);
+     
+     for (uint32_t i = 0; i < RING_PEDERSEN_STATISTICAL_SECURITY; ++i)
+@@ -623,7 +624,7 @@ static inline int deserialize_ring_pedersen_param_zkp(ring_pedersen_param_proof_
+     uint32_t n_len = BN_num_bytes(n);
+     uint32_t proof_n_len;
+     const uint8_t *ptr = serialized_proof;
+-    proof_n_len = *(uint32_t*)ptr;
++    proof_n_len = load_u32(ptr);
+     ptr += sizeof(uint32_t);
+ 
+     if (n_len != proof_n_len)
+@@ -632,7 +633,7 @@ static inline int deserialize_ring_pedersen_param_zkp(ring_pedersen_param_proof_
+     }
+         
+     
+-    if (*(uint32_t*)ptr < RING_PEDERSEN_STATISTICAL_SECURITY)
++    if (load_u32(ptr) < RING_PEDERSEN_STATISTICAL_SECURITY)
+     {
+         return 0;
+     }
+diff --git a/src/common/crypto/paillier/paillier_zkp.c b/src/common/crypto/paillier/paillier_zkp.c
+index 8931dd4..accba4d 100644
+--- a/src/common/crypto/paillier/paillier_zkp.c
++++ b/src/common/crypto/paillier/paillier_zkp.c
+@@ -7,6 +7,7 @@
+ 
+ #include <openssl/err.h>
+ #include <openssl/rand.h>
++#include "crypto/common/byte_io.h"
+ 
+ #define FACTORIZANTION_ZKP_K 10
+ #define COPRIME_ZKP_K 16
+@@ -849,7 +850,7 @@ static inline uint64_t paillier_blum_zkp_serialized_size(const paillier_public_k
+ static inline long serialize_paillier_blum_zkp(const zkp_paillier_blum_modulus_proof_t *proof, uint32_t n_len, uint8_t serialize_all_nth_roots, uint8_t *serialized_proof)
+ {
+     uint8_t *ptr = serialized_proof;
+-    *(uint32_t*)ptr = n_len;
++    store_u32(ptr, n_len);
+     ptr += sizeof(uint32_t);
+     if (BN_bn2binpad(proof->w, ptr, n_len) <= 0)
+     {
+@@ -882,7 +883,7 @@ static inline int deserialize_paillier_blum_zkp(zkp_paillier_blum_modulus_proof_
+ {
+     uint32_t proof_n_len;
+     const uint8_t *ptr = serialized_proof;
+-    proof_n_len = *(uint32_t*)ptr;
++    proof_n_len = load_u32(ptr);
+     ptr += sizeof(uint32_t);
+ 
+     if (n_len != proof_n_len)
+diff --git a/src/common/crypto/paillier_commitment/paillier_commitment.c b/src/common/crypto/paillier_commitment/paillier_commitment.c
+index 60f9d13..25bde92 100644
+--- a/src/common/crypto/paillier_commitment/paillier_commitment.c
++++ b/src/common/crypto/paillier_commitment/paillier_commitment.c
+@@ -12,6 +12,7 @@
+ #include <string.h>
+ #include <openssl/bn.h>
+ #include <openssl/err.h>
++#include "crypto/common/byte_io.h"
+ 
+ #define PAILLIER_COMMITMENTS_MIN_KEY_BITSIZE            (1024)
+ #define PAILLIER_COMMITMENTS_TOUGH_SUBPRIMES_BITSIZE    (256)
+@@ -458,7 +459,7 @@ long paillier_commitment_public_key_serialize(const paillier_commitment_public_k
+         return PAILLIER_ERROR_INVALID_PARAM;
+     }
+ 
+-    *(uint32_t*)ptr = n_len;
++    store_u32(ptr, n_len);
+     ptr += sizeof(uint32_t);
+ 
+     if (BN_bn2binpad(pub->n, ptr, n_len) <= 0)
+@@ -525,7 +526,7 @@ paillier_commitment_public_key_t * paillier_commitment_public_key_deserialize(co
+         goto cleanup;
+     }
+ 
+-    n_len = *(const uint32_t* ) buffer;
++    n_len = load_u32(buffer);
+     buffer += sizeof(uint32_t);
+ 
+     if (n_len < PAILLIER_COMMITMENTS_MIN_KEY_SIZE || n_len > PAILLIER_COMMITMENTS_MAX_KEY_SIZE)
+@@ -663,7 +664,7 @@ long paillier_commitment_private_key_serialize(const paillier_commitment_private
+         return PAILLIER_ERROR_INVALID_PARAM;
+     }
+ 
+-    *(uint32_t*)ptr = n_len;
++    store_u32(ptr, n_len);
+     ptr += sizeof(uint32_t);
+ 
+     if (BN_bn2binpad(priv->p, ptr, prime_len) <= 0)
+@@ -750,7 +751,7 @@ paillier_commitment_private_key_t * paillier_commitment_private_key_deserialize(
+         goto cleanup;
+     }
+ 
+-    n_len = *(const uint32_t*)buffer;
++    n_len = load_u32(buffer);
+     buffer += sizeof(uint32_t);
+     prime_len = ((n_len * 8  / 2)  + 7) / 8;
+     lambda_len = PAILLIER_COMMITMENTS_LAMBDA_BITSIZE(n_len * 8) / 8;
+@@ -1724,10 +1725,10 @@ long paillier_commitment_commitment_serialize(const paillier_commitment_with_ran
+         return PAILLIER_ERROR_BUFFER_TOO_SHORT;
+     }
+ 
+-    *(uint32_t*)serialized_proof = commitment->commitment_size;
++    store_u32(serialized_proof, commitment->commitment_size);
+     serialized_proof += sizeof(uint32_t);
+ 
+-    *(uint32_t*)serialized_proof = commitment->randomizer_exponent_size;
++    store_u32(serialized_proof, commitment->randomizer_exponent_size);
+     serialized_proof += sizeof(uint32_t);
+ 
+ 
+@@ -1754,10 +1755,10 @@ paillier_commitment_with_randomizer_power_t* paillier_commitment_commitment_dese
+         return NULL;
+     }
+ 
+-    commitment->commitment_size = *(const uint32_t*)serialized_proof;
++    commitment->commitment_size = load_u32(serialized_proof);
+     serialized_proof += sizeof(uint32_t);
+ 
+-    commitment->randomizer_exponent_size = *(const uint32_t*)serialized_proof;
++    commitment->randomizer_exponent_size = load_u32(serialized_proof);
+     serialized_proof += sizeof(uint32_t);
+ 
+     //sanity
+diff --git a/src/common/crypto/zero_knowledge_proof/range_proofs.c b/src/common/crypto/zero_knowledge_proof/range_proofs.c
+index 4937d22..ebb5d75 100644
+--- a/src/common/crypto/zero_knowledge_proof/range_proofs.c
++++ b/src/common/crypto/zero_knowledge_proof/range_proofs.c
+@@ -15,6 +15,7 @@
+ #include <alloca.h>
+ #include <string.h>
+ #include <assert.h>
++#include "crypto/common/byte_io.h"
+ 
+ #define ZKPOK_L_SIZE sizeof(elliptic_curve256_scalar_t)
+ #define ZKPOK_EPSILON_SIZE 2 * sizeof(elliptic_curve256_scalar_t)
+@@ -262,10 +263,10 @@ static uint8_t* serialize_exponent_zkpok(const range_proof_exponent_zkpok_t* pro
+     const uint32_t paillier_n_size = (uint32_t)BN_num_bytes(paillier_n);
+     uint8_t *ptr = serialized_proof;
+ 
+-    *(uint32_t*)ptr = ring_pedersen_n_size;
++    store_u32(ptr, ring_pedersen_n_size);
+     ptr += sizeof(uint32_t);
+ 
+-    *(uint32_t*)ptr = paillier_n_size;
++    store_u32(ptr, paillier_n_size);
+     ptr += sizeof(uint32_t);
+ 
+     if (BN_bn2binpad(proof->S, ptr, ring_pedersen_n_size) <= 0)
+@@ -319,13 +320,13 @@ static const uint8_t* deserialize_exponent_zkpok(range_proof_exponent_zkpok_t* p
+     const uint32_t paillier_n_size = (uint32_t)BN_num_bytes(paillier_n);
+     const uint8_t *ptr = serialized_proof;
+ 
+-    if (*(const uint32_t*)ptr != ring_pedersen_n_size)
++    if (load_u32(ptr) != ring_pedersen_n_size)
+     {
+         return NULL;
+     }
+     ptr += sizeof(uint32_t);
+ 
+-    if (*(const uint32_t*)ptr != paillier_n_size)
++    if (load_u32(ptr) != paillier_n_size)
+     {
+         return NULL;
+     }
+@@ -1373,9 +1374,9 @@ static inline uint8_t* serialize_paillier_large_factors_zkp(const range_proof_pa
+     if (BN_num_bytes(proof->v) > (int)v_size)
+         return NULL;
+ 
+-    *(uint32_t*)ptr = ring_pedersen_n_size;
++    store_u32(ptr, ring_pedersen_n_size);
+     ptr += sizeof(uint32_t);
+-    *(uint32_t*)ptr = paillier_n_size;
++    store_u32(ptr, paillier_n_size);
+     ptr += sizeof(uint32_t);
+ 
+     if (BN_bn2binpad(proof->P, ptr, ring_pedersen_n_size) <= 0)
+@@ -1427,10 +1428,10 @@ static inline const uint8_t* deserialize_paillier_large_factors_zkp(range_proof_
+     const uint32_t v_size = ZKPOK_L_SIZE + ZKPOK_EPSILON_SIZE + ring_pedersen_n_size + paillier_n_size;
+     const uint8_t *ptr = serialized_proof;
+ 
+-    if (*(uint32_t*)ptr != ring_pedersen_n_size)
++    if (load_u32(ptr) != ring_pedersen_n_size)
+         return NULL;
+     ptr += sizeof(uint32_t);
+-    if (*(uint32_t*)ptr != paillier_n_size)
++    if (load_u32(ptr) != paillier_n_size)
+         return NULL;
+     ptr += sizeof(uint32_t);
+     if (!BN_bin2bn(ptr, ring_pedersen_n_size, proof->P))
+@@ -2267,7 +2268,7 @@ static inline uint8_t* serialize_paillier_large_factors_quadratic(const range_pr
+     const uint32_t z_size = paillier_large_factors_quadratic_z_size_bytes(n_bitlsize);
+     const uint32_t lambda_size = (3 * ZKPOK_OPTIM_L_SIZE(n_bitlsize)) + ZKPOK_OPTIM_NU_SIZE(n_bitlsize);
+ 
+-    *(uint32_t*)ptr =  d_size;
++    store_u32(ptr, d_size);
+     ptr += sizeof(uint32_t);
+ 
+     if (BN_bn2binpad(zkp->setup.d, ptr, d_size) <= 0)
+@@ -2372,7 +2373,7 @@ static inline const uint8_t* deserialize_paillier_large_factors_quadratic(range_
+         return NULL;
+     }
+ 
+-    d_size = *(const uint32_t*)ptr; // read sizeof(uint32_t)
++    d_size = load_u32(ptr); // read sizeof(uint32_t)
+     ptr += sizeof(uint32_t);
+     if (!d_size || d_size > MAX_D_SIZE)
+     {
