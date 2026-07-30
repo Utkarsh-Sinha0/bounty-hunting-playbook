@@ -1,0 +1,23 @@
+HTTP/2 403 
+date: Thu, 30 Jul 2026 20:01:20 GMT
+content-type: text/html;charset=utf-8
+access-control-allow-origin: *
+cache-control: max-age=0, private, no-cache, no-store, must-revalidate
+x-content-type-options: nosniff
+pragma: no-cache
+accept-ch: Sec-CH-UA,Sec-CH-UA-Mobile,Sec-CH-UA-Platform,Sec-CH-UA-Arch,Sec-CH-UA-Full-Version-List,Sec-CH-UA-Model,Sec-CH-Device-Memory
+access-control-allow-credentials: true
+access-control-expose-headers: x-dd-b, x-set-cookie
+access-control-expose-headers: x-set-cookie, x-dd-b
+charset: utf-8
+x-dd-b: 1
+x-datadome: protected
+x-datadome-cid: AHrlqAAAAAMAb6usbp8Yu_QANClfIw==
+strict-transport-security: max-age=15552000; includeSubDomains; preload
+set-cookie: datadome=1Uz6nA25GHurQcmIfAQ2lvcVRGuHn1j77MGUYb2wi4gX6oCzdRlnj~OfCFE_X41tbSgZx_kbBW75WmEqT05D5rP6m2M2LBfhrJPfG3kiI7dydMQVVtFrYxHXk8VGhT8c; Max-Age=604800; Domain=.etoro.com; Path=/; Secure; SameSite=Lax
+set-cookie: __cf_bm=fQmTquEP3CeqaIAJRVgemJMV_RjsfD.Va7mIot8aHeY-1785441680.2669337-1.0.1.1-r7MyGvjxZ0OeUTQpedKmjlJmGNQi0.ZBQt0BZOsQtxHvjYiba0faD8qtal0.IaSWbCFQW4RlJDiV2QcxlQVcArKxbSWnW4AHh4NJHN2HwETfP7T_rycuOp6m6kfnQ5MBhFPNWpYkcEA.dEdRkplzkw; HttpOnly; SameSite=None; Secure; Path=/; Domain=etoro.com; Expires=Thu, 30 Jul 2026 20:31:20 GMT
+access-control-allow-headers: x-datadome-clientid
+server: cloudflare
+cf-ray: a236f465ac3057bf-SEA
+alt-svc: h3=":443"; ma=86400
+

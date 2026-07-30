@@ -1,0 +1,21 @@
+HTTP/2 200 
+date: Thu, 30 Jul 2026 20:02:31 GMT
+content-type: text/html; charset=utf-8
+x-content-type-options: nosniff
+x-xss-protection: 1; mode=block
+strict-transport-security: max-age=15552000; includeSubDomains; preload
+cache-control: no-cache, no-store, must-revalidate, pre-check=0, post-check=0
+expires: Tue, 31 Mar 1981 05:00:00 GMT
+content-security-policy: frame-ancestors 'self' file://*
+x-frame-options: allow-fromfile://*
+vary: Accept-Encoding
+access-control-allow-headers: x-datadome-clientid
+access-control-expose-headers: x-set-cookie, x-dd-b
+cf-cache-status: DYNAMIC
+set-cookie: eToroLocale=en-gb; Path=/
+set-cookie: __cf_bm=rdE1jUGf48_.di1dE9mdfUW3FQ9M1Yb3x9_MZzFMEgk-1785441751.2516026-1.0.1.1-w0BVCHoSThEhFO_5YjZupEispLbPbzWUm_5q3hLPyN9QHJQCM4Q1e_DPk1Ne0ifnDImOLBZnBdrV0V1Q.pLJQ.kdxScMeBH9aVkPHCYQh7NhCA4d_7GXJRaBIWhMXp_Tg.Q5sBpIWyXXB5VpCciFCw; HttpOnly; SameSite=None; Secure; Path=/; Domain=etoro.com; Expires=Thu, 30 Jul 2026 20:32:31 GMT
+set-cookie: __cflb=02DiuEAg8LPSYevHEYjnpbgJGw1ZD2QacjvgwcnXpjm96; HttpOnly; SameSite=None; Secure; Path=/; Expires=Fri, 31 Jul 2026 19:02:31 GMT
+server: cloudflare
+cf-ray: a236f6215b50ba4e-SEA
+alt-svc: h3=":443"; ma=86400
+
