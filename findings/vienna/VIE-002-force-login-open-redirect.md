@@ -1,8 +1,9 @@
 # VIE-002 — `/force_login` open redirect via `document.referrer`
 
 **Target:** `https://mein.wien.gv.at/force_login` (and mirrored login JS on Standardportal login pages)  
-**Proposed severity:** **P4** (open redirect; not P1/P2 alone)  
-**Status:** Client-side logic confirmed in page source
+**Proposed severity:** **P4** (open redirect)  
+**Payout status:** **Excluded** — City of Vienna brief excludes **P4 and P5**. Do **not** submit for reward.  
+**Status:** Client-side logic confirmed; kept only as chain material if it ever becomes part of a P1–P3 exploit path
 
 ## Reproduction
 

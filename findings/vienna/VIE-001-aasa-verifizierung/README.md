@@ -3,8 +3,8 @@
 **Target:** `https://mein.wien.gv.at`  
 **Program:** City of Vienna Managed Bug Bounty (Bugcrowd)  
 **Research date:** 2026-07-31  
-**Proposed severity:** **P2 candidate** (account-activation token interception on iOS)  
-**Evidence grade:** L2 — misconfiguration + token-in-URL + unauthenticated activate API fully reproduced; **iOS Universal Link handoff not device-proven in this environment**
+**Proposed severity (updated):** **Do not submit yet** — under the live brief only **P1–P3** pay; P4/P5 are excluded. Wiener Wohnen is named in the program description as a City independent enterprise, so this AASA claim is **likely intentional**. Without a device PoC of hostile token interception / ATO, expect **N/A**.  
+**Evidence grade:** L2 config/API only; **no iOS Universal Link handoff PoC**
 
 ## Summary
 
