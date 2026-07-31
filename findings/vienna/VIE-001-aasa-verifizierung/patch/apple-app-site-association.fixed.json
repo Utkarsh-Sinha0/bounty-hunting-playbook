@@ -1,0 +1,24 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "TEAMID.at.gv.wien.stadtapp",
+        "paths": [
+          "NOT /Verifizierung",
+          "NOT /Verifizierung/*",
+          "NOT /Zugangsdaten-vergessen",
+          "NOT /Zugangsdaten-vergessen/*",
+          "NOT /Einladung",
+          "NOT /Einladung/*",
+          "*"
+        ]
+      }
+    ]
+  },
+  "webcredentials": {
+    "apps": [
+      "TEAMID.at.gv.wien.stadtapp"
+    ]
+  }
+}
