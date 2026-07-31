@@ -1,0 +1,36 @@
+=== REQ#31 user_gain ===
+URL: https://www.etoro.com/sapi/userstats/UserGain/?cid=2988943&Period=OneYearAgo
+http_code=404 size=2183
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" cont
+=== REQ#32 user_risk ===
+URL: https://www.etoro.com/sapi/riskscore/UserRisk/?cid=2988943
+http_code=404 size=2183
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" cont
+=== REQ#33 user_gain_bg ===
+URL: https://www.etoro.com/sapi/userstats/UserGain/?cid=17252&Period=OneYearAgo
+http_code=404 size=2183
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" cont
+=== REQ#34 rankings_cid ===
+URL: https://www.etoro.com/sapi/rankings/rankings/?cid=2988943&Period=OneYearAgo
+http_code=404 size=1691
+{
+  "Status": "ERROR",
+  "ErrorText": "Invalid Parameter [cid]. Valid Values: username,hasavatar,issocialconnected,isguru,istestaccount,displayfullname,optin,bonusonly,blocked,verified,popularinvest
+=== REQ#35 logininfo_private_style ===
+URL: https://www.etoro.com/api/logininfo/v1.1/users/bbxss9cursor
+http_code=404 size=86
+{"ErrorData":null,"ErrorCode":"NotFound","ErrorMessage":"User bbxss9cursor not found"}
+=== REQ#36 sso_token ===
+URL: https://www.etoro.com/api/sso/v1/token
+http_code=405 size=68
+{"errorCode":"MethodNotAllowed","errorMessage":"Method not allowed"}
+TOTAL=36

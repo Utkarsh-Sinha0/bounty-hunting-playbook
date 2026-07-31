@@ -1,0 +1,157 @@
+=== REQ#1 sso_root ===
+URL: https://www.etoro.com/sso/
+http_code=200 final_url=https://www.etoro.com/sso/ size=11296 redirs=0
+--- headers (selected) ---
+HTTP/2 200 
+content-type: text/html
+set-cookie: __cf_bm=aw6MtozGUDXFRJAV9vg0mJ58_AtdfacGUHCDqJkLl50-1785441679.22343-1.0.1.1-i.li6gfsP.8pEmSYrrRcDrJnnD5gOR8F9VuqDftdgugN8Q_lbfh_rTiu57BxX3DXxNXhQGxRa.f3.LyVYVo76ZA8.ViOBnpdajXox_hl2oReCSE__Kg2ZKI_BpvhuSeqR6NDS44t1ze2oimDOqzsjA; HttpOnly; SameSite=None; Secure; Path=/; Domain=etoro.com; Expires=Thu, 30 Jul 2026 20:31:19 GMT
+
+=== REQ#2 oidc_etoro ===
+URL: https://www.etoro.com/.well-known/openid-configuration
+http_code=200 final_url=https://www.etoro.com/.well-known/openid-configuration size=845 redirs=0
+--- headers (selected) ---
+HTTP/2 200 
+content-type: text/html; charset=utf-8
+set-cookie: eToroLocale=en-gb; Path=/
+set-cookie: __cf_bm=6p_ilbGZh5ZTPltyi9Ts6RC0KE9InOB85Kbo8KkfT8E-1785441679.491826-1.0.1.1-EMO6BBXX.wVOLwhLm1t3II86TxAwm_f7rlog.lR0am6dzWrRaiIn_sNvbjuGji.zhiFEtXknMkPXjqHWtrUJqykEeU_PITlM2vxII89xi4RQm3AI9L36Onobset9kL32wURgYTuDB6gwncihvtjtiQ; HttpOnly; SameSite=None; Secure; Path=/; Domain=etoro.com; Expires=Thu, 30 Jul 2026 20:31:20 GMT
+set-cookie: __cflb=02DiuEAg8LPSYevHEYjnT7VhYXyg6u98bWwV81LYaR29a; HttpOnly; SameSite=None; Secure; Path=/; Expires=Fri, 31 Jul 2026 19:01:20 GMT
+
+=== REQ#3 oidc_sso ===
+URL: https://www.etoro.com/sso/.well-known/openid-configuration
+http_code=404 final_url=https://www.etoro.com/sso/.well-known/openid-configuration size=1259 redirs=0
+--- headers (selected) ---
+HTTP/2 404 
+content-type: text/html
+set-cookie: __cf_bm=AtDZH1c915d1AoE3p9hLBXnFO7IjLd9CmmhIrn9lk40-1785441680.0546572-1.0.1.1-uD87dwFnr2gFKf7YzQt7aeUtBscEr4htETel2r4FduJuW_S.s1DSFr6ulqG5g4en_4v.0uPTjBFDKLiANbjV8p.cwDiC5ZcPCJdYhn0qz6Xoy.MWCF1.4sei9g9TFV983GQH11fSFZcfea3kBDKG9w; HttpOnly; SameSite=None; Secure; Path=/; Domain=etoro.com; Expires=Thu, 30 Jul 2026 20:31:20 GMT
+
+=== REQ#4 oidc_login ===
+URL: https://www.etoro.com/api/sts/.well-known/openid-configuration
+http_code=403 final_url=https://www.etoro.com/api/sts/.well-known/openid-configuration size=1707 redirs=0
+--- headers (selected) ---
+HTTP/2 403 
+content-type: text/html;charset=utf-8
+access-control-allow-origin: *
+access-control-allow-credentials: true
+access-control-expose-headers: x-dd-b, x-set-cookie
+access-control-expose-headers: x-set-cookie, x-dd-b
+set-cookie: datadome=1Uz6nA25GHurQcmIfAQ2lvcVRGuHn1j77MGUYb2wi4gX6oCzdRlnj~OfCFE_X41tbSgZx_kbBW75WmEqT05D5rP6m2M2LBfhrJPfG3kiI7dydMQVVtFrYxHXk8VGhT8c; Max-Age=604800; Domain=.etoro.com; Path=/; Secure; SameSite=Lax
+set-cookie: __cf_bm=fQmTquEP3CeqaIAJRVgemJMV_RjsfD.Va7mIot8aHeY-1785441680.2669337-1.0.1.1-r7MyGvjxZ0OeUTQpedKmjlJmGNQi0.ZBQt0BZOsQtxHvjYiba0faD8qtal0.IaSWbCFQW4RlJDiV2QcxlQVcArKxbSWnW4AHh4NJHN2HwETfP7T_rycuOp6m6kfnQ5MBhFPNWpYkcEA.dEdRkplzkw; HttpOnly; SameSite=None; Secure; Path=/; Domain=etoro.com; Expires=Thu, 30 Jul 2026 20:31:20 GMT
+access-control-allow-headers: x-datadome-clientid
+
+TOTAL_SO_FAR=4
+=== SSO HTML analysis ===
+/cdn-cgi/challenge-platform/scripts/jsd/main.js
+/etoro-root
+https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js
+/javascript
+/noscript
+/script
+/style
+/title
+/x-icon
+--- script srcs ---
+src="https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js"
+src="runtime.adec9d55b6c273b1.js"
+src="polyfills.5a15379b09577a11.js"
+src="main.bd4f6473d1710046.js"
+--- meta/config ---
+window.mixpanel = b;
+config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");
+window.mixpanel||[]);
+Window.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a236f45f2857769f',t:'MTc4NTQ0MTY3OQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts
+window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadysta
+=== REQ#5 sts_wellknown ===
+URL: https://sts.etoro.com/.well-known/openid-configuration
+http_code=404 final_url=https://sts.etoro.com/.well-known/openid-configuration size=0
+HTTP/2 404 
+
+=== REQ#6 login_wellknown ===
+URL: https://login.etoro.com/.well-known/openid-configuration
+http_code=200 final_url=https://www.etoro.com/ size=358111
+HTTP/2 301 
+location: https://www.etoro.com/
+HTTP/2 200 
+content-type: text/html; charset=utf-8
+
+=== REQ#7 accounts_wellknown ===
+URL: https://accounts.etoro.com/.well-known/openid-configuration
+http_code=200 final_url=https://www.etoro.com/ size=358111
+HTTP/2 301 
+location: https://www.etoro.com/
+HTTP/2 200 
+content-type: text/html; charset=utf-8
+
+=== REQ#8 etorox_wellknown ===
+URL: https://www.etorox.com/.well-known/openid-configuration
+http_code=200 final_url=https://www.etoro.com/ size=358111
+HTTP/2 301 
+content-type: text/html; charset=UTF-8
+location: https://www.etoro.com/
+HTTP/2 200 
+content-type: text/html; charset=utf-8
+
+TOTAL_SO_FAR=8
+=== REQ#9 jwks ===
+URL: https://www.etoro.com/.well-known/jwks.json
+http_code=200 final_url=https://www.etoro.com/.well-known/jwks.json size=441
+HTTP/2 200 
+content-type: application/json; charset=utf-8
+
+=== REQ#10 sso_mainjs ===
+URL: https://www.etoro.com/sso/main.bd4f6473d1710046.js
+http_code=200 final_url=https://www.etoro.com/sso/main.bd4f6473d1710046.js size=253619
+HTTP/2 200 
+content-type: application/javascript
+
+=== REQ#11 sso_runtime ===
+URL: https://www.etoro.com/sso/runtime.adec9d55b6c273b1.js
+http_code=200 final_url=https://www.etoro.com/sso/runtime.adec9d55b6c273b1.js size=914
+HTTP/2 200 
+content-type: application/javascript
+
+TOTAL_SO_FAR=11
+=== REQ#12 appinfo ===
+URL: https://www.etoro.com/api/sso/v1/applications/00000000-0000-4000-8000-000000000001/app-info?redirect_uri=https://evil.example/cb&client_request_id=bb-test-1
+http_code=404 final_url=https://www.etoro.com/api/sso/v1/applications/00000000-0000-4000-8000-000000000001/app-info?redirect_uri=https://evil.example/cb&client_request_id=bb-test-1 size=68
+HTTP/2 404 
+content-type: application/json; charset=utf-8
+x-content-type-options: nosniff
+BODY_SNIP:
+{"errorCode":"ClientIdNotFound","errorMessage":"ClientId not found"}
+=== REQ#13 silent_verify ===
+URL: -X
+BODY_SNIP:
+
+=== REQ#14 token_opts ===
+URL: -X
+BODY_SNIP:
+
+=== REQ#15 forgot_page ===
+URL: https://www.etoro.com/login/forgot-password
+http_code=200 final_url=https://www.etoro.com/login/forgot-password size=179384
+HTTP/2 200 
+content-type: text/html; charset=utf-8
+x-content-type-options: nosniff
+x-xss-protection: 1; mode=block
+x-frame-options: allow-fromfile://*
+access-control-allow-headers: x-datadome-clientid
+access-control-expose-headers: x-set-cookie, x-dd-b
+BODY_SNIP:
+<!DOCTYPE html>
+<html>
+<head data-meta-tags="" data-assets-version="v651.1310.0">
+    <meta charset="utf-8"/>
+    
+    
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no, minimal-ui">
+    <meta name="msapplication-tap-highlight" content="no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta property="fb:admins" content="100000137838591"/>
+    <meta property="fb:app_id" content="166209726726710"/>
+    <meta property="og:site_name" content="eToro"/>
+    <meta property="og:type" content="website"/>
+    <meta property="article:publisher" content="https://www.facebook.com/etoro"/>
+    <
+TOTAL_SO_FAR=15

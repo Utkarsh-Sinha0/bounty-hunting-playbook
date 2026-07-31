@@ -1,0 +1,13 @@
+HTTP/2 301 
+date: Thu, 30 Jul 2026 20:05:42 GMT
+content-type: text/html
+location: http://www.etoro.com/
+set-cookie: __cf_bm=1w2nmpmHQlEOJM3ssJyGoq_ujsMqASODFr47DOQc3sA-1785441942.5594115-1.0.1.1-tyroBhSCezw6tJ7ZdHL6Cw3W0mg81EGCeLhy_aYaDevh3dCMbITYkySy5ftW4NIGv6d_l6YQXUrvMDiiu7pAhrZP37Ks6zOfiEbD05QXG3GgSReRlXQj6FHkTIiSpQBMt0WR9sJ7Hf6og47pL6uHEg; HttpOnly; SameSite=None; Secure; Path=/; Domain=etoro.com; Expires=Thu, 30 Jul 2026 20:35:42 GMT
+set-cookie: __cflb=02DiuEAg8LPSYevHEYjnpbgJGw1ZD2QabuwmW1DypAqqE; HttpOnly; SameSite=None; Secure; Path=/; Expires=Fri, 31 Jul 2026 19:05:42 GMT
+cf-cache-status: DYNAMIC
+strict-transport-security: max-age=15552000; includeSubDomains; preload
+x-content-type-options: nosniff
+server: cloudflare
+cf-ray: a236faccff592840-SEA
+alt-svc: h3=":443"; ma=86400
+

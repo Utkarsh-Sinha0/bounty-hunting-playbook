@@ -1,0 +1,12 @@
+51:failed to verify offline signature for block 0, error -7
+66:failed to verify offline signature for block 0, error -7
+80:failed to verify offline signature for block 0, error -7
+94:failed to verify offline signature for block 0, error -7
+108:failed to verify offline signature for block 0, error -7
+122:failed to verify offline signature for block 0, error -7
+162:failed to verify offline signature for block 0, error -7
+427:failed to verify offline signature for block 0, error -7
+503:failed to verify offline signature for block 0, error -7
+573:failed to verify offline signature for block 0, error -7
+638:failed to verify offline signature for block 0, error -7
+652:All tests passed (506 assertions in 1 test case)

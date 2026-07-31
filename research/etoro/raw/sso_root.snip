@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en" data-critters-container>
+  <head>
+    <meta charset="utf-8">
+    <title>connect-with-etoro</title>
+    <base href="/sso/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+<!--    Prevents the first-frame background flash (when arriving from eToro Dark Mode / cold cache).-->
+<!--    Sets theme-color + color-scheme so the browser paints the initial frame as light,-->
+<!--    and uses inline CSS to apply the background before external CSS/JS load.-->
+    <meta name="theme-color" content="#ffffff">
+    <meta name="color-scheme" content="light">
+    <style>
+      html,body { height:100%; margin:0; background:#ffffff; }
+    </style>
+    <script type="text/javascript">
+      (function(f,b){
+        if(!b.__SV){
+          var e,g,i,h;
+          window.mixpanel = b;
+          b._i = [];
+          b.init = function(e,f,c){
+            function g(a,d){
+              var b=d.split(".");
+              2==b.length&&(a=a[b[0]],d=b[1]);
+              a[d]=function(){
+                a.push([d].concat(Array.prototype.slice.call(arguments,0)))
+              }
+            }
+            var a=b;
+            "undefined"!==typeof c?a=b[c]=[]:c="mixpanel";
+            a.people=a.people||[];
+            a.toString=function(a){
+              var d="mixpanel";
+              "mixpanel"!==c&&(d+="."+c);
+              a||(d+=" (stub)");
+              return d;
+            };
+            a.people.toString=function(){
+              return a.toString(1)+".people (stub)"
+            };
+            i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");
+            for(h=0;h<i.length;h++)g(a,i[h]);
+            b._i.push([e,f,c])
+          };
+          b.__SV=1.2;
+          e=f.createElem

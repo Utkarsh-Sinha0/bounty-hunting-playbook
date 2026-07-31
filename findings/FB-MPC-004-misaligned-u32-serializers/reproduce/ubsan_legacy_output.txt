@@ -1,0 +1,18 @@
+/workspace/findings/FB-MPC-004-misaligned-u32-serializers/reproduce/ubsan_unaligned_u32.cpp:11:20: runtime error: store to misaligned address 0x5625f0cf02b1 for type 'uint32_t', which requires 4 byte alignment
+0x5625f0cf02b1: note: pointer points here
+ 00 00 00  ab 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  51 00 00 00 00
+              ^ 
+/workspace/findings/FB-MPC-004-misaligned-u32-serializers/reproduce/ubsan_unaligned_u32.cpp:11:20: runtime error: store to misaligned address 0x5625f0cf02b5 for type 'uint32_t', which requires 4 byte alignment
+0x5625f0cf02b5: note: pointer points here
+ 11 11 11 11 00 00 00  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  51 00 00 00 00 00 00 00  75
+             ^ 
+/workspace/findings/FB-MPC-004-misaligned-u32-serializers/reproduce/ubsan_unaligned_u32.cpp:15:31: runtime error: load of misaligned address 0x5625f0cf02b5 for type 'const uint32_t', which requires 4 byte alignment
+0x5625f0cf02b5: note: pointer points here
+ 11 11 11 11 22 22 22  22 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  51 00 00 00 00 00 00 00  75
+             ^ 
+/workspace/findings/FB-MPC-004-misaligned-u32-serializers/reproduce/ubsan_unaligned_u32.cpp:15:31: runtime error: load of misaligned address 0x5625f0cf02b1 for type 'const uint32_t', which requires 4 byte alignment
+0x5625f0cf02b1: note: pointer points here
+ 00 00 00  ab 11 11 11 11 22 22 22  22 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  51 00 00 00 00
+              ^ 
+legacy load1=11111111 load2=22222222
+EXIT:0

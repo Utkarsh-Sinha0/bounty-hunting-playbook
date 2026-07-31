@@ -1,0 +1,55 @@
+=================================================================
+==13766==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x515000000500 at pc 0x563f647e7b0d bp 0x7ffe04c767f0 sp 0x7ffe04c767e0
+READ of size 1 at 0x515000000500 thread T0
+    #0 0x563f647e7b0c in read_bytes_like_sha256_update /workspace/findings/FB-MPC-002-mta-heap-overread/reproduce/asan_overread.cpp:32
+    #1 0x563f647e7b0c in buggy_seed_step /workspace/findings/FB-MPC-002-mta-heap-overread/reproduce/asan_overread.cpp:52
+    #2 0x563f647e7b0c in main /workspace/findings/FB-MPC-002-mta-heap-overread/reproduce/asan_overread.cpp:64
+    #3 0x7fc916e031c9  (/lib/x86_64-linux-gnu/libc.so.6+0x2a1c9) (BuildId: 8e9fd827446c24067541ac5390e6f527fb5947bb)
+    #4 0x7fc916e0328a in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x2a28a) (BuildId: 8e9fd827446c24067541ac5390e6f527fb5947bb)
+    #5 0x563f647e73a4 in _start (/workspace/findings/FB-MPC-002-mta-heap-overread/reproduce/asan_overread+0x23a4) (BuildId: 9acdddfe94f25956f00a1e614ef4bbc62b345cbd)
+
+0x515000000500 is located 0 bytes after 512-byte region [0x515000000300,0x515000000500)
+allocated by thread T0 here:
+    #0 0x7fc917994548 in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:95
+    #1 0x563f647e7898 in std::__new_allocator<unsigned char>::allocate(unsigned long, void const*) /usr/include/c++/13/bits/new_allocator.h:151
+    #2 0x563f647e7898 in std::allocator_traits<std::allocator<unsigned char> >::allocate(std::allocator<unsigned char>&, unsigned long) /usr/include/c++/13/bits/alloc_traits.h:482
+    #3 0x563f647e7898 in std::_Vector_base<unsigned char, std::allocator<unsigned char> >::_M_allocate(unsigned long) /usr/include/c++/13/bits/stl_vector.h:381
+    #4 0x563f647e7898 in std::_Vector_base<unsigned char, std::allocator<unsigned char> >::_M_create_storage(unsigned long) /usr/include/c++/13/bits/stl_vector.h:398
+    #5 0x563f647e7898 in std::_Vector_base<unsigned char, std::allocator<unsigned char> >::_Vector_base(unsigned long, std::allocator<unsigned char> const&) /usr/include/c++/13/bits/stl_vector.h:335
+    #6 0x563f647e7898 in std::vector<unsigned char, std::allocator<unsigned char> >::vector(unsigned long, std::allocator<unsigned char> const&) /usr/include/c++/13/bits/stl_vector.h:557
+    #7 0x563f647e7898 in buggy_seed_step /workspace/findings/FB-MPC-002-mta-heap-overread/reproduce/asan_overread.cpp:37
+    #8 0x563f647e7898 in main /workspace/findings/FB-MPC-002-mta-heap-overread/reproduce/asan_overread.cpp:64
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow /workspace/findings/FB-MPC-002-mta-heap-overread/reproduce/asan_overread.cpp:32 in read_bytes_like_sha256_update
+Shadow bytes around the buggy address:
+  0x515000000280: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x515000000300: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x515000000380: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x515000000400: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x515000000480: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x515000000500:[fa]fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x515000000580: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x515000000600: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x515000000680: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x515000000700: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x515000000780: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==13766==ABORTING

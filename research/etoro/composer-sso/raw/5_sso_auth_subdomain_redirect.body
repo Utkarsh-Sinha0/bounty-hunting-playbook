@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en" data-critters-container>
+  <head>
+    <meta charset="utf-8">
+    <title>connect-with-etoro</title>
+    <base href="/sso/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+<!--    Prevents the first-frame background flash (when arriving from eToro Dark Mode / cold cache).-->
+<!--    Sets theme-color + color-scheme so the browser paints the initial frame as light,-->
+<!--    and uses inline CSS to apply the background before external CSS/JS load.-->
+    <meta name="theme-color" content="#ffffff">
+    <meta name="color-scheme" content="light">
+    <style>
+      html,body { height:100%; margin:0; background:#ffffff; }
+    </style>
+    <script type="text/javascript">
+      (function(f,b){
+        if(!b.__SV){
+          var e,g,i,h;
+          window.mixpanel = b;
+          b._i = [];
+          b.init = function(e,f,c){
+            function g(a,d){
+              var b=d.split(".");
+              2==b.length&&(a=a[b[0]],d=b[1]);
+              a[d]=function(){
+                a.push([d].concat(Array.prototype.slice.call(arguments,0)))
+              }
+            }
+            var a=b;
+            "undefined"!==typeof c?a=b[c]=[]:c="mixpanel";
+            a.people=a.people||[];
+            a.toString=function(a){
+              var d="mixpanel";
+              "mixpanel"!==c&&(d+="."+c);
+              a||(d+=" (stub)");
+              return d;
+            };
+            a.people.toString=function(){
+              return a.toString(1)+".people (stub)"
+            };
+            i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");
+            for(h=0;h<i.length;h++)g(a,i[h]);
+            b._i.push([e,f,c])
+          };
+          b.__SV=1.2;
+          e=f.createElement("script");
+          e.type="text/javascript";
+          e.async=!0;
+          e.src="https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";
+          g=f.getElementsByTagName("script")[0];
+          g.parentNode.insertBefore(e,g)
+        }
+      })(document,window.mixpanel||[]);
+    </script>
+
+  <style>:root{--primary-neutral-text:#13151C;--secondary-neutral-text:#5A6178;--tertiary-neutral-text:#878DA1;--disabled-primary-neutral-text:#BCC1D1;--overlay-neutral-text:#FFFFFF;--inverted-primary-neutral-text:#FFFFFF;--transparent-neutral-text:#878DA133;--static-neutral-0:#FFFFFF;--static-neutral-10:#F7F8FA;--static-neutral-20:#F2F3F7;--static-neutral-30:#E4E7F0;--static-neutral-40:#D3D7E3;--static-neutral-50:#BCC1D1;--static-neutral-60:#999FB2;--static-neutral-70:#878DA1;--static-neutral-80:#727787;--static-neutral-90:#5A6178;--static-neutral-91:#343B4D;--static-neutral-92:#292E3D;--static-neutral-93:#232733;--static-neutral-94:#1C1F29;--static-neutral-100:#13151C;--static-neutral-110:#0F121A;--neutral-70-transparent:#878da133;--neutral-20-transparent:#f2f3f733;--neutral-gradient-base-94:#1c1f29;--neutral-gradient-transparent-base-94:#1c1f2933;--primary-divider:#E4E7F0;--secondary-divider:#E4E7F0;--tertiary-divider:#F2F3F7;--brand-action-text:#0EB12E;--brand-hover-action-text:#0B8E25;--brand-var-action-text:#F23D40;--brand-var-hover-action-text:#BF180F;--info-action-text:#343B4D;--info-hover-action-text:#232733;--disabled-action-text:#BCC1D1;--positive-text:#13C636;--negative-text:#F7191E;--orange-text:#FFA114;--yellow-text:#FFD500;--mint-text:#0EC7C7;--blue-text:#198CF7;--purple-text:#B119F7;--violet-text:#7D19F7;--risk-1:#008C17;--risk-2:#00A61C;--risk-3:#61C200;--risk-4:#A8D200;--risk-5:#E5DC00;--risk-6:#FBC400;--risk-7:#FFA318;--risk-8:#FF6E1D;--risk-9:#E20D0D;--risk-10:#BB0000;--indices-primary:#33C728;--indices-gradient-base:#90E589;--crypto-primary:#FF9C33;--crypto-gradient-base:#FFC180;--currencies-primary:#FF80D8;--currencies-gradient-base:#FFB2E8;--smart-portfolios-primary:#D580FF;--smart-portfolios-gradient-base:#E5B2FF;--etf-primary:#A280FF;--etf-gradient-base:#C7B2FF;--stocks-primary:#16C1DF;--stocks-gradient-base:#4ADEF7;--people-primary:#0073FF;--people-gradient-base:#59A4FF;--commodities-primary:#506AE5;--commodities-gradient-base:#8A9BE5;--countries-primary:#2444B2;--countries-gradient-base:#6275B2;--other-primary:#283241;--other-gradient-base:#ADB8C9;--new-wallet:#FF686A;--new-usd:#4B5974;--new-pound:#037FD9;--new-euro:#13487D;--neutral-primary-bg:#FFFFFF;--neutral-secondary-bg:#FFFFFF;--neutral-tertiary-bg:#FFFFFF;--neutral-fourthiary-bg:#FFFFFF;--neutral-grey-primary-bg:#F2F3F7;--neutral-grey-secondary-bg:#F2F3F7;--neutral-grey-quaternary-bg:#F2F3F7;--neutral-grey-quaternary-gradient-base-bg:#F2F3F700;--neutral-grey-quinary-bg:#E4E7F0;--neutral-mobile-base-bg:#FFFFFF;--transparent-primary-bg:#FFFFFFD9;--primary-scroll-base-bg:#FFFFFF00;--secondary-scroll-base-bg:#FFFFFF00;--tertiary-scroll-base-bg:#FFFFFF00;--grey-primary-bg:#F2F3F7;--grey-secondary-bg:#F7F8FA;--orange-primary-bg:#FFE1B5;--orange-secondary-bg:#FFF0D9;--orange-secondary-opaque-bg:#FFEBCC;--orange-tertiary-bg:#FFF0D9;--orange-quaternary-bg:#FFFAF2;--yellow-primary-bg:#FFF3B5;--yellow-secondary-bg:#FFF9D9;--yellow-secondary-opaque-bg:#FFF6C7;--yellow-tertiary-bg:#FFF9D9;--yellow-quaternary-bg:#FFFDF2;--mint-primary-bg:#AFF2F2;--mint-secondary-bg:#E6FCFC;--mint-secondary-opaque-bg:#D7FCFC;--mint-tertiary-bg:#E6FCFC;--mint-quaternary-bg:#F0FCFC;--blue-primary-bg:#B5DBFF;--blue-secondary-bg:#E8F4FF;--blue-secondary-opaque-bg:#D9EDFF;--blue-tertiary-bg:#E8F4FF;--blue-quaternary-bg:#F2F9FF;--purple-primary-bg:#E7B5FF;--purple-secondary-bg:#F8E8FF;--purple-secondary-opaque-bg:#F3D9FF;--purple-tertiary-bg:#F8E8FF;--purple-quaternary-bg:#FBF2FF;--violet-primary-bg:#D6B5FF;--violet-secondary-bg:#F2E8FF;--violet-secondary-opaque-bg:#EAD9FF;--violet-tertiary-bg:#F2E8FF;--violet-quaternary-bg:#F8F2FF;--orange-primary-gradient-70:#FFA114;--orange-primary-gradient-50:#FFC46B;--yellow-primary-gradient-70:#FFD500;--yellow-primary-gradient-50:#FFE66B;--violet-primary-gradient-70:#AE6BFF;--violet-primary-gradient-50:#D06BFF;--overlay-top-bg:#1C1F29d9;--overlay-bottom-bg:#0F121AF2;--brand-actions:#0EB12E;--brand-hover-actions:#3AC054;--brand-var-actions:#F23D40;--brand-var-hover-actions:#FF474B;--info-actions:#343B4D;--info-hover-actions:#5A6178;--disabled-actions:#F7F8FA;--positive-primary-bg:#66EB81;--positive-secondary-bg:#E6fAEA;--positive-tertiary-bg:#E6fAEA;--positive-tertiary-opaque-bg:#D9FFE0;--positive-forthiary-bg:#F5FCF6;--positive-quinary-bg:#B6FFC4;--positive-senary-bg:#E6FAEA;--negative-primary-bg:#F23D40;--negative-secondary-bg:#FAE6E6;--negative-tertiary-bg:#FAE6E6;--negative-tertiary-opaque-bg:#FAD4D4;--negative-forthiary-bg:#FCF5F5;--negative-quinary-bg:#FFB5B6;--negative-senary-bg:#FAE6E6;--positive-primary-gradient-50:#6DFF8A;--positive-primary-gradient-70:#13C636;--positive-secondary-transparent-bg:#6DFF8A33;--positive-secondary-gradient-45-bg:#6DFF8A80;--positive-secondary-gradient-30-bg:#6DFF8A33;--positive-secondary-gradient-25-bg:#6DFF8A26;--positive-secondary-gradient-0-bg:#6DFF8A00;--negative-primary-gradient-50:#FF6B6E;--negative-primary-gradient-70:#F7191E;--negative-secondary-transparent-bg:#FF6B6E33;--negative-secondary-gradient-45-bg:#FF6B6E80;--negative-secondary-gradient-30-bg:#FF6B6E33;--negative-secondary-gradient-25-bg:#FF6B6E26;--negative-secondary-gradient-0-bg:#FF6B6E00;--primary-20:#38F55E;--primary-30:#4CE96C;--primary-40:#30CF4F;--primary-50:#3AC054;--primary-60:#0EB12E;--primary-70:#0B8E25;--primary-var-20:#FF5F57;--primary-var-30:#E9544C;--primary-var-40:#E0382F;--primary-var-50:#FF474B;--primary-var-70:#BF180F;--scrollbar-color:#5A6178;--lightmode-primary-100:#3FB923;--lightmode-primary-100-hover:#48C328;--primary-100:#3FB923;--primary-100-hover:#48C328;--lightmode-primary-110:#3DAE23;--lightmode-primary-110-hover:#46BA28;--primary-110:#3DAE23;--primary-110-hover:#46BA28;--lightmode-primary-10:#E7F9EA;--lightmode-primary-10-hover:#F1FBF3;--primary-10:#E7F9EA;--primary-10-hover:#F1FBF3;--rgb-neutral-0:255, 255, 255;--rgb-neutral-70:133, 137, 155;--rgb-neutral-100:0, 0, 0;--rgb-neutral-20-dm:50, 55, 75;--primary-100-dm:#ADF68D;--primary-100-dm-hover:#C1F8A9;--lightmode-primary-var-100:#E8464A;--lightmode-primary-var-100-hover:#F95E63;--primary-var-100:#E8464A;--primary-var-100-hover:#F95E63;--lightmode-primary-var-110:#D0021B;--lightmode-primary-var-110-hover:#D7021F;--primary-var-110:#D0021B;--primary-var-110-hover:#D7021F;--lightmode-primary-var-10:#F8E4E6;--lightmode-primary-var-10-hover:#FBEFF1;--primary-var-10:#F8E4E6;--primary-var-10-hover:#FBEFF1;--primary-var-100-dm:#FF6A6A;--primary-var-100-dm-hover:#FF9494;--lightmode-secondary-100:#2999F5;--lightmode-secondary-100-hover:#2FA8F6;--secondary-110:#0079b9;--secondary-100:#2999F5;--secondary-100-hover:#2FA8F6;--secondary-100-dm:#80CDFF;--secondary-100-dm-hover:#9CD8FF;--lightmode-neutral-100:#2c2c2c;--lightmode-neutral-90:#777;--lightmode-neutral-70:#bababa;--lightmode-neutral-40:#ddd;--lightmode-neutral-20:#f1f1f1;--lightmode-neutral-10:#f7f7f7;--lightmode-neutral-0:#fff;--neutral-100:#2c2c2c;--neutral-90:#777;--neutral-80:#666666;--neutral-70:#bababa;--neutral-40:#ddd;--neutral-30:#e4e4e4;--neutral-20:#f1f1f1;--neutral-10:#f7f7f7;--neutral-0:#fff;--neutral-100-dm:#fff;--neutral-90-dm:#CACBD1;--lightmode-neutral-dm-70:#85899B;--lightmode-neutral-dm-40:#555B70;--lightmode-neutral-dm-20:#32374B;--lightmode-neutral-dm-10:#272B3A;--neutral-70-dm:#85899B;--neutral-40-dm:#555B70;--neutral-20-dm:#32374B;--neutral-10-dm:#272B3A;--neutral-0-dm:#181C27;--rating-lowest:#3DAE23;--rating-low:#48C328;--rating-medium:#FBBF3A;--rating-high:#FD8200;--rating-highest:#D0021B;--usd:#00A44B;--euro:#005ca4;--pound:#037fd9}body{margin:0;background-color:var(--secondary-divider);font-family:Open Sans,sans-serif;height:100%}</style><link rel="stylesheet" href="styles.7500282e0f9817b0.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles.7500282e0f9817b0.css"></noscript></head>
+  <body>
+    <etoro-root></etoro-root>
+  <script src="runtime.adec9d55b6c273b1.js" type="module"></script><script src="polyfills.5a15379b09577a11.js" type="module"></script><script src="main.bd4f6473d1710046.js" type="module"></script><script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a236fa1a28a62813',t:'MTc4NTQ0MTkxMw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

@@ -1,0 +1,16 @@
+diff --git a/src/common/cosigner/mta.cpp b/src/common/cosigner/mta.cpp
+index 0b988c6..121e61c 100644
+--- a/src/common/cosigner/mta.cpp
++++ b/src/common/cosigner/mta.cpp
+@@ -127,7 +127,10 @@ static inline void generate_mta_range_zkp_seed(const cmp_mta_message& response,
+ 
+     std::vector<uint8_t> n(BN_num_bytes(proof.A));
+     BN_bn2bin(proof.A, n.data());
+-    SHA256_Update(&ctx, n.data(), BN_num_bytes(proof.S)); // right size of S is ensured during serialization
++    // Hash A with A's own length. Using BN_num_bytes(proof.S) truncated A under
++    // production key sizes (Paillier 2048 / Ring-Pedersen 1024) and could
++    // over-read if BN_num_bytes(S) > BN_num_bytes(A).
++    SHA256_Update(&ctx, n.data(), BN_num_bytes(proof.A));
+ 
+     SHA256_Update(&ctx, proof.Bx, sizeof(elliptic_curve256_point_t));
+ 

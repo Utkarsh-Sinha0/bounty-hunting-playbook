@@ -1,0 +1,13 @@
+HTTP/2 301 
+date: Thu, 30 Jul 2026 20:02:35 GMT
+content-type: text/html
+location: http://www.etoro.com/api/users/v1/2988943/personaldetails/
+set-cookie: __cf_bm=OBuusrXHS1.NbCw0F_didbeGDniKpEUaxy_m3oaQlRQ-1785441755.3610513-1.0.1.1-50DPsX7e1rFJClGJfwadNBE0vQ2_S04Ak9FYsewHesp2HV4Rb9XQl9bZ0wtg6KwUt_OW5UCaL2KM0Zle_QHCfIghE8AgxmLXVlHSaJ9V5W0.BXvg1EzZLGRBVNc_sNlulUQMvCcuqu3VVkanm7rmqA; HttpOnly; SameSite=None; Secure; Path=/; Domain=etoro.com; Expires=Thu, 30 Jul 2026 20:32:35 GMT
+set-cookie: __cflb=02DiuEAg8LPSYevHEYjnpbgJGw1ZD2Qacnsy2R38KpR6k; HttpOnly; SameSite=None; Secure; Path=/; Expires=Fri, 31 Jul 2026 19:02:35 GMT
+cf-cache-status: DYNAMIC
+strict-transport-security: max-age=15552000; includeSubDomains; preload
+x-content-type-options: nosniff
+server: cloudflare
+cf-ray: a236f63b0c074f5c-SEA
+alt-svc: h3=":443"; ma=86400
+
