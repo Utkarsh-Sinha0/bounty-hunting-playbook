@@ -39,23 +39,27 @@ Also: phishing, DDoS (single-request DoS still allowed), leaked/purchased creds,
 
 Recent CrowdStream (Jul 2026): multiple **P1** accepts on `*.wien.gv.at` and **AS6720** ($2400–$3000) — infra/network single-request issues remain valuable.
 
+## CrowdStream payout gravity (Jul 2026)
+
+Recent accepts cluster on **`*.wien.gv.at` P1** and **`AS6720` P1** (soeckly-heavy), plus **`*.gesundheitsverbund.at` P2/P3**. Mein Wien is quieter in that sample. Full map: `research/vienna/CROWDSTREAM_P1P2_HUNT_MAP.md`.
+
 ## Current live-hunt status
 
 **No submit-ready P1–P3 yet** in this environment.
 
 Blockers:
 
-1. No `@bugcrowdninja.com` mailbox / Mein Wien accounts for IDOR/ATO.
-2. No iOS/Android device for Stadt Wien app P1–P2.
-3. Public unauth surfaces checked so far (search XSS canaries, broker swagger, common subdomains, ActivateAccount) did not yield a clean P1–P3 PoC.
+1. Incomplete host/ASN inventory (CT down; Hackertarget capped ~50 rows).
+2. No `@bugcrowdninja.com` accounts for app IDOR/ATO.
+3. No iOS/Android device for Stadt Wien app P1–P2.
+4. Unauth probes so far (gateway 403 appdev, STP test, SlideCenter/AREX login walls, search XSS canaries) did not clear P3+.
 
 ## Immediate workflow for a paying report
 
-1. Create **two** Stadt Wien / Mein Wien accounts with `@bugcrowdninja.com`.
-2. Enforce normal MFA if offered; keep sessions for A↔B object swaps.
-3. Prioritize: payments, applications, appointments, `Transfer/*`, `Group/*`, ID Austria linking, broker API.
-4. Only submit issues with **reproducible impact** that clear P3+ under VRT **and** survive the exclusion list.
-5. Skip anything that is “only” open redirect, CSRF, rate limit, or mail-auth.
+1. Expand `*.wien.gv.at` / AS6720 host list; prioritize dev/test/admin/management hosts (soeckly-style P1 surface).
+2. Health apps (`3dhisto`, `arex`, FTAPI-adjacent): authZ/IDOR only with synthetic data — stop on real medical PII.
+3. Create **two** `@bugcrowdninja.com` Mein Wien accounts for Konto IDOR/ATO (still valid, lower CrowdStream volume).
+4. Submit only reproducible VRT **P1–P3** impact that survives exclusions.
 
 ## Artifacts
 
