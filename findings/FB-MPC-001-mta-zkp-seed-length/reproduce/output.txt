@@ -1,0 +1,10 @@
+A1_bytes=512 A2_bytes=512 S_bytes=128
+Expected truncation: buggy path hashes only first 128 of 512 A bytes
+
+buggy(A1): da4db958d9e5184ce791cfd8663dc9f25c47d7a248dcc9b1d9888a78111798b1
+buggy(A2): da4db958d9e5184ce791cfd8663dc9f25c47d7a248dcc9b1d9888a78111798b1
+fixed(A1): 0bd8b25d41f041a7fc7639d8c7a20a16794ee4168685f2e5ed9a45d623e3f944
+fixed(A2): 4c9bea5517ec92a627eeed546c1490c9d480e92bd51f9175f44ee1efebdaf557
+
+PASS: buggy seeds COLLIDE — low-order A bytes unbound in FS transcript
+PASS: fixed seeds DIFFER — full A is bound

@@ -1,0 +1,2 @@
+safe load1=11111111 load2=22222222
+EXIT:0
